@@ -1,0 +1,64 @@
+{
+  "_note": "Hand-curated portal figures (idealista blocks automated access). Update monthly after each idealista/Fotocasa report; the build script derives yields from these plus official MIVAU appraisal values.",
+  "as_of": "2026-09",
+  "rent": {
+    "source": "idealista rent price report, September 2026",
+    "url": "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/alquiler/",
+    "press_url": "https://www.idealista.com/news/inmobiliario/vivienda/2026/10/01/916616-el-precio-del-alquiler-sube-un-5-6-anual-en-septiembre-pero-cae-en-el-ultimo",
+    "national": {"eur_m2": 15.1, "yoy": 5.6, "qoq": -0.4},
+    "ccaa": {
+      "01": {"eur_m2": 14.1, "yoy": 5.2},
+      "02": {"eur_m2": 11.2, "yoy": 9.6},
+      "03": {"eur_m2": 10.9, "yoy": 9.3},
+      "04": {"eur_m2": 20.2, "yoy": 3.6},
+      "05": {"eur_m2": 15.2, "yoy": 4.3},
+      "06": {"eur_m2": 11.8, "yoy": 5.4},
+      "07": {"eur_m2": 9.7, "yoy": 6.7},
+      "08": {"eur_m2": 8.8, "yoy": 8.3},
+      "09": {"eur_m2": 15.9, "yoy": 2.2},
+      "10": {"eur_m2": 13.2, "yoy": 6.0},
+      "11": {"eur_m2": 7.7, "yoy": 5.7},
+      "12": {"eur_m2": 9.9, "yoy": 4.7},
+      "13": {"eur_m2": 21.6, "yoy": 5.7},
+      "14": {"eur_m2": 9.5, "yoy": 4.8},
+      "15": {"eur_m2": null, "yoy": 0.9},
+      "16": {"eur_m2": 15.0, "yoy": -0.3},
+      "17": {"eur_m2": 9.5, "yoy": 5.3},
+      "19": {"eur_m2": 11.3, "yoy": 8.6}
+    },
+    "province": {
+      "28": {"eur_m2": 21.6, "yoy": 5.7},
+      "07": {"eur_m2": 20.2, "yoy": 3.6},
+      "29": {"eur_m2": 18.8},
+      "08": {"eur_m2": 17.2, "yoy": 1.6},
+      "23": {"eur_m2": 7.0},
+      "13": {"eur_m2": 7.7},
+      "10": {"eur_m2": 7.7},
+      "06": {"eur_m2": 7.8},
+      "49": {"eur_m2": 8.0},
+      "44": {"eur_m2": 8.0},
+      "45": {"yoy": 12.7},
+      "16": {"yoy": 10.9},
+      "22": {"yoy": 10.2},
+      "50": {"yoy": 9.7},
+      "12": {"yoy": 9.5},
+      "01": {"yoy": -4.0},
+      "20": {"yoy": -3.0}
+    }
+  },
+  "sale": {
+    "source": "idealista sale price report, September 2026 (second-hand asking prices)",
+    "url": "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/",
+    "national": {"eur_m2": 2930, "yoy": 11.8},
+    "ccaa": {
+      "13": {"eur_m2": 5065, "yoy": 6.9},
+      "10": {"eur_m2": 2497, "yoy": 10.1}
+    }
+  },
+  "other_indicators": [
+    {"label": "Fotocasa rent index", "value": "14.10 €/m²", "detail": "Q3 2026: −4.7% q/q, +3.0% y/y. Fotocasa says the third quarter has fallen in every year of the last 20.", "url": "https://www.democrata.es/economia/el-alquiler-baja-un-4-7-en-el-tercer-trimestre-de-2026-pero-sube-un-3-en-un-ano-segun-fotocasa/"},
+    {"label": "Long-term rental listings", "value": "−10% y/y", "detail": "idealista, Oct 2026: permanent rental supply is down 10% in a year, and seasonal lets are now about one third of the market.", "url": "https://www.idealista.com/news/inmobiliario/vivienda/2026/10/20/919563-la-oferta-de-alquiler-permanente-cae-un-10-en-un-ano-y-la-de-temporada-ya-supone-un"},
+    {"label": "Rental stock on portals", "value": "902k → 510k", "detail": "Long-term listings counted by idealista, 2018 vs 2025 (Barcelona −83%).", "url": "https://theolivepress.es/spain-news/2026/10/25/spain-illegal-holiday-lets-crackdown"},
+    {"label": "Housing shortage", "value": "~800k homes", "detail": "Estimated structural deficit; BBVA expects only 130–140k completions a year in 2026–27.", "url": "https://www.spanishpropertyinsight.com/2026/04/09/housing-shortage-heading-towards-800000-homes/"}
+  ]
+}

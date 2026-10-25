@@ -1,0 +1,59 @@
+{
+  "_note": "Curated political tracker. Dates are as reported; where outlets disagree the item says so. Update as events occur.",
+  "updated": "2026-10-25",
+  "election": {"date": "2026-11-29", "label": "General election", "campaign_start": "2026-11-13"},
+  "headline": "Congress voted down the government's two housing decrees on 2 Oct 2026. Pedro Sánchez dissolved parliament and called a snap election for 29 Nov. Re-issued as RDL 28/2026 and RDL 29/2026, the decrees have been in force since 8 Oct, but the Diputación Permanente must ratify them, with a vote expected on 12 Nov. The 2% cap on rent updates and the extensions to lease contracts depend on that vote and on who wins on 29 Nov.",
+  "decrees": [
+    {"id": "RDL 29/2026 · main housing package", "status": "In force · vote 12 Nov", "level": "warn", "summary": "Caps annual rent updates at 2% to the end of 2027, bans evictions of vulnerable households to 2030, adds rules on seasonal and room rentals, and puts 10% VAT on tourist lets from 1 Dec. Press tallies point to ratification by 35–34 with PNV support."},
+    {"id": "RDL 28/2026 · lease extensions", "status": "In force · likely to fall", "level": "crit", "summary": "Tenants can extend expiring leases by up to 2 years, and the decree moves toward open-ended contracts. PNV says it will vote against, so the measure is expected to lapse on 12 Nov."},
+    {"id": "Ley 12/2023 · Housing Law", "status": "In force", "level": "good", "summary": "Allows rent caps in tensioned zones (Catalonia first; others vary by region). The PP has pushed motions to repeal it, so a PP-led government could unwind the caps."}
+  ],
+  "timeline": [
+    {"date": "2023-05-26", "cat": "law", "title": "Housing Law (Ley 12/2023) in force", "detail": "Lets regions declare 'tensioned zones' with rent caps based on reference indices, and adds extra limits on large landlords.", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203"},
+    {"date": "2024-03-16", "cat": "law", "title": "Catalonia applies first tensioned-zone rent caps", "detail": "First region to use the 2023 law; 140 municipalities are covered.", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203"},
+    {"date": "2025-04-03", "cat": "law", "title": "Golden visa scheme abolished", "detail": "Ends residence permits granted for property investment of €500k or more.", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2025-76"},
+    {"date": "2025-07-01", "cat": "law", "title": "Single short-term rental registry mandatory", "detail": "Tourist and seasonal lets need a registration number to be listed on platforms.", "url": "https://www.boe.es/"},
+    {"date": "2026-10-02", "cat": "parliament", "title": "Congress rejects both housing decrees", "detail": "PP, Vox and Junts voted against. Reported votes: 178–172 and 184–166. The 2% cap on rent updates lapsed.", "url": "https://www.idealista.com/en/news/financial-advice-in-spain/2026/10/02/917257-spain-rejects-housing-measures-impact-on-renters-and-tourists"},
+    {"date": "2026-10-03", "cat": "protest", "title": "Mass protests in Madrid and ~50 cities", "detail": "Triggered by the eviction of an 87-year-old Madrid tenant, who later died in hospital. Tenants' unions call for a general strike.", "url": "https://www.aljazeera.com/news/2026/10/3/tens-of-thousands-protest-in-spain-after-failed-housing-reforms"},
+    {"date": "2026-10-05", "cat": "election", "title": "Sánchez calls snap election for 29 November", "detail": "Parliament dissolved about nine months early, with housing as the central issue.", "url": "https://www.euronews.com/2026/10/05/pedro-sanchez-calls-early-elections-in-spain-after-defeat-of-housing-decrees"},
+    {"date": "2026-10-06", "cat": "law", "title": "Decrees re-approved as RDL 28/2026 and RDL 29/2026", "detail": "Published in the BOE on 7 Oct and in force from 8 Oct. They cap annual rent updates at 2% to the end of 2027, let tenants extend leases ending before 2029 by up to 2 years, ban evictions of vulnerable households to 2030, and add 10% VAT on tourist lets from 1 Dec if ratified.", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-20823"},
+    {"date": "2026-10-16", "cat": "parliament", "title": "Ratification vote scheduled for 12 November", "detail": "In the Diputación Permanente (69 seats), press tallies put RDL 29 at 35–34 in favour, with PNV support. RDL 28 (open-ended leases) is likely to fall.", "url": "https://www.moncloa.com/2026/10/17/decretos-vivienda-congreso-12n-3450016/"},
+    {"date": "2026-10-20", "cat": "market", "title": "Permanent rental supply down 10% y/y", "detail": "idealista reports that seasonal lets are now about one third of the rental market, a sign of landlords moving away from regulated leases.", "url": "https://www.idealista.com/news/inmobiliario/vivienda/2026/10/20/919563-la-oferta-de-alquiler-permanente-cae-un-10-en-un-ano-y-la-de-temporada-ya-supone-un"},
+    {"date": "2026-10-21", "cat": "election", "title": "PP housing plan: 3 laws in 100 days", "detail": "Promises a Land Law, a law against squatting with 48-hour evictions, and a horizontal-property reform. Also pledges 1M homes over the legislature and tax breaks for landlords who extend leases below inflation.", "url": "https://www.idealista.com/en/news/property-for-sale-in-spain/2026/10/22/919967-spain-s-opposition-leader-promises-48-hour-squatter-evictions-and-rent-tax"},
+    {"date": "2026-10-23", "cat": "election", "title": "Government pledges tougher rules if re-elected", "detail": "Says it will intervene 'with the full force of the law' and points to a €7bn State Housing Plan to 2030.", "url": "https://www.idealista.com/en/news/property-for-rent-in-spain/2026/10/23/919924-spain-s-government-promises-tougher-housing-rules-if-it-wins-the-november"},
+    {"date": "2026-10-25", "cat": "market", "title": "8,300 'seasonal' listings ordered off platforms", "detail": "The Consumer Affairs ministry is targeting holiday lets disguised as seasonal rentals.", "url": "https://theolivepress.es/spain-news/2026/10/25/spain-illegal-holiday-lets-crackdown"}
+  ],
+  "upcoming": [
+    {"date": "2026-10-28", "title": "Candidate lists published in BOE"},
+    {"date": "2026-11-11", "title": "24-hour general strike over housing and wages"},
+    {"date": "2026-11-12", "title": "Diputación Permanente votes on RDL 28 & 29/2026"},
+    {"date": "2026-11-13", "title": "Official campaign starts"},
+    {"date": "2026-11-29", "title": "General election"},
+    {"date": "2026-12-01", "title": "10% VAT on tourist lets applies (if RDL 29 ratified)"},
+    {"date": "2026-12-04", "title": "INE house price index, Q3 2026 (estimated date)"}
+  ],
+  "polls": {
+    "_note": "Only the figures reported by the press or aggregators are entered here. Blank means not reported. Add new polls as rows.",
+    "result_2023": {"PP": 33.1, "PSOE": 31.7, "Vox": 12.4, "Sumar": 12.3},
+    "rows": [
+      {"pollster": "CIS", "date": "2026-10-08", "PP": 28.3, "PSOE": 28.6},
+      {"pollster": "RTVE", "date": "2026-10-05", "Sumar": 6.3},
+      {"pollster": "Electocracia", "date": "2026-10-05", "Sumar": 6.2},
+      {"pollster": "Electomanía", "date": "2026-10-23", "Vox": 19.4},
+      {"pollster": "El Periódico", "date": "2026-10-24", "PP": 30.5, "PSOE": 27.5},
+      {"pollster": "The Economist", "date": "2026-10-24", "PP": 32.0, "PSOE": 27.0, "Vox": 19.0}
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_Spanish_general_election",
+      "https://www.poliwave.com/es/gen/polls"
+    ]
+  },
+  "parties": [
+    {"party": "PSOE", "stance": "Intervention", "score": -2, "housing": "Keep RDL 29/2026: 2% rent-update cap, lease extensions, eviction moratorium, VAT on tourist lets. Promises to go 'further' if re-elected; €7bn State Housing Plan to 2030."},
+    {"party": "Sumar", "stance": "Strong intervention", "score": -3, "housing": "Historically pushed for tighter rent caps, open-ended leases and limits on speculative purchases. Backs both decrees."},
+    {"party": "PNV", "stance": "Swing", "score": 0, "housing": "Supports RDL 29 (the main package) but opposes RDL 28 (open-ended leases). Its vote decides the 12 Nov ratification."},
+    {"party": "Junts", "stance": "Swing / regional", "score": 1, "housing": "Voted with PP and Vox to reject the decrees on 2 Oct, citing regional powers."},
+    {"party": "PP", "stance": "Supply & liberalise", "score": 2, "housing": "Land Law, 48-hour squatter evictions, 1M homes, tax breaks for landlords who extend leases below CPI, purchase aid for young buyers. Has previously moved to repeal the 2023 Housing Law."},
+    {"party": "Vox", "stance": "Deregulate", "score": 3, "housing": "Opposes rent controls, wants tax cuts and tough anti-squatting rules, and frames housing demand around immigration. Voted against both decrees."}
+  ]
+}

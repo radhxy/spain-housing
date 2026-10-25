@@ -1,0 +1,39 @@
+{
+  "_note": "Published forecasts for annual Spanish house-price growth (%), by vintage. 'actual' figures come from INE IPV and are filled in by the build script.",
+  "forecasts": [
+    {"source": "CaixaBank Research", "published": "2025-11-15", "year": 2026, "value": 6.3, "url": "https://www.caixabankresearch.com/en/sectoral-analysis/real-estate/shortage-new-homes-continues-strain-spains-housing-market", "note": "Older vintage; CaixaBank's latest outlook gives direction only (moderating growth, large regional disparity)."},
+    {"source": "Bankinter", "published": "2025-11-15", "year": 2026, "value": 7.0, "url": "https://blog.urbanitae.com/en/2025/11/03/the-price-of-housing-in-spain-evolution-and-forecasts-for-2026/", "note": "Older vintage."},
+    {"source": "Fitch", "published": "2026-01-20", "year": 2026, "value": 9.0, "low": 8.0, "high": 10.0, "url": "https://bravosestate.com/guide/spain-property-market-2026", "note": "Range 8–10%; midpoint plotted."},
+    {"source": "BBVA Research", "published": "2026-03-15", "year": 2026, "value": 10.2, "url": "https://www.bbvaresearch.com/en/publicaciones/spain-real-estate-sector-outlook-and-profitability-march-2026/"},
+    {"source": "BBVA Research", "published": "2026-03-15", "year": 2027, "value": 6.8, "url": "https://www.bbvaresearch.com/en/publicaciones/spain-real-estate-sector-outlook-and-profitability-march-2026/"},
+    {"source": "S&P Global", "published": "2026-07-21", "year": 2026, "value": 9.1, "url": "https://www.idealista.com/en/news/property-for-sale-in-spain/2026/07/21/906018-sp-spain-to-lead-europe-in-house-price-growth-in-2027-28"},
+    {"source": "S&P Global", "published": "2026-07-21", "year": 2027, "value": 7.1, "url": "https://www.idealista.com/en/news/property-for-sale-in-spain/2026/07/21/906018-sp-spain-to-lead-europe-in-house-price-growth-in-2027-28", "note": "Coverage also quotes 7.4% for 2027 and 6.2% for 2028."},
+    {"source": "BBVA Research", "published": "2026-08-15", "year": 2026, "value": 12.0, "url": "https://www.spanishpropertyinsight.com/2026/08/15/spanish-home-sales-forecast-to-fall-as-prices-surge-12pc/"},
+    {"source": "BBVA Research", "published": "2026-08-15", "year": 2027, "value": 5.7, "url": "https://www.spanishpropertyinsight.com/2026/08/15/spanish-home-sales-forecast-to-fall-as-prices-surge-12pc/"},
+    {"source": "BBVA Research", "published": "2026-10-10", "year": 2026, "value": 11.5, "url": "https://www.mallorca.com/en/magazin/news/spain-house-prices-housing-forecast"},
+    {"source": "BBVA Research", "published": "2026-10-10", "year": 2027, "value": 5.5, "url": "https://www.mallorca.com/en/magazin/news/spain-house-prices-housing-forecast"}
+  ],
+  "sales_forecasts": [
+    {"source": "BBVA Research", "published": "2026-08-15", "year": 2026, "value": -7.3},
+    {"source": "BBVA Research", "published": "2026-08-15", "year": 2027, "value": 0.6}
+  ],
+  "scenarios": {
+    "_note": "Illustrative scenario model (this dashboard's own assumptions, not a published forecast). Adjustments are percentage points added to baseline annual growth in 2027 and 2028.",
+    "baseline": {"2026": 11.0, "2027": 6.1, "2028": 4.5, "rent_2027": 5.0, "rent_2028": 4.0},
+    "list": [
+      {"id": "right", "name": "PP-led government (with Vox support)", "prior": 0.55,
+       "price_adj": {"2027": 0.8, "2028": 0.3}, "rent_adj": {"2027": 1.5, "2028": 0.5}, "sales_adj": 4,
+       "rationale": "Rent caps and tensioned-zone controls rolled back, landlord tax breaks and faster evictions bring investors back. More homes on the market and land reform take years to add supply, so in the short run prices and rents keep rising and sales recover."},
+      {"id": "left", "name": "PSOE-led government (continuity)", "prior": 0.20,
+       "price_adj": {"2027": -0.3, "2028": -0.3}, "rent_adj": {"2027": -1.5, "2028": -1.0}, "sales_adj": -2,
+       "rationale": "RDL 29/2026 is consolidated and regulation goes further. Signed-contract rents are held near the 2% cap, but long-term rental supply keeps shrinking toward seasonal and for-sale use. Investor demand cools and price growth eases slightly."},
+      {"id": "hung", "name": "Hung parliament / repeat election", "prior": 0.25,
+       "price_adj": {"2027": -0.8, "2028": 0.0}, "rent_adj": {"2027": 0.5, "2028": 0.0}, "sales_adj": -5,
+       "rationale": "Months of caretaker government leave the decrees in legal limbo. Uncertainty delays purchases and development starts, and sales fall further."}
+    ],
+    "macro": {
+      "euribor_sensitivity": -2.0,
+      "_euribor_note": "pp change in annual price growth per +1pp change in 12m Euribor versus its latest level (rule of thumb from the affordability literature)."
+    }
+  }
+}

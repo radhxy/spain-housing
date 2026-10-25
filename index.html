@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spain Housing Monitor</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#overview"><span class="brand-mark" aria-hidden="true">€/m²</span><span>Spain Housing Monitor</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#overview">Overview</a>
+      <a href="#map">Map</a>
+      <a href="#prices">Prices &amp; sales</a>
+      <a href="#yields">Yields</a>
+      <a href="#outlook">Outlook</a>
+      <a href="#politics">Politics</a>
+      <a href="#news">News</a>
+      <a href="#sources">Sources</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- Overview -->
+  <section id="overview" class="section">
+    <div class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Sale prices, rents and yields across Spain's 52 provinces · <span id="genStamp">loading…</span></p>
+        <h1>Prices up <span id="heroYoy">—</span> in a year, and housing is now deciding an election</h1>
+        <p id="politicsHeadline" class="lede"></p>
+      </div>
+      <aside class="countdown" aria-label="Key dates">
+        <div class="cd-item"><span class="cd-num" id="cdVote">—</span><span class="cd-label">days to the decree<br>ratification vote (12 Nov)</span></div>
+        <div class="cd-item cd-main"><span class="cd-num" id="cdElection">—</span><span class="cd-label">days to the general<br>election (29 Nov)</span></div>
+      </aside>
+    </div>
+    <div class="decrees" id="decrees"></div>
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <!-- Map -->
+  <section id="map" class="section">
+    <div class="section-head">
+      <h2>Province map</h2>
+      <p>Choose a measure and drag the timeline to see how it changed. Click a province for its history.</p>
+    </div>
+    <div class="map-layout">
+      <div class="card map-card">
+        <div class="controls">
+          <label class="field" for="mapMetric">Measure
+            <select id="mapMetric">
+              <option value="price">Sale price, €/m² (appraised)</option>
+              <option value="priceYoy">Sale price change, y/y</option>
+              <option value="sales">Home sales, last 12 months</option>
+              <option value="salesYoy">Home sales change, 12 m vs prior 12 m</option>
+              <option value="yield">Gross rental yield (now)</option>
+              <option value="rent">Asking rent, €/m² per month (now)</option>
+              <option value="rentYoy">Asking rent change, y/y (now)</option>
+            </select>
+          </label>
+          <div class="timeline" id="timelineBox">
+            <button type="button" class="btn" id="playBtn" aria-label="Play timeline">▶ Play</button>
+            <input type="range" id="timeSlider" min="0" max="0" value="0" aria-label="Period">
+            <output id="timeLabel" for="timeSlider">—</output>
+          </div>
+        </div>
+        <div id="mapChart" class="chart chart-map" role="img" aria-label="Choropleth map of Spanish provinces"></div>
+        <p class="note" id="mapNote"></p>
+      </div>
+      <aside class="card detail" id="provDetail" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <!-- Prices & sales -->
+  <section id="prices" class="section">
+    <div class="section-head">
+      <h2>Prices &amp; sales</h2>
+      <p>Official series from INE (transaction prices, registered sales), the Ministry of Housing (appraisals), the ECB and Eurostat.</p>
+    </div>
+    <div class="grid-2">
+      <figure class="card">
+        <figcaption><h3>House price growth, y/y</h3><p>INE house price index (IPV), new vs second-hand homes</p></figcaption>
+        <div id="ipvChart" class="chart chart-tall"></div>
+      </figure>
+      <figure class="card">
+        <figcaption><h3>Price growth by region, <span id="ipvRegionPeriod"></span></h3><p>INE IPV, annual change. Spain's figure is highlighted</p></figcaption>
+        <div id="regionChart" class="chart chart-tall"></div>
+      </figure>
+      <figure class="card">
+        <figcaption><h3>Home sales per month</h3><p>INE ETDP, registered purchases of homes, new vs second-hand</p></figcaption>
+        <div class="seg" role="group" aria-label="Sales range">
+          <button type="button" class="seg-btn" data-range="36">3 y</button>
+          <button type="button" class="seg-btn is-on" data-range="96">8 y</button>
+          <button type="button" class="seg-btn" data-range="999">All</button>
+        </div>
+        <div id="salesChart" class="chart"></div>
+      </figure>
+      <figure class="card">
+        <figcaption><h3>Prices have outrun rents</h3><p>INE price index (annual average) vs INE rent index from tax returns, 2015 = 100</p></figcaption>
+        <div id="divergeChart" class="chart"></div>
+      </figure>
+      <figure class="card">
+        <figcaption><h3>Spain vs Europe</h3><p>Eurostat house price index, annual change</p></figcaption>
+        <div id="euChart" class="chart"></div>
+      </figure>
+      <figure class="card">
+        <figcaption><h3>12-month Euribor</h3><p>ECB, monthly average. The benchmark for most variable-rate Spanish mortgages</p></figcaption>
+        <div id="euriborChart" class="chart"></div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Yields -->
+  <section id="yields" class="section">
+    <div class="section-head">
+      <h2>Rental yields</h2>
+      <p>Gross yield = 12 months of asking rent ÷ asking sale price. A rough guide for investors, before taxes, vacancy and costs.</p>
+    </div>
+    <div class="grid-yields">
+      <figure class="card">
+        <figcaption><h3>Gross yield by province</h3><p>Solid bars use idealista's published rent. Hatched bars are modelled from the region's rent. The vertical line marks the Spain average</p></figcaption>
+        <div id="yieldBars" class="chart chart-xtall"></div>
+      </figure>
+      <div class="stack">
+        <figure class="card">
+          <figcaption><h3>Cheaper provinces pay higher yields</h3><p>Sale price vs gross yield. Bubble size = home sales in the last 12 months</p></figcaption>
+          <div id="yieldScatter" class="chart"></div>
+        </figure>
+        <div class="card method">
+          <h3>How yields are estimated</h3>
+          <ul id="yieldMethod"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outlook -->
+  <section id="outlook" class="section">
+    <div class="section-head">
+      <h2>Outlook: forecasts vs reality</h2>
+      <p>Forecasters have repeatedly underestimated this cycle. The scenario model below sets election outcomes against the latest INE data, and its baseline updates with each new release.</p>
+    </div>
+    <div class="grid-2">
+      <figure class="card">
+        <figcaption><h3>Every forecast for 2026 has been too low</h3><p>Published forecasts for annual house price growth, by publication date, against INE's actual figures</p></figcaption>
+        <div id="forecastChart" class="chart"></div>
+      </figure>
+      <div class="card pulse" id="pulse"></div>
+    </div>
+    <div class="card scenario">
+      <div class="scenario-head">
+        <div>
+          <h3>Scenario model: price index to 2028</h3>
+          <p>INE price index (2025 = 100). Dashed lines are the three election outcomes; the thick line weights them by your probabilities. These are the dashboard's own assumptions, not a published forecast.</p>
+        </div>
+      </div>
+      <div class="scenario-body">
+        <div class="scenario-controls" id="scenarioControls"></div>
+        <div class="scenario-chart">
+          <div id="scenarioChart" class="chart chart-tall"></div>
+          <div class="table-wrap"><table class="data" id="scenarioTable"></table></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Politics -->
+  <section id="politics" class="section">
+    <div class="section-head">
+      <h2>Political climate</h2>
+      <p>Who controls housing policy after 29 November decides whether the rent caps survive.</p>
+    </div>
+    <div class="grid-politics">
+      <div class="card">
+        <h3>Timeline</h3>
+        <div class="chips" id="timelineFilter" role="group" aria-label="Filter timeline"></div>
+        <ol class="timeline-list" id="timeline"></ol>
+      </div>
+      <div class="stack">
+        <figure class="card">
+          <figcaption><h3>Polls for 29 November</h3><p>Vote intention (%), as reported. Rings mark each party's 2023 result</p></figcaption>
+          <div id="pollChart" class="chart"></div>
+        </figure>
+        <div class="card">
+          <h3>Where the parties stand on housing</h3>
+          <div class="spectrum" id="spectrum" aria-hidden="true"></div>
+          <div class="table-wrap"><table class="data parties" id="partyTable"></table></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section id="news" class="section">
+    <div class="section-head">
+      <h2>Latest updates</h2>
+      <p id="newsStamp">Headlines refresh automatically with every data update.</p>
+    </div>
+    <div class="card">
+      <div class="chips" id="newsFilter" role="group" aria-label="Filter headlines"></div>
+      <ul class="news-list" id="newsList"></ul>
+    </div>
+  </section>
+
+  <!-- Sources -->
+  <section id="sources" class="section">
+    <div class="section-head">
+      <h2>Data sources</h2>
+      <p>Every source that tracks Spanish house prices, rents, sales and housing policy. <b>Auto</b> sources refresh in the pipeline, <b>curated</b> ones are entered by hand, and <b>candidates</b> could be added next.</p>
+    </div>
+    <div class="card">
+      <div class="table-wrap"><table class="data sources" id="sourcesTable"></table></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>Built from INE, Ministry of Housing (MIVAU), ECB, Eurostat, idealista, Fotocasa, BOE and press reports. Portal figures are asking prices. Appraisals and INE indices are official. Forecast and scenario figures are estimates. Province boundaries: click_that_hood (CC BY).</p>
+    <p id="footStamp"></p>
+  </div>
+</footer>
+
+<div id="loadError" class="load-error" hidden>Couldn't load data/dashboard.json. Serve this folder over HTTP (for example <code>python3 -m http.server</code>) rather than opening the file directly.</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
