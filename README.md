@@ -26,7 +26,7 @@ python3 -m http.server 8000        # open http://localhost:8000
 
 ## Keeping it current
 
-- **Automatic:** `.github/workflows/update-data.yml` runs daily. It pulls INE (IPV, ETDP, IPVA), the Ministry of Housing appraisal workbook, ECB Euribor, Eurostat and Google News, then commits the refreshed `data/`. For a public URL, enable GitHub Pages on this branch (Settings → Pages → Deploy from branch).
+- **Automatic:** `.github/workflows/update-data.yml` runs daily. It pulls INE (IPV, ETDP, IPVA), the Ministry of Housing appraisal workbook, ECB Euribor, Eurostat and Google News, then commits the refreshed `data/`. `.github/workflows/pages.yml` then redeploys the site to GitHub Pages: https://radhxy.github.io/spain-housing/ (one-time setup: Settings → Pages → Source: **GitHub Actions**).
 - **By hand** (sites that block automated access, and political events):
   - `data/curated/market.json`: idealista and Fotocasa rents and sale prices, once a month after each report (around the 1st).
   - `data/curated/politics.json`: timeline, upcoming dates, decree status, polls and party positions.
