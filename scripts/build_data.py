@@ -289,6 +289,19 @@ def _rebase(series, start):
     return {t: round(v / avg * 100, 1) for t, v in series.items() if t >= start}
 
 
+def boe_rate(tries=4):
+    """BoE's database sometimes answers with an HTML error page instead of CSV; retry until it doesn't."""
+    for i in range(tries):
+        text = fetch(BOE_RATE).decode(errors="replace")
+        if text.startswith("DATE"):
+            rows = csv.reader(io.StringIO(text))
+            next(rows)
+            return [(datetime.strptime(r[0], "%d %b %Y").strftime("%Y-%m"), float(r[1]))
+                    for r in rows if len(r) == 2 and r[1]]
+        time.sleep(3 * (i + 1))
+    raise RuntimeError("Bank of England returned no CSV")
+
+
 def build_intl():
     """Spain vs Portugal, Ireland and the UK on comparable affordability measures.
 
@@ -307,10 +320,7 @@ def build_intl():
     for c in ("ES", "PT", "IE"):
         rows = csv.DictReader(io.StringIO(fetch(ECB_MIR.format(c)).decode()))
         rates[c] = _quarterly_mean((r["TIME_PERIOD"], float(r["OBS_VALUE"])) for r in rows if r.get("OBS_VALUE"))
-    boe = csv.reader(io.StringIO(fetch(BOE_RATE).decode()))
-    next(boe)
-    rates["UK"] = _quarterly_mean(
-        (datetime.strptime(r[0], "%d %b %Y").strftime("%Y-%m"), float(r[1])) for r in boe if len(r) == 2 and r[1])
+    rates["UK"] = _quarterly_mean(boe_rate())
 
     out = {}
     for c, iso in INTL.items():
@@ -500,29 +510,54 @@ def load(name):
         return json.load(fh)
 
 
+def previous_output():
+    path = os.path.join(DATA, "dashboard.json")
+    try:
+        with open(path, encoding="utf-8") as fh:
+            return json.load(fh)
+    except (OSError, ValueError):
+        return {}
+
+
+FAILED = []
+
+
+def safe(name, fn, prev):
+    """Run one source's builder; if its server is down, keep that block from the last good build."""
+    try:
+        return fn()
+    except Exception as e:
+        if name not in prev:
+            raise
+        print(f"  ! {name} failed ({e}); keeping previous data")
+        FAILED.append(name)
+        return prev[name]
+
+
 def main():
+    prev = previous_output()
     market = load("market.json")
-    appraisal = build_appraisal()
-    bde = build_bde()
+    appraisal = safe("appraisal", build_appraisal, prev)
+    bde = safe("bde", build_bde, prev)
     refresh_national_sale(market, bde)
     api = load_idealista_api()
     out = {
         "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "provinces": {c: {"name": n, "ccaa": cc} for c, (n, cc, _) in PROVINCES.items()},
         "ccaa": CCAA,
-        "ipv": build_ipv(),
-        "sales": build_sales(),
-        "rent_index": build_rent_index(),
+        "ipv": safe("ipv", build_ipv, prev),
+        "sales": safe("sales", build_sales, prev),
+        "rent_index": safe("rent_index", build_rent_index, prev),
         "appraisal": appraisal,
-        "euribor": build_euribor(),
-        "eu_hpi": build_eu_hpi(),
+        "euribor": safe("euribor", build_euribor, prev),
+        "eu_hpi": safe("eu_hpi", build_eu_hpi, prev),
         "market": market,
         "yields": build_yields(appraisal, market, api),
         "idealista_api": {"provinces": api, "count": len(api)},
         "bde": bde,
-        "buyers": build_buyers(),
-        "catalonia_rents": build_catalonia_rents(),
-        "intl": build_intl(),
+        "buyers": safe("buyers", build_buyers, prev),
+        "catalonia_rents": safe("catalonia_rents", build_catalonia_rents, prev),
+        "intl": safe("intl", build_intl, prev),
         "projections": load("projections.json"),
         "politics": load("politics.json"),
         "sources": load("sources.json"),
@@ -531,10 +566,11 @@ def main():
     if os.path.exists(news):
         with open(news, encoding="utf-8") as fh:
             out["news"] = json.load(fh)
+    out["stale_sources"] = FAILED
     path = os.path.join(DATA, "dashboard.json")
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(out, fh, ensure_ascii=False, separators=(",", ":"))
-    print(f"wrote {path} ({os.path.getsize(path) // 1024} KB)")
+    print(f"wrote {path} ({os.path.getsize(path) // 1024} KB)" + (f"; kept previous data for {', '.join(FAILED)}" if FAILED else ""))
 
 
 if __name__ == "__main__":
