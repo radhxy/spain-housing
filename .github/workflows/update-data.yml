@@ -19,6 +19,11 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Fetch headlines
         run: python3 scripts/fetch_news.py
+      - name: Sample idealista listings (skipped without API secrets)
+        env:
+          IDEALISTA_API_KEY: ${{ secrets.IDEALISTA_API_KEY }}
+          IDEALISTA_API_SECRET: ${{ secrets.IDEALISTA_API_SECRET }}
+        run: python3 scripts/fetch_idealista.py
       - name: Build dashboard data
         run: python3 scripts/build_data.py
       - name: Commit if changed

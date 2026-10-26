@@ -53,6 +53,8 @@
   const sum12 = (s, t) => { if (!s) return null; const i = s.t.indexOf(t); if (i < 11) return null; let a = 0; for (let k = i - 11; k <= i; k++) a += s.v[k]; return a; };
   const yoy = (now, before) => (now == null || before == null || before === 0) ? null : (now / before - 1) * 100;
   const daysTo = (iso) => Math.ceil((new Date(iso + "T00:00:00+01:00") - new Date()) / 864e5);
+  const qYear = (v) => (v.endsWith("Q1") ? v.slice(0, 4) : "");
+  const mYear = (v) => (v.endsWith("-01") ? v.slice(0, 4) : "");
   const quarterEnd = (t) => `${t.slice(0, 4)}-${["03-31", "06-30", "09-30", "12-31"][+t[5] - 1]}`;
 
   let D, GEO;
@@ -146,6 +148,8 @@
       { label: "Asking rent", value: "€" + nf1.format(R.eur_m2), unit: "/m²·month", delta: `${pct(R.yoy)} y/y · ${pct(R.qoq)} q/q`, dir: R.yoy > 0 ? "up" : "down", src: `idealista, ${D.market.as_of}` + (fc ? ` · Fotocasa ${fc.value}` : "") },
       { label: "Gross rental yield", value: nf1.format(Y.national.gross_yield) + "%", unit: "Spain", delta: `${pn(ys[0][0])} ${nf1.format(ys[0][1].gross_yield)}% → ${pn(ys[ys.length - 1][0])} ${nf1.format(ys[ys.length - 1][1].gross_yield)}%`, src: "Asking rent ÷ asking price" },
       { label: "Home sales", value: nf0.format(sL.v), unit: label(sL.t), delta: `${pct(sY)} y/y · 12 m: ${nf0.format(s12)} (${pct(s12y)})`, dir: sY < 0 ? "down" : "up", neutral: true, src: "INE registered sales", spark: sales.v.slice(-36), sparkT: sales.t.slice(-36) },
+      (() => { const L = landmarks(D.bde.price_income); return { label: "Price ÷ income", value: nf1.format(L.now[1]), unit: "years", delta: `peak ${nf1.format(L.peak[1])} (${L.peak[0].slice(0, 4)}) · trough ${nf1.format(L.trough[1])} (${L.trough[0].slice(0, 4)})`, dir: "up", src: "Banco de España", spark: D.bde.price_income.v.slice(-80), sparkT: D.bde.price_income.t.slice(-80) }; })(),
+      (() => { const F = buyerFrame("ES"), n = F.t.length - 1, y = F.yoyOf(F.r.foreign_nonres)[n]; return { label: "Foreign buyers", value: nf1.format(F.share(F.r.foreign)[n]) + "%", unit: "of purchases", delta: `non-resident buying ${pct(y)} y/y`, neutral: true, src: `Ministry of Housing, 4 q to ${label(F.t[n])}`, spark: F.share(F.r.foreign).slice(-40), sparkT: F.t.slice(-40) }; })(),
       { label: "12-month Euribor", value: nf2.format(eL.v) + "%", unit: label(eL.t), delta: `${e12 == null ? "" : (eL.v - e12 >= 0 ? "+" : "−") + nf2.format(Math.abs(eL.v - e12)) + " pp in a year"}`, dir: eL.v > e12 ? "up" : "down", src: "ECB monthly average", spark: eu.v.slice(-48), sparkT: eu.t.slice(-48) },
     ];
     tiles.forEach((k, i) => {
@@ -214,12 +218,41 @@
       value: (c) => yieldOf(c)?.rent_m2, fmt: (v) => "€" + nf1.format(v) + "/m²",
       note: "Asking rent per m² per month (idealista, latest month). Modelled where idealista doesn't publish the province.",
     },
+    foreignShare: {
+      kind: "quarter", scale: "seq", unit: "%",
+      periods: () => D.buyers.ES.total.t.filter((t) => t >= "2007Q4"),
+      value: (c, t) => buyerAt("p" + c, t, (F, i) => F.share(F.r.foreign)[i]),
+      fmt: (v) => nf1.format(v) + "%",
+      note: "Purchases by foreign nationals (resident and non-resident) as a share of all notarised purchases, rolling 4 quarters (Ministry of Housing).",
+    },
+    nonresShare: {
+      kind: "quarter", scale: "seq", unit: "%",
+      periods: () => D.buyers.ES.total.t.filter((t) => t >= "2007Q4"),
+      value: (c, t) => buyerAt("p" + c, t, (F, i) => F.share(F.r.foreign_nonres)[i]),
+      fmt: (v) => nf1.format(v) + "%",
+      note: "Purchases by foreigners who don't live in Spain, as a share of all purchases, rolling 4 quarters. The most footloose demand.",
+    },
+    foreignYoy: {
+      kind: "quarter", scale: "div", cap: 40, unit: "%",
+      periods: () => D.buyers.ES.total.t.filter((t) => t >= "2008Q4"),
+      value: (c, t) => buyerAt("p" + c, t, (F, i) => F.yoyOf(F.r.foreign)[i]),
+      fmt: (v) => pct(v),
+      note: "Purchases by foreign nationals, rolling 4 quarters vs a year earlier. Red = rising, blue = falling.",
+    },
     rentYoy: {
       kind: null, scale: "div", cap: 12, unit: "%",
       value: (c) => yieldOf(c)?.rent_yoy, fmt: (v) => pct(v),
       note: "Annual change in asking rent. The province figure where published, otherwise its region's.",
     },
   };
+
+  const buyerCache = {};
+  function buyerAt(key, t, fn) {
+    const F = buyerCache[key] || (buyerCache[key] = buyerFrame(key));
+    if (!F) return null;
+    const i = F.t.indexOf(t);
+    return i < 0 ? null : fn(F, i);
+  }
 
   function metricRange(m) {
     const vals = [];
@@ -334,7 +367,9 @@
     const s12 = sL ? sum12(sales, sL.t) : null, s12y = sL ? yoy(s12, sum12(sales, shiftM(sL.t, -12))) : null;
     const ri = D.rent_index["p" + code], riL = ri?.yoy ? last(ri.yoy) : null;
     const ranks = Object.entries(D.yields.by_province).sort((a, b) => b[1].gross_yield - a[1].gross_yield).map((e) => e[0]);
-    const tag = y.rent_method === "modelled" ? '<span class="tag">modelled</span>' : '<span class="tag">idealista</span>';
+    const tag = `<span class="tag">${{ modelled: "modelled", api: "idealista API", published: "idealista" }[y.rent_method] || ""}</span>`;
+    const FB = buyerFrame("p" + code), fn = FB ? FB.t.length - 1 : -1;
+    const fb = FB ? { t: FB.t[fn], share: FB.share(FB.r.foreign)[fn], nonres: FB.share(FB.r.foreign_nonres)[fn] } : null;
     $("#provDetail").innerHTML = `
       <div><h3>${esc(p.name)}</h3><p class="sub">${esc(D.ccaa[p.ccaa])} · INE code ${code}</p></div>
       <dl class="dl">
@@ -347,6 +382,7 @@
         <dt>Sales, 12 m to ${sL ? label(sL.t) : "—"}</dt><dd>${s12 ? nf0.format(s12) : "—"}</dd>
         <dt>Sales change</dt><dd>${pct(s12y)}</dd>
         ${riL ? `<dt>INE rent index (${riL.t}, tax data)</dt><dd>${pct(riL.v)}</dd>` : ""}
+        ${fb ? `<dt>Foreign buyers (4 q to ${label(fb.t)})</dt><dd>${nf1.format(fb.share)}%</dd><dt>of which non-resident</dt><dd>${nf1.format(fb.nonres)}%</dd>` : ""}
       </dl>
       <div><p class="sub">Appraised €/m² since 2005: ${esc(p.name)} vs Spain</p><div id="detailChart" class="detail-chart"></div></div>`;
     if (charts.detailChart) { charts.detailChart.dispose(); delete charts.detailChart; }
@@ -495,7 +531,7 @@
         label: { show: true, position: "right", color: c.muted, fontSize: 11, formatter: (p) => nf1.format(p.value) },
         data: rows.map(([, y]) => ({
           value: y.gross_yield,
-          itemStyle: y.rent_method === "published"
+          itemStyle: y.rent_method !== "modelled"
             ? { color: col, borderRadius: [0, 4, 4, 0] }
             : { color: col + "55", borderRadius: [0, 4, 4, 0], decal: { symbol: "rect", symbolSize: 1, dashArrayX: [1, 0], dashArrayY: [2, 4], rotation: Math.PI / 4, color: col + "cc" } },
         })),
@@ -504,10 +540,12 @@
     }), true);
     const Y = D.yields;
     const nPub = Object.values(Y.by_province).filter((v) => v.rent_method === "published").length;
+    const natVia = D.market.sale.national.via ? ` (updated via ${esc(D.market.sale.national.via)}, ${esc(D.market.sale_as_of)})` : "";
     $("#yieldMethod").innerHTML = [
       `<b>Rent:</b> idealista asking rent (${esc(D.market.as_of)}). ${nPub} provinces use a published figure, either their own or their single-province region's.`,
+      D.idealista_api?.count ? `<b>idealista API:</b> ${D.idealista_api.count} provinces use a fresh listing sample from around the provincial capital. The sample's rent ÷ price ratio is applied to the province's price level.` : `<b>idealista API:</b> not connected yet. Add API credentials as repository secrets and listing samples will replace modelled rents automatically.`,
       `<b>Modelled rent:</b> region rent × (province price ÷ region price)<sup>β</sup>, with β = ${nf2.format(Y.beta)} fitted on the published provinces. Rents rise less than proportionally with prices, which is why cheap provinces yield more.`,
-      `<b>Price:</b> Ministry of Housing appraised €/m², scaled by ${nf2.format(Y.asking_over_appraisal)} so the national level matches idealista's asking price (€${nf0.format(Y.national.price_m2)}/m²). As a check, the model gives Madrid €${nf0.format(Y.by_province["28"].price_m2)}/m² against idealista's published €${nf0.format(D.market.sale.ccaa["13"]?.eur_m2 || 0)}/m².`,
+      `<b>Price:</b> Ministry of Housing appraised €/m², scaled by ${nf2.format(Y.asking_over_appraisal)} so the national level matches idealista's asking price (€${nf0.format(Y.national.price_m2)}/m²${natVia}). As a check, the model gives Madrid €${nf0.format(Y.by_province["28"].price_m2)}/m² against idealista's published €${nf0.format(D.market.sale.ccaa["13"]?.eur_m2 || 0)}/m².`,
       `<b>Caveats:</b> these are gross, portal-level estimates. Net yields after IBI, community fees, vacancy, maintenance and tax typically run 1.5–2.5 pp lower. Capital cities differ from province averages.`,
     ].map((s) => `<li>${s}</li>`).join("");
   }
@@ -683,6 +721,249 @@
       `<tr><td><b>Probability-weighted</b></td><td class="num">100%</td><td class="num"><b>${pct(wGrowth(2027))}</b></td><td class="num"><b>${pct(wGrowth(2028))}</b></td><td class="num"><b>${pct(wRentAvg)}</b></td><td class="num">—</td><td class="num"><b>${nf1.format(end(weighted))}</b></td></tr></tbody>`;
   }
 
+  // ------------------------------------------------------------------ affordability
+  // Pre-GFC peak and GFC trough found from the data, so they stay right as series revise.
+  function landmarks(s, troughMin = true) {
+    const pts = s.t.map((t, i) => [t, s.v[i]]);
+    const peak = pts.filter(([t]) => t >= "2004Q1" && t <= "2009Q4").reduce((a, b) => (b[1] > a[1] ? b : a));
+    const span = pts.filter(([t]) => t >= "2011Q1" && t <= "2017Q4");
+    const trough = span.reduce((a, b) => (troughMin ? (b[1] < a[1] ? b : a) : (b[1] > a[1] ? b : a)));
+    return { peak, trough, now: pts[pts.length - 1] };
+  }
+
+  function landmarkChart(id, s, fmt, unit) {
+    const c = ink(), col = S(0), L = landmarks(s);
+    const mp = (p, name, pos) => ({ coord: [p[0], p[1]], value: p[1], name, label: { position: pos, formatter: `${name}\n${fmt(p[1])}`, color: c.primary, fontSize: 11, fontWeight: 600, lineHeight: 14 } });
+    chart(id).setOption(base({
+      legend: { show: false },
+      tooltip: Object.assign(base().tooltip, { valueFormatter: (v) => fmt(v) }),
+      grid: { left: 8, right: 24, top: 40, bottom: 8, containLabel: true },
+      xAxis: axisX("category", { data: s.t, axisLabel: { color: c.muted, fontSize: 11, formatter: qYear, hideOverlap: true } }),
+      yAxis: axisY({ scale: true, axisLabel: { color: c.muted, fontSize: 11, formatter: (v) => fmt(v) } }),
+      series: [line(unit, s.v, col, {
+        areaStyle: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: col + "30" }, { offset: 1, color: col + "00" }]) },
+        markArea: { silent: true, itemStyle: { color: c.grid + "88" }, label: { color: c.muted, fontSize: 10, position: "insideTop" }, data: [[{ name: "GFC & bust", xAxis: "2008Q1" }, { xAxis: "2014Q4" }]] },
+        markLine: { silent: true, symbol: "none", lineStyle: { color: c.axis, width: 1, type: "solid" }, label: { show: false }, data: [{ yAxis: L.peak[1] }, { yAxis: L.trough[1] }] },
+        markPoint: { symbol: "circle", symbolSize: 9, itemStyle: { color: c.primary, borderColor: c.surface, borderWidth: 2 }, data: [mp(L.peak, `Peak ${L.peak[0].slice(0, 4)}`, "top"), mp(L.trough, `Trough ${L.trough[0].slice(0, 4)}`, "bottom"), mp(L.now, "Now", "left")] },
+      })],
+    }), true);
+  }
+
+  function affordability() {
+    const B = D.bde;
+    landmarkChart("affordChart", B.price_income, (v) => nf1.format(v) + " y", "Price ÷ income");
+    landmarkChart("effortChart", B.effort, (v) => nf0.format(v) + "%", "Effort");
+    const card = (title, s, fmt, why) => {
+      const L = landmarks(s), span = L.peak[1] - L.trough[1], pos = (L.now[1] - L.trough[1]) / span;
+      const pctPos = Math.max(0, Math.min(100, pos * 100));
+      return `<div class="afford-stat"><h3>${title}: ${fmt(L.now[1])} now</h3>
+        <div class="gauge" aria-hidden="true"><div class="gauge-track"></div>
+          <div class="gauge-tick lo" style="left:0"><span>${L.trough[0].slice(0, 4)} trough ${fmt(L.trough[1])}</span></div>
+          <div class="gauge-tick hi" style="left:100%"><span>${L.peak[0].slice(0, 4)} peak ${fmt(L.peak[1])}</span></div>
+          <div class="gauge-now" style="left:${pctPos}%"></div></div>
+        <p style="margin-top:14px"><b>${nf0.format(pos * 100)}%</b> of the way from the GFC trough back to the pre-GFC peak (${label(L.now[0])}). ${why}</p></div>`;
+    };
+    const pi = landmarks(B.price_income), ef = landmarks(B.effort);
+    const piPos = (pi.now[1] - pi.trough[1]) / (pi.peak[1] - pi.trough[1]), efPos = (ef.now[1] - ef.trough[1]) / (ef.peak[1] - ef.trough[1]);
+    $("#affordStats").innerHTML =
+      card("Price ÷ income", B.price_income, (v) => nf1.format(v) + " yrs", "This is the price level relative to incomes, regardless of how the purchase is financed.") +
+      card("Mortgage effort", B.effort, (v) => nf0.format(v) + "%", "This is what buyers feel each month. It depends on mortgage rates as well as prices.") +
+      `<div class="afford-stat"><h3>Reading the gap</h3><p>${piPos > efPos + 0.15
+        ? `Prices relative to income are much closer to bubble territory (${nf0.format(piPos * 100)}%) than monthly payments are (${nf0.format(efPos * 100)}%). Lower rates and longer terms are absorbing the difference, so affordability is sensitive to rates: a rise in Euribor would close that gap quickly.`
+        : `Price-to-income (${nf0.format(piPos * 100)}%) and mortgage effort (${nf0.format(efPos * 100)}%) are at similar points in their ranges, so cheap credit isn't masking an extreme price level.`}</p>
+        <p>The ratio uses gross household income for the whole country. Coastal provinces and big cities, where incomes lag prices, are more stretched than the national figure suggests.</p></div>`;
+
+    const r = last(B.mortgage_rate), term = last(B.mortgage_term), ltv = last(B.ltv), l80 = last(B.ltv80);
+    const r12 = at(B.mortgage_rate, shiftM(r.t, -12));
+    const k = [
+      { label: "New mortgage rate", value: nf2.format(r.v) + "%", unit: label(r.t), delta: r12 != null ? `${r.v - r12 >= 0 ? "+" : "−"}${nf2.format(Math.abs(r.v - r12))} pp in a year` : "", dir: r.v > r12 ? "up" : "down", spark: B.mortgage_rate.v.slice(-60), sparkT: B.mortgage_rate.t.slice(-60) },
+      { label: "Average term", value: nf1.format(term.v / 12), unit: "years", delta: label(term.t), spark: B.mortgage_term.v.slice(-40), sparkT: B.mortgage_term.t.slice(-40) },
+      { label: "Loan-to-value", value: nf1.format(ltv.v) + "%", unit: label(ltv.t), delta: "average at purchase", spark: B.ltv.v.slice(-40), sparkT: B.ltv.t.slice(-40) },
+      { label: "Loans above 80% LTV", value: nf1.format(l80.v) + "%", unit: label(l80.t), delta: "share of new mortgages", spark: B.ltv80.v.slice(-40), sparkT: B.ltv80.t.slice(-40) },
+    ];
+    tiles("#mortgageKpis", k, "mk", "Banco de España");
+  }
+
+  // KPI tiles with sparklines (shared by several sections)
+  function tiles(sel, list, prefix, src) {
+    const box = $(sel);
+    box.innerHTML = list.map((k, i) => `<div class="kpi"><span class="kpi-label">${esc(k.label)}</span><span class="kpi-value">${esc(k.value)}<small>${esc(k.unit || "")}</small></span><span class="kpi-delta ${k.neutral ? "" : k.dir || ""}">${esc(k.delta || "")}</span><span class="kpi-src">${esc(k.src || src)}</span>${k.spark ? `<div class="kpi-spark" id="${prefix}${i}"></div>` : ""}</div>`).join("");
+    list.forEach((k, i) => {
+      if (!k.spark) return;
+      if (charts[prefix + i]) { charts[prefix + i].dispose(); delete charts[prefix + i]; }
+      sparkline(prefix + i, k.spark, k.sparkT);
+    });
+  }
+  function sparkline(id, data, ts) {
+    const c = chart(id), col = S(0);
+    c.setOption({
+      backgroundColor: "transparent", animation: false,
+      grid: { left: 2, right: 6, top: 4, bottom: 2 },
+      xAxis: { type: "category", show: false, data: ts, boundaryGap: false },
+      yAxis: { type: "value", show: false, scale: true },
+      tooltip: { trigger: "axis", confine: true, backgroundColor: ink().surface, borderColor: ink().axis, textStyle: { color: ink().primary, fontSize: 12 }, formatter: (p) => `${label(p[0].name)}: <b>${nf1.format(p[0].value)}</b>`, axisPointer: { lineStyle: { color: ink().muted } } },
+      series: [{
+        type: "line", data, showSymbol: false, lineStyle: { width: 1.5, color: col },
+        areaStyle: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: col + "40" }, { offset: 1, color: col + "00" }]) },
+        markPoint: { symbol: "circle", symbolSize: 6, itemStyle: { color: col }, label: { show: false }, data: [{ coord: [ts.length - 1, data[data.length - 1]] }] },
+      }],
+    }, true);
+  }
+
+  // ------------------------------------------------------------------ buyers
+  const GROUPS = [["spanish", "Spanish nationals"], ["foreign_res", "Resident foreigners"], ["foreign_nonres", "Non-resident foreigners"]];
+  const roll4 = (s) => s.v.map((_, i) => (i < 3 ? null : s.v[i - 3] + s.v[i - 2] + s.v[i - 1] + s.v[i]));
+  function buyerFrame(key) {
+    const B = D.buyers[key];
+    if (!B) return null;
+    const t = B.total.t, r = {};
+    for (const k of ["total", "spanish", "foreign_res", "foreign_nonres"]) r[k] = roll4(B[k]);
+    r.foreign = r.foreign_res.map((v, i) => (v == null ? null : v + r.foreign_nonres[i]));
+    const yoyOf = (arr) => arr.map((v, i) => (i < 4 || arr[i - 4] == null || v == null || !arr[i - 4] ? null : (v / arr[i - 4] - 1) * 100));
+    const share = (arr) => arr.map((v, i) => (v == null || !r.total[i] ? null : (v / r.total[i]) * 100));
+    return { t, r, yoyOf, share };
+  }
+
+  function buyersSection() {
+    const F = buyerFrame("ES"), c = ink(), n = F.t.length - 1, from = F.t.indexOf("2007Q4");
+    const ts = F.t.slice(from);
+    const cut = (arr) => arr.slice(from);
+    const yo = Object.fromEntries(["total", "spanish", "foreign_res", "foreign_nonres", "foreign"].map((k) => [k, F.yoyOf(F.r[k])]));
+    const sh = { foreign: F.share(F.r.foreign), nonres: F.share(F.r.foreign_nonres) };
+    const pkShare = Math.max(...sh.foreign.filter((v) => v != null));
+    const contrib = (k) => F.r[k].map((v, i) => (i < 4 || F.r[k][i - 4] == null || !F.r.total[i - 4] ? null : ((v - F.r[k][i - 4]) / F.r.total[i - 4]) * 100));
+
+    tiles("#buyerKpis", [
+      { label: "Foreign share of purchases", value: nf1.format(sh.foreign[n]) + "%", unit: "4 q to " + label(F.t[n]), delta: `peak ${nf1.format(pkShare)}% · a year ago ${nf1.format(sh.foreign[n - 4])}%`, dir: sh.foreign[n] < sh.foreign[n - 4] ? "down" : "up", neutral: true, spark: cut(sh.foreign).slice(-40), sparkT: ts.slice(-40) },
+      { label: "Non-resident foreign buyers", value: nf0.format(F.r.foreign_nonres[n]), unit: "homes, 4 q", delta: `${pct(yo.foreign_nonres[n])} y/y · ${nf1.format(sh.nonres[n])}% of sales`, dir: yo.foreign_nonres[n] < 0 ? "down" : "up", neutral: true, spark: cut(F.r.foreign_nonres).slice(-40), sparkT: ts.slice(-40) },
+      { label: "Resident foreign buyers", value: nf0.format(F.r.foreign_res[n]), unit: "homes, 4 q", delta: `${pct(yo.foreign_res[n])} y/y`, neutral: true, spark: cut(F.r.foreign_res).slice(-40), sparkT: ts.slice(-40) },
+      { label: "Spanish buyers", value: nf0.format(F.r.spanish[n]), unit: "homes, 4 q", delta: `${pct(yo.spanish[n])} y/y`, neutral: true, spark: cut(F.r.spanish).slice(-40), sparkT: ts.slice(-40) },
+    ], "bk", "Ministry of Housing (notaries)");
+
+    const qAxis = (extra = {}) => axisX("category", Object.assign({ data: ts, axisLabel: { color: c.muted, fontSize: 11, formatter: qYear, hideOverlap: true } }, extra));
+    chart("buyerMix").setOption(base({
+      tooltip: Object.assign(base().tooltip, { valueFormatter: (v) => (v == null ? "—" : nf0.format(v)) }),
+      xAxis: qAxis(), yAxis: axisY({ axisLabel: { color: c.muted, fontSize: 11, formatter: (v) => nf0.format(v / 1000) + "k" } }),
+      series: GROUPS.map(([k, name], i) => ({ name, type: "line", stack: "b", data: cut(F.r[k]), showSymbol: false, lineStyle: { width: 1, color: S(i) }, itemStyle: { color: S(i) }, areaStyle: { color: S(i), opacity: 0.85 } })),
+    }), true);
+
+    chart("buyerShare").setOption(base({
+      tooltip: Object.assign(base().tooltip, { valueFormatter: (v) => (v == null ? "—" : nf1.format(v) + "%") }),
+      grid: { left: 8, right: 72, top: 28, bottom: 8, containLabel: true },
+      xAxis: qAxis(), yAxis: axisY({ min: 0, axisLabel: { color: c.muted, fontSize: 11, formatter: (v) => v + "%" } }),
+      series: [
+        line("All foreign buyers", cut(sh.foreign), S(1), { endLabel: { show: true, color: c.secondary, formatter: (p) => nf1.format(p.value) + "%" } }),
+        line("Non-resident foreigners", cut(sh.nonres), S(2), { endLabel: { show: true, color: c.secondary, formatter: (p) => nf1.format(p.value) + "%" } }),
+      ],
+    }), true);
+
+    // shade foreign-led declines
+    const flagged = [];
+    for (let i = 0; i < F.t.length; i++) if (i >= from && yo.foreign_nonres[i] < -10 && Math.abs(yo.spanish[i]) <= 5) flagged.push(F.t[i]);
+    const areas = [];
+    flagged.forEach((t) => { const prev = areas[areas.length - 1]; if (prev && shiftQ(prev[1].xAxis, 1) === t) prev[1].xAxis = t; else areas.push([{ xAxis: t }, { xAxis: t }]); });
+    chart("buyerYoy").setOption(base({
+      tooltip: Object.assign(base().tooltip, { valueFormatter: (v) => pct(v) }),
+      grid: { left: 8, right: 16, top: 28, bottom: 8, containLabel: true },
+      xAxis: qAxis({ data: ts.slice(4) }), yAxis: axisY({ axisLabel: { color: c.muted, fontSize: 11, formatter: (v) => v + "%" } }),
+      series: GROUPS.map(([k, name], i) => line(name, cut(yo[k]).slice(4), S(i), i === 0 ? {
+        markLine: { silent: true, symbol: "none", lineStyle: { color: c.axis, type: "solid" }, label: { show: false }, data: [{ yAxis: 0 }] },
+        markArea: { silent: true, itemStyle: { color: tok("--critical") + "22" }, data: areas },
+      } : {})),
+    }), true);
+
+    const ct = ts.slice(4);
+    chart("buyerContrib").setOption(base({
+      tooltip: Object.assign(base().tooltip, { valueFormatter: (v) => (v == null ? "—" : (v > 0 ? "+" : "") + nf1.format(v) + " pp") }),
+      grid: { left: 8, right: 16, top: 28, bottom: 8, containLabel: true },
+      xAxis: qAxis({ boundaryGap: true, data: ct }), yAxis: axisY({ axisLabel: { color: c.muted, fontSize: 11, formatter: (v) => v + "pp" } }),
+      series: [
+        ...GROUPS.map(([k, name], i) => ({ name, type: "bar", stack: "c", data: cut(contrib(k)).slice(4), itemStyle: { color: S(i) }, barCategoryGap: "20%" })),
+        line("Total change", cut(yo.total).slice(4), c.primary, { z: 5 }),
+      ],
+    }), true);
+
+    exposure();
+    const ctx = D.politics.buyer_context || [];
+    $("#buyerContext").innerHTML = ctx.map((x) => `<li>${esc(x.text)}${x.url ? ` <a href="${esc(x.url)}" target="_blank" rel="noopener">Source</a>` : ""}</li>`).join("");
+  }
+
+  function exposure() {
+    const dn = +$("#shockNonres").value, dr = +$("#shockRes").value;
+    $("#shockNonresV").textContent = "−" + dn + "%";
+    $("#shockResV").textContent = "−" + dr + "%";
+    const rows = codes().map((code) => {
+      const F = buyerFrame("p" + code);
+      if (!F) return null;
+      const n = F.t.length - 1, tot = F.r.total[n];
+      const sNon = F.r.foreign_nonres[n] / tot * 100, sRes = F.r.foreign_res[n] / tot * 100;
+      return { code, name: D.provinces[code].name, tot, sNon, sRes, share: sNon + sRes, yF: F.yoyOf(F.r.foreign)[n], yS: F.yoyOf(F.r.spanish)[n], hit: (sNon * dn + sRes * dr) / 100 };
+    }).filter(Boolean);
+    const N = buyerFrame("ES"), n = N.t.length - 1;
+    const natHit = (N.r.foreign_nonres[n] * dn + N.r.foreign_res[n] * dr) / 100;
+    $("#shockHeadline").innerHTML = `Spain would lose <b>${nf0.format(natHit)}</b> purchases a year (<b>${pct(-natHit / N.r.total[n] * 100)}</b> of sales).`;
+    const top = rows.sort((a, b) => b.share - a.share).slice(0, 15);
+    const maxHit = Math.max(...top.map((r) => r.hit), 1);
+    $("#exposureTable").innerHTML = `<thead><tr><th>Province</th><th class="num">Foreign share</th><th class="num">Non-resident</th><th class="num">Foreign buys y/y</th><th class="num">Spanish buys y/y</th><th class="num">Sales hit</th><th class="num">Homes / yr</th></tr></thead><tbody>` +
+      top.map((r) => `<tr><td><b>${esc(r.name)}</b></td><td class="num">${nf1.format(r.share)}%</td><td class="num">${nf1.format(r.sNon)}%</td><td class="num">${pct(r.yF)}</td><td class="num">${pct(r.yS)}</td><td class="num"><span class="bar-cell" style="width:${Math.round(r.hit / maxHit * 60)}px"></span>${pct(-r.hit)}</td><td class="num">${nf0.format(r.tot * r.hit / 100)}</td></tr>`).join("") + `</tbody>`;
+  }
+
+  // ------------------------------------------------------------------ official rents
+  function bdeYieldChart() {
+    const s = D.bde.gross_yield, c = ink(), col = S(0);
+    chart("bdeYieldChart").setOption(base({
+      legend: { show: false },
+      tooltip: Object.assign(base().tooltip, { valueFormatter: (v) => nf2.format(v) + "%" }),
+      grid: { left: 8, right: 52, top: 16, bottom: 8, containLabel: true },
+      xAxis: axisX("category", { data: s.t, axisLabel: { color: c.muted, fontSize: 11, formatter: qYear, hideOverlap: true } }),
+      yAxis: axisY({ min: 0, axisLabel: { color: c.muted, fontSize: 11, formatter: (v) => v + "%" } }),
+      series: [line("Gross yield", s.v, col, {
+        areaStyle: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: col + "30" }, { offset: 1, color: col + "00" }]) },
+        endLabel: { show: true, color: c.primary, fontWeight: 700, formatter: (p) => nf2.format(p.value) + "%" },
+        markArea: { silent: true, itemStyle: { color: c.grid + "88" }, data: [[{ xAxis: "2008Q1" }, { xAxis: "2014Q4" }]] },
+      })],
+    }), true);
+  }
+
+  function rentMeasures() {
+    const c = ink(), cpi = D.bde.cpi_rent, ri = D.rent_index.ES?.yoy, R = D.market.rent;
+    const ts = cpi.t.filter((t) => t >= "2012-01");
+    const asOf = D.market.as_of;
+    const allT = ts.includes(asOf) ? ts : ts.concat([asOf]).sort();
+    chart("rentMeasures").setOption(base({
+      tooltip: Object.assign(base().tooltip, { valueFormatter: (v) => (v == null ? "—" : pct(v)) }),
+      grid: { left: 8, right: 16, top: 28, bottom: 8, containLabel: true },
+      xAxis: axisX("category", { data: allT, axisLabel: { color: c.muted, fontSize: 11, formatter: mYear, hideOverlap: true } }),
+      yAxis: axisY({ axisLabel: { color: c.muted, fontSize: 11, formatter: (v) => v + "%" } }),
+      series: [
+        line("CPI rents paid", allT.map((t) => at(cpi, t)), S(0)),
+        { name: "INE rent index", type: "line", connectNulls: true, data: allT.map((t) => (t.endsWith("-12") && ri ? at(ri, t.slice(0, 4)) : null)), symbol: "circle", symbolSize: 8, lineStyle: { width: 1.5, color: S(1) }, itemStyle: { color: S(1), borderColor: c.surface, borderWidth: 2 } },
+        { name: "idealista asking", type: "scatter", data: allT.map((t) => (t === asOf ? R.national.yoy : null)), symbol: "diamond", symbolSize: 13, itemStyle: { color: S(2), borderColor: c.surface, borderWidth: 2 }, label: { show: true, position: "left", color: c.secondary, fontSize: 11, formatter: (p) => "Asking " + pct(p.value) } },
+      ],
+    }), true);
+  }
+
+  function cataloniaChart() {
+    const C = D.catalonia_rents?.c09, c = ink();
+    if (!C) return;
+    const ts = C.rent.t.filter((t) => t >= "2019Q1");
+    const b = "2023Q4", rb = at(C.rent, b), lb = at(C.leases, b);
+    chart("cataloniaChart").setOption(base({
+      tooltip: Object.assign(base().tooltip, {
+        formatter: (ps) => `${label(ps[0].name)}<br>` + ps.map((p) => `${p.marker}${p.seriesName}: <b>${nf1.format(p.value)}</b> (${p.seriesIndex === 0 ? "€" + nf0.format(at(C.rent, p.name)) + "/month" : nf0.format(at(C.leases, p.name)) + " leases"})`).join("<br>"),
+      }),
+      grid: { left: 8, right: 16, top: 28, bottom: 8, containLabel: true },
+      xAxis: axisX("category", { data: ts, axisLabel: { color: c.muted, fontSize: 11, formatter: qYear, hideOverlap: true } }),
+      yAxis: axisY({ scale: true }),
+      series: [
+        line("Average new-lease rent", ts.map((t) => +(at(C.rent, t) / rb * 100).toFixed(1)), S(0), {
+          markLine: { silent: true, symbol: "none", lineStyle: { color: c.primary, width: 1, type: "solid" }, label: { formatter: "Caps start", color: c.primary, fontSize: 11 }, data: [{ xAxis: "2024Q1" }] },
+        }),
+        line("New leases signed", ts.map((t) => +(at(C.leases, t) / lb * 100).toFixed(1)), S(1)),
+      ],
+    }), true);
+  }
+
   // ------------------------------------------------------------------ politics
   let tlFilter = "all";
   function timeline() {
@@ -776,7 +1057,9 @@
     register(kpis);
     setupMap();
     register(ipvChart); register(regionChart); register(salesChart); register(divergeChart); register(euChart); register(euriborChart);
-    register(yieldBars); register(yieldScatter);
+    register(affordability); register(buyersSection);
+    ["#shockNonres", "#shockRes"].forEach((s) => $(s).addEventListener("input", exposure));
+    register(yieldBars); register(yieldScatter); register(bdeYieldChart); register(rentMeasures); register(cataloniaChart);
     register(forecastChart); pulse(); setupScenario();
     timeline(); register(pollChart); parties();
     news(); sources();

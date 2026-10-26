@@ -18,7 +18,9 @@
       <a href="#overview">Overview</a>
       <a href="#map">Map</a>
       <a href="#prices">Prices &amp; sales</a>
-      <a href="#yields">Yields</a>
+      <a href="#afford">Affordability</a>
+      <a href="#buyers">Who's buying</a>
+      <a href="#yields">Yields &amp; rents</a>
       <a href="#outlook">Outlook</a>
       <a href="#politics">Politics</a>
       <a href="#news">News</a>
@@ -63,6 +65,9 @@
               <option value="yield">Gross rental yield (now)</option>
               <option value="rent">Asking rent, €/m² per month (now)</option>
               <option value="rentYoy">Asking rent change, y/y (now)</option>
+              <option value="foreignShare">Foreign buyers' share of purchases</option>
+              <option value="nonresShare">Non-resident foreign buyers' share</option>
+              <option value="foreignYoy">Purchases by foreigners, change y/y</option>
             </select>
           </label>
           <div class="timeline" id="timelineBox">
@@ -117,10 +122,72 @@
     </div>
   </section>
 
+  <!-- Affordability -->
+  <section id="afford" class="section">
+    <div class="section-head">
+      <h2>Affordability for owner-occupiers</h2>
+      <p>Banco de España series back to 1987. The price-to-income ratio counts how many years of gross household income an average home costs. Mortgage effort is the share of a year's income that goes on payments for a typical new mortgage. Comparing the two separates the price level from the cost of credit.</p>
+    </div>
+    <div class="afford-stats" id="affordStats"></div>
+    <div class="grid-2">
+      <figure class="card">
+        <figcaption><h3>Home price ÷ household income</h3><p>Years of gross household income for an average home. Banco de España, quarterly</p></figcaption>
+        <div id="affordChart" class="chart chart-tall"></div>
+      </figure>
+      <figure class="card">
+        <figcaption><h3>Mortgage effort, % of income</h3><p>Annual payments on a typical new mortgage as a share of household income, before tax relief. Banco de España</p></figcaption>
+        <div id="effortChart" class="chart chart-tall"></div>
+      </figure>
+    </div>
+    <div class="kpis" id="mortgageKpis"></div>
+  </section>
+
+  <!-- Buyers -->
+  <section id="buyers" class="section">
+    <div class="section-head">
+      <h2>Who's buying: local vs foreign demand</h2>
+      <p>Notarised home purchases split by buyer: Spanish nationals, foreigners living in Spain, and foreigners buying from abroad (non-residents). Non-residents are the closest proxy for footloose international money. Source: Ministry of Housing, quarterly by province since 2007, shown as rolling four-quarter totals.</p>
+    </div>
+    <div class="kpis" id="buyerKpis"></div>
+    <div class="grid-2">
+      <figure class="card">
+        <figcaption><h3>Purchases by buyer, rolling 4 quarters</h3><p>Stacked: Spanish nationals, resident foreigners, non-resident foreigners</p></figcaption>
+        <div id="buyerMix" class="chart"></div>
+      </figure>
+      <figure class="card">
+        <figcaption><h3>Foreign share of purchases</h3><p>All foreign buyers, and the non-resident part, as % of purchases (rolling 4 quarters)</p></figcaption>
+        <div id="buyerShare" class="chart"></div>
+      </figure>
+      <figure class="card">
+        <figcaption><h3>Shock detector</h3><p>Change in purchases vs a year earlier, rolling 4 quarters. Shaded quarters: non-resident purchases down more than 10% while Spanish buyers hold within ±5%</p></figcaption>
+        <div id="buyerYoy" class="chart"></div>
+      </figure>
+      <figure class="card">
+        <figcaption><h3>What drove the change in sales</h3><p>Contribution of each buyer group to the y/y change in total purchases, percentage points</p></figcaption>
+        <div id="buyerContrib" class="chart"></div>
+      </figure>
+    </div>
+    <div class="card shock">
+      <div class="shock-head">
+        <div>
+          <h3>If foreign money disappears: where sales are exposed</h3>
+          <p>Set a drop in foreign purchases. The table shows the direct hit to each province's sales over a year, before any knock-on effect on prices or local buyers. It covers the 15 provinces most reliant on foreign buyers.</p>
+        </div>
+        <div class="shock-controls">
+          <div class="sc-slider"><label for="shockNonres"><span>Non-resident foreigners</span><b id="shockNonresV"></b></label><input type="range" id="shockNonres" min="0" max="100" step="5" value="30"></div>
+          <div class="sc-slider"><label for="shockRes"><span>Resident foreigners</span><b id="shockResV"></b></label><input type="range" id="shockRes" min="0" max="100" step="5" value="0"></div>
+        </div>
+      </div>
+      <p class="shock-headline" id="shockHeadline"></p>
+      <div class="table-wrap"><table class="data" id="exposureTable"></table></div>
+      <ul class="context-list" id="buyerContext"></ul>
+    </div>
+  </section>
+
   <!-- Yields -->
   <section id="yields" class="section">
     <div class="section-head">
-      <h2>Rental yields</h2>
+      <h2>Rental yields &amp; rents</h2>
       <p>Gross yield = 12 months of asking rent ÷ asking sale price. A rough guide for investors, before taxes, vacancy and costs.</p>
     </div>
     <div class="grid-yields">
@@ -138,6 +205,20 @@
           <ul id="yieldMethod"></ul>
         </div>
       </div>
+    </div>
+    <div class="grid-3">
+      <figure class="card">
+        <figcaption><h3>Official gross yield since 1987</h3><p>Banco de España, trailing 12 months. Built from CPI rents and INE prices, so the level sits below portal yields. Read it for the trend</p></figcaption>
+        <div id="bdeYieldChart" class="chart"></div>
+      </figure>
+      <figure class="card">
+        <figcaption><h3>Rent growth: asking vs paid</h3><p>CPI rents actually paid by tenants (monthly), INE rent index from tax returns (annual) and idealista asking rents (latest)</p></figcaption>
+        <div id="rentMeasures" class="chart"></div>
+      </figure>
+      <figure class="card">
+        <figcaption><h3>Catalonia's rent cap: signed leases</h3><p>Incasòl deposit register, Catalonia. Average rent on new leases and number of leases signed, Q4 2023 = 100. Caps started in March 2024</p></figcaption>
+        <div id="cataloniaChart" class="chart"></div>
+      </figure>
     </div>
   </section>
 

@@ -29,6 +29,10 @@ ROOT = os.path.join(os.path.dirname(__file__), "..")
 DATA = os.path.join(ROOT, "data")
 INE = "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/{}?nult={}"
 MIVAU_XLS = "https://apps.fomento.gob.es/BoletinOnline2/sedal/35101000.XLS"
+MIVAU_BUYERS_XLS = "https://apps.fomento.gob.es/BoletinOnline2/sedal/340101d0.XLS"
+BDE_CSV = "https://www.bde.es/webbe/es/estadisticas/compartido/datos/csv/si_1_5.csv"
+CAT_RENTS = ("https://analisi.transparenciacatalunya.cat/resource/hepw-33ik.json"
+             "?$where=ambit_territorial%20in%20('Prov%C3%ADncia','Catalunya')&$limit=5000")
 ECB = ("https://data-api.ecb.europa.eu/service/data/FM/"
        "M.U2.EUR.RT.MM.EURIBOR1YD_.HSTA?format=csvdata&startPeriod=2005-01")
 EUROSTAT = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hpi_q"
@@ -164,23 +168,119 @@ def build_appraisal():
                 for q in range(4)
                 if c + q < sh.ncols and str(qrow[c + q]).strip().startswith(str(q + 1))]
         for r in range(hdr + 1, sh.nrows):
-            label = str(sh.cell_value(r, 1)).strip()
-            if not label:
-                continue
-            keys = []
-            if is_national(label):
-                keys = ["ES"]
-            else:
-                if ccaa_code(label):
-                    keys.append("c" + ccaa_code(label))
-                if province_code(label):
-                    keys.append("p" + province_code(label))
-            for key in keys:
+            for key in row_keys(sh.cell_value(r, 1)):
                 for c, t in cols:
                     v = sh.cell_value(r, c)
                     if isinstance(v, float) and v > 0:
                         out.setdefault(key, {})[t] = round(v, 1)
     return {k: to_series(sorted(v.items())) for k, v in out.items()}
+
+
+def row_keys(label):
+    """Geo keys for a MIVAU row label; single-province regions map to both."""
+    label = str(label).strip()
+    if not label:
+        return []
+    if is_national(label):
+        return ["ES"]
+    keys = []
+    if ccaa_code(label):
+        keys.append("c" + ccaa_code(label))
+    if province_code(label):
+        keys.append("p" + province_code(label))
+    return keys
+
+
+def build_buyers():
+    """Notarised home purchases by buyer residence and nationality (MIVAU table 1.6).
+
+    One sheet per quarter since 2007; columns are total, residents (Spanish /
+    foreign / unknown), non-residents (Spanish / foreign / unknown), unknown.
+    Spanish nationals are grouped together whether resident or not, so the
+    split is: locals, foreigners living in Spain, foreigners buying from abroad.
+    """
+    import xlrd
+
+    print("MIVAU transactions by buyer residence")
+    book = xlrd.open_workbook(file_contents=fetch(MIVAU_BUYERS_XLS))
+    out = {}
+    for sh in book.sheets():
+        q, year = sh.name.lower().split("t")
+        t = f"{int(year)}Q{int(q)}"
+        for r in range(sh.nrows):
+            row = sh.row_values(r)
+            if len(row) < 13 or not isinstance(row[3], float):
+                continue
+            num = [v if isinstance(v, float) else 0.0 for v in row]
+            vals = {
+                "total": num[3],
+                "spanish": num[5] + num[9],
+                "foreign_res": num[6],
+                "foreign_nonres": num[10],
+            }
+            for key in row_keys(row[1]):
+                for k, v in vals.items():
+                    out.setdefault(key, {}).setdefault(k, {})[t] = int(v)
+    return {key: {k: to_series(sorted(s.items())) for k, s in d.items()} for key, d in out.items()}
+
+
+# ---------------------------------------------------------------- Banco de España
+
+BDE_MONTHS = {m: i + 1 for i, m in enumerate(["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"])}
+BDE_SERIES = {  # BdE code -> output name (table si_1_5, "Indicadores del mercado de la vivienda")
+    "D_TKB57110_IPV": "price_income",        # house price / gross income per household (years)
+    "D_TKB57210_IPV": "effort",              # theoretical annual mortgage effort, % of income
+    "D_TKR60REA_VIV_IPV": "gross_yield",     # gross rental yield, trailing 12 months (%)
+    "D_TKR600RV_VIV_IPV": "total_return",    # rental yield + capital gain (%)
+    "DIP2025LTVA_C0411.M": "cpi_rent",       # CPI actual rents paid by tenants, y/y (%)
+    "D_1KB56100_IDEA": "idealista_sale",     # idealista second-hand asking price €/m²
+    "D_1KB56100_FOTO": "fotocasa_sale",      # Fotocasa second-hand asking price €/m²
+    "D_IMVTIPLV": "mortgage_rate",           # new home-purchase loan rate (%)
+    "DHIRINOAPLDMDUVT.T": "mortgage_term",   # average mortgage term (months)
+    "DHIRINOAPLCPRUVT_TRPV.T": "ltv",        # average loan-to-value at purchase (%)
+    "DHIRINOAPLCPRUVT_TPRPVS81.T": "ltv80",  # share of loans with LTV > 80% (%)
+}
+
+
+def build_bde():
+    print("Banco de España housing indicators")
+    rows = list(csv.reader(io.StringIO(fetch(BDE_CSV).decode("latin-1"))))
+    codes, freqs = rows[0], rows[5]
+    out = {}
+    for i, code in enumerate(codes):
+        name = BDE_SERIES.get(code)
+        if not name:
+            continue
+        quarterly = freqs[i].startswith("TRIM")
+        pts = []
+        for r in rows[6:]:
+            if len(r) <= i or not re.match(r"^[A-Z]{3} \d{4}$", r[0]) or r[i] in ("_", ""):
+                continue
+            mon, year = BDE_MONTHS[r[0][:3]], r[0][4:]
+            t = f"{year}Q{(mon + 2) // 3}" if quarterly else f"{year}-{mon:02d}"
+            pts.append((t, float(r[i])))
+        out[name] = to_series(sorted(pts))
+    return out
+
+
+# ---------------------------------------------------------------- Catalonia (Incasòl deposits)
+
+def build_catalonia_rents():
+    """Average rent and count of new leases from the Incasòl deposit register, by province."""
+    print("Catalonia signed-lease rents")
+    rows = json.loads(fetch(CAT_RENTS))
+    quarters = {"gener-març": 1, "abril-juny": 2, "juliol-setembre": 3, "octubre-desembre": 4}
+    out = {}
+    for r in rows:
+        q = quarters.get(r.get("periode"))
+        if not q or not r.get("renda"):
+            continue
+        key = "c09" if r["ambit_territorial"] == "Catalunya" else "p" + r["codi_territorial"].zfill(2)
+        t = f"{r['any']}Q{q}"
+        out.setdefault(key, {"rent": {}, "leases": {}})
+        out[key]["rent"][t] = round(float(r["renda"]), 1)
+        out[key]["leases"][t] = int(float(r.get("habitatges") or 0))
+    return {k: {m: to_series(sorted(s.items())) for m, s in d.items()} for k, d in out.items()}
 
 
 # ---------------------------------------------------------------- ECB / Eurostat
@@ -215,15 +315,18 @@ def latest(series):
     return series["t"][-1], series["v"][-1]
 
 
-def build_yields(appraisal, market):
+def build_yields(appraisal, market, api=None):
     """Gross rental yield by province (asking rent ÷ asking-equivalent price).
 
     Prices: MIVAU appraised €/m² rescaled to idealista's asking-price level using
     the national ratio (appraisals sit well below asking prices).
     Rents: idealista where published (province, or single-province region);
+    otherwise the listing-level yield from the idealista API sample of the
+    provincial capital (scripts/fetch_idealista.py, when credentials exist);
     otherwise the region's idealista rent scaled by the province's relative
     price with an elasticity fitted on the published provinces.
     """
+    api = api or {}
     rent = market["rent"]
     nat_rent = rent["national"]["eur_m2"]
     _, nat_appr = latest(appraisal["ES"])
@@ -257,8 +360,12 @@ def build_yields(appraisal, market):
         price_a = appr("p" + code)
         if not price_a:
             continue
+        sample = api.get(code)
         if code in anchors:
             r, method = anchors[code], "published"
+        elif sample and sample.get("n_rent", 0) >= API_MIN_LISTINGS and sample.get("n_sale", 0) >= API_MIN_LISTINGS:
+            # apply the capital's listing yield to the province price level
+            r, method = sample["rent_m2"] / sample["sale_m2"] * price_a * k, "api"
         else:
             ref_r = rent["ccaa"].get(cc, {}).get("eur_m2")
             ref_p = appr("c" + cc)
@@ -280,6 +387,44 @@ def build_yields(appraisal, market):
     }
 
 
+# ---------------------------------------------------------------- idealista
+
+API_MIN_LISTINGS = 15
+API_MAX_AGE_DAYS = 120
+
+
+def load_idealista_api():
+    """Fresh province samples written by scripts/fetch_idealista.py (empty without credentials)."""
+    path = os.path.join(DATA, "idealista_api.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as fh:
+        samples = json.load(fh).get("provinces", {})
+    today = datetime.now(timezone.utc).date()
+    fresh = {}
+    for code, s in samples.items():
+        age = (today - datetime.strptime(s["date"], "%Y-%m-%d").date()).days
+        if age <= API_MAX_AGE_DAYS:
+            fresh[code] = s
+    return fresh
+
+
+def refresh_national_sale(market, bde):
+    """Use BdE's monthly republication of idealista's national asking price when newer than the curated file."""
+    s = bde.get("idealista_sale")
+    if not s or not s["t"]:
+        return
+    t, v = s["t"][-1], s["v"][-1]
+    nat = market["sale"]["national"]
+    if t > market.get("sale_as_of", market["as_of"]):
+        prev = s["v"][s["t"].index(t) - 12] if len(s["t"]) > 12 else None
+        nat["eur_m2"] = v
+        if prev:
+            nat["yoy"] = round((v / prev - 1) * 100, 1)
+        market["sale_as_of"] = t
+        nat["via"] = "Banco de España (idealista series)"
+
+
 # ---------------------------------------------------------------- main
 
 def load(name):
@@ -290,6 +435,9 @@ def load(name):
 def main():
     market = load("market.json")
     appraisal = build_appraisal()
+    bde = build_bde()
+    refresh_national_sale(market, bde)
+    api = load_idealista_api()
     out = {
         "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "provinces": {c: {"name": n, "ccaa": cc} for c, (n, cc, _) in PROVINCES.items()},
@@ -301,7 +449,11 @@ def main():
         "euribor": build_euribor(),
         "eu_hpi": build_eu_hpi(),
         "market": market,
-        "yields": build_yields(appraisal, market),
+        "yields": build_yields(appraisal, market, api),
+        "idealista_api": {"provinces": api, "count": len(api)},
+        "bde": bde,
+        "buyers": build_buyers(),
+        "catalonia_rents": build_catalonia_rents(),
         "projections": load("projections.json"),
         "politics": load("politics.json"),
         "sources": load("sources.json"),
