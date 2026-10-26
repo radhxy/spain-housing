@@ -126,18 +126,31 @@
   <section id="afford" class="section">
     <div class="section-head">
       <h2>Affordability for owner-occupiers</h2>
-      <p>Banco de España series back to 1987. The price-to-income ratio counts how many years of gross household income an average home costs. Mortgage effort is the share of a year's income that goes on payments for a typical new mortgage. Comparing the two separates the price level from the cost of credit.</p>
+      <p>The price-to-income ratio counts how many years of income an average home costs. Mortgage effort is the share of income that goes on payments for a typical new mortgage. Comparing the two separates the price level from the cost of credit. Each chart compares Spain with Portugal, Ireland and the UK on harmonised indices (OECD, ECB, Bank of England), or switches to Banco de España's Spanish series in years and % of income back to 1987.</p>
     </div>
     <div class="afford-stats" id="affordStats"></div>
     <div class="grid-2">
       <figure class="card">
-        <figcaption><h3>Home price ÷ household income</h3><p>Years of gross household income for an average home. Banco de España, quarterly</p></figcaption>
+        <figcaption><h3>Home price ÷ household income</h3><p id="affordCap"></p></figcaption>
+        <div class="seg" role="group" aria-label="Price to income view" data-target="pti">
+          <button type="button" class="seg-btn is-on" data-view="compare">Spain vs PT, IE, UK</button>
+          <button type="button" class="seg-btn" data-view="spain">Spain in years</button>
+        </div>
         <div id="affordChart" class="chart chart-tall"></div>
       </figure>
       <figure class="card">
-        <figcaption><h3>Mortgage effort, % of income</h3><p>Annual payments on a typical new mortgage as a share of household income, before tax relief. Banco de España</p></figcaption>
+        <figcaption><h3>Mortgage effort</h3><p id="effortCap"></p></figcaption>
+        <div class="seg" role="group" aria-label="Mortgage effort view" data-target="effort">
+          <button type="button" class="seg-btn is-on" data-view="compare">Spain vs PT, IE, UK</button>
+          <button type="button" class="seg-btn" data-view="spain">Spain, % of income</button>
+        </div>
         <div id="effortChart" class="chart chart-tall"></div>
       </figure>
+    </div>
+    <div class="card">
+      <h3>Where each country stands vs its own boom and bust</h3>
+      <p class="note">Position between each country's post-GFC trough (2011–17) and its pre-GFC peak (2004–09). 100% = back at the peak; above 100% = beyond it.</p>
+      <div class="table-wrap"><table class="data" id="intlTable"></table></div>
     </div>
     <div class="kpis" id="mortgageKpis"></div>
   </section>

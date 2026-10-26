@@ -33,6 +33,11 @@ MIVAU_BUYERS_XLS = "https://apps.fomento.gob.es/BoletinOnline2/sedal/340101d0.XL
 BDE_CSV = "https://www.bde.es/webbe/es/estadisticas/compartido/datos/csv/si_1_5.csv"
 CAT_RENTS = ("https://analisi.transparenciacatalunya.cat/resource/hepw-33ik.json"
              "?$where=ambit_territorial%20in%20('Prov%C3%ADncia','Catalunya')&$limit=5000")
+OECD_HOUSING = ("https://sdmx.oecd.org/public/rest/data/OECD.ECO.MPD,DSD_AN_HOUSE_PRICES@DF_HOUSE_PRICES,1.0/"
+                "ESP+PRT+IRL+GBR.Q.HPI_YDH+HPI_RPI.?startPeriod=1980-Q1&format=csvfilewithlabels")
+ECB_MIR = "https://data-api.ecb.europa.eu/service/data/MIR/M.{}.B.A2C.A.R.A.2250.EUR.N?format=csvdata&startPeriod=2003-01"
+BOE_RATE = ("https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes"
+            "&Datefrom=01/Jan/2003&Dateto=now&SeriesCodes=IUMBV34&CSVF=TN&UsingCodes=Y&VPD=Y&VFD=N")
 ECB = ("https://data-api.ecb.europa.eu/service/data/FM/"
        "M.U2.EUR.RT.MM.EURIBOR1YD_.HSTA?format=csvdata&startPeriod=2005-01")
 EUROSTAT = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hpi_q"
@@ -263,6 +268,69 @@ def build_bde():
     return out
 
 
+# ---------------------------------------------------------------- international affordability
+
+INTL = {"ES": "ESP", "PT": "PRT", "IE": "IRL", "UK": "GBR"}
+MORTGAGE_YEARS = 25
+
+
+def _quarterly_mean(points):
+    q = {}
+    for t, v in points:  # t = YYYY-MM
+        key = f"{t[:4]}Q{(int(t[5:7]) + 2) // 3}"
+        q.setdefault(key, []).append(v)
+    return {k: sum(v) / len(v) for k, v in q.items() if len(v) == 3}
+
+
+def _rebase(series, start):
+    """Index each country to its own average since `start` = 100, so levels read as above/below normal."""
+    vals = [v for t, v in series.items() if t >= start]
+    avg = sum(vals) / len(vals)
+    return {t: round(v / avg * 100, 1) for t, v in series.items() if t >= start}
+
+
+def build_intl():
+    """Spain vs Portugal, Ireland and the UK on comparable affordability measures.
+
+    price_income: OECD price-to-disposable-income index.
+    mortgage_cost: price-to-income x the annual payment on a 25-year annuity at
+    the country's new mortgage rate (ECB for euro countries, BoE 2-year fixed
+    at 75% LTV for the UK), so it moves with both prices and the cost of credit.
+    Both are rebased to each country's own average (1995+ and 2003+).
+    """
+    print("OECD / ECB / BoE international affordability")
+    raw = {}
+    for r in csv.DictReader(io.StringIO(fetch(OECD_HOUSING).decode("utf-8-sig"))):
+        if r.get("OBS_VALUE"):
+            raw.setdefault((r["REF_AREA"], r["MEASURE"]), {})[r["TIME_PERIOD"].replace("-", "")] = float(r["OBS_VALUE"])
+    rates = {}
+    for c in ("ES", "PT", "IE"):
+        rows = csv.DictReader(io.StringIO(fetch(ECB_MIR.format(c)).decode()))
+        rates[c] = _quarterly_mean((r["TIME_PERIOD"], float(r["OBS_VALUE"])) for r in rows if r.get("OBS_VALUE"))
+    boe = csv.reader(io.StringIO(fetch(BOE_RATE).decode()))
+    next(boe)
+    rates["UK"] = _quarterly_mean(
+        (datetime.strptime(r[0], "%d %b %Y").strftime("%Y-%m"), float(r[1])) for r in boe if len(r) == 2 and r[1])
+
+    out = {}
+    for c, iso in INTL.items():
+        pti = raw.get((iso, "HPI_YDH"), {})
+        cost = {}
+        for t, p in pti.items():
+            r = rates[c].get(t)
+            if r is None:
+                continue
+            m, n = r / 1200, MORTGAGE_YEARS * 12
+            cost[t] = p * 12 * m / (1 - (1 + m) ** -n)
+        out[c] = {
+            "price_income": to_series(sorted(_rebase(pti, "1995Q1").items())),
+            "price_rent": to_series(sorted(_rebase(raw.get((iso, "HPI_RPI"), {}), "1995Q1").items())),
+            "mortgage_rate": to_series(sorted((t, round(v, 2)) for t, v in rates[c].items())),
+            "mortgage_cost": to_series(sorted(_rebase(cost, "2003Q1").items())),
+        }
+    return out
+
+
 # ---------------------------------------------------------------- Catalonia (Incasòl deposits)
 
 def build_catalonia_rents():
@@ -454,6 +522,7 @@ def main():
         "bde": bde,
         "buyers": build_buyers(),
         "catalonia_rents": build_catalonia_rents(),
+        "intl": build_intl(),
         "projections": load("projections.json"),
         "politics": load("politics.json"),
         "sources": load("sources.json"),

@@ -749,10 +749,60 @@
     }), true);
   }
 
+  const COUNTRIES = [["ES", "Spain"], ["PT", "Portugal"], ["IE", "Ireland"], ["UK", "UK"]];
+  const affordView = { pti: "compare", effort: "compare" };
+
+  function intlChart(id, key, start) {
+    const c = ink(), I = D.intl;
+    const ts = [...new Set(COUNTRIES.flatMap(([k]) => I[k][key].t))].filter((t) => t >= start).sort();
+    chart(id).setOption(base({
+      tooltip: Object.assign(base().tooltip, { valueFormatter: (v) => (v == null ? "—" : nf0.format(v)) }),
+      grid: { left: 8, right: 92, top: 40, bottom: 8, containLabel: true },
+      xAxis: axisX("category", { data: ts, axisLabel: { color: c.muted, fontSize: 11, formatter: qYear, hideOverlap: true } }),
+      yAxis: axisY({ scale: true, axisLabel: { color: c.muted, fontSize: 11 } }),
+      series: COUNTRIES.map(([k, name], i) => line(name, ts.map((t) => at(I[k][key], t)), S(i), Object.assign({
+        z: k === "ES" ? 6 : 3,
+        lineStyle: { width: k === "ES" ? 2.75 : 1.75, color: S(i) },
+        endLabel: { show: true, color: k === "ES" ? c.primary : c.secondary, fontWeight: k === "ES" ? 700 : 400, fontSize: 11, formatter: (p) => `${name} ${nf0.format(p.value)}` },
+        labelLayout: { moveOverlap: "shiftY" },
+      }, i === 0 ? {
+        markLine: { silent: true, symbol: "none", lineStyle: { color: c.axis, width: 1, type: "solid" }, label: { formatter: "Own average", color: c.muted, fontSize: 10, position: "insideStartTop" }, data: [{ yAxis: 100 }] },
+        markArea: { silent: true, itemStyle: { color: c.grid + "88" }, label: { color: c.muted, fontSize: 10, position: "insideTop" }, data: [[{ name: "GFC & bust", xAxis: "2008Q1" }, { xAxis: "2014Q4" }]] },
+      } : {}))),
+    }), true);
+  }
+
+  function drawAffordCharts() {
+    const B = D.bde;
+    if (affordView.pti === "compare") {
+      intlChart("affordChart", "price_income", "1995Q1");
+      $("#affordCap").textContent = "OECD house price ÷ disposable income per head, each country's own 1995–today average = 100. Levels aren't comparable across countries, but distance from normal is";
+    } else {
+      landmarkChart("affordChart", B.price_income, (v) => nf1.format(v) + " y", "Price ÷ income");
+      $("#affordCap").textContent = "Years of gross household income for an average home. Banco de España, quarterly";
+    }
+    if (affordView.effort === "compare") {
+      intlChart("effortChart", "mortgage_cost", "2003Q1");
+      $("#effortCap").textContent = "Price-to-income × the annual payment on a 25-year mortgage at each country's new-loan rate (ECB; UK: BoE 2-year fixed, 75% LTV). Own 2003–today average = 100";
+    } else {
+      landmarkChart("effortChart", B.effort, (v) => nf0.format(v) + "%", "Effort");
+      $("#effortCap").textContent = "Annual payments on a typical new mortgage as a share of household income, before tax relief. Banco de España";
+    }
+  }
+
+  function intlTable() {
+    const I = D.intl;
+    const pos = (s) => { const L = landmarks(s); return { L, p: (L.now[1] - L.trough[1]) / (L.peak[1] - L.trough[1]) }; };
+    const cell = (x) => `<td class="num">${nf0.format(x.L.now[1])}</td><td class="num">${nf0.format(x.L.peak[1])} <span class="note">${x.L.peak[0].slice(0, 4)}</span></td><td class="num">${nf0.format(x.L.trough[1])} <span class="note">${x.L.trough[0].slice(0, 4)}</span></td><td class="num"><b>${nf0.format(x.p * 100)}%</b>${x.p > 1 ? " ▲" : ""}</td>`;
+    $("#intlTable").innerHTML = `<thead><tr><th rowspan="2">Country</th><th class="num" colspan="4">Price ÷ income (avg = 100)</th><th class="num" colspan="4">Mortgage cost (avg = 100)</th><th class="num" rowspan="2">New mortgage rate</th></tr>
+      <tr><th class="num">Now</th><th class="num">Peak</th><th class="num">Trough</th><th class="num">Back to peak</th><th class="num">Now</th><th class="num">Peak</th><th class="num">Trough</th><th class="num">Back to peak</th></tr></thead><tbody>` +
+      COUNTRIES.map(([k, name]) => { const r = last(I[k].mortgage_rate); return `<tr><td><b>${name}</b></td>${cell(pos(I[k].price_income))}${cell(pos(I[k].mortgage_cost))}<td class="num">${nf2.format(r.v)}% <span class="note">${label(r.t)}</span></td></tr>`; }).join("") + `</tbody>`;
+  }
+
   function affordability() {
     const B = D.bde;
-    landmarkChart("affordChart", B.price_income, (v) => nf1.format(v) + " y", "Price ÷ income");
-    landmarkChart("effortChart", B.effort, (v) => nf0.format(v) + "%", "Effort");
+    drawAffordCharts();
+    intlTable();
     const card = (title, s, fmt, why) => {
       const L = landmarks(s), span = L.peak[1] - L.trough[1], pos = (L.now[1] - L.trough[1]) / span;
       const pctPos = Math.max(0, Math.min(100, pos * 100));
@@ -1065,9 +1115,16 @@
     news(); sources();
     navSpy();
 
-    document.querySelectorAll(".seg-btn").forEach((b) => b.addEventListener("click", () => {
-      document.querySelectorAll(".seg-btn").forEach((x) => x.classList.toggle("is-on", x === b));
+    document.querySelectorAll(".seg-btn[data-range]").forEach((b) => b.addEventListener("click", () => {
+      document.querySelectorAll(".seg-btn[data-range]").forEach((x) => x.classList.toggle("is-on", x === b));
       salesRange = +b.dataset.range; salesChart();
+    }));
+    document.querySelectorAll(".seg[data-target]").forEach((g) => g.addEventListener("click", (e) => {
+      const b = e.target.closest(".seg-btn");
+      if (!b) return;
+      g.querySelectorAll(".seg-btn").forEach((x) => x.classList.toggle("is-on", x === b));
+      affordView[g.dataset.target] = b.dataset.view;
+      drawAffordCharts();
     }));
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", rerender);
     new MutationObserver(rerender).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });

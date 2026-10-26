@@ -121,6 +121,28 @@
     "used": "auto"
   },
   {
+    "name": "OECD Analytical House Prices",
+    "publisher": "OECD",
+    "kind": "Official (international)",
+    "metrics": "Price-to-income and price-to-rent indices for Spain, Portugal, Ireland and the UK",
+    "geo": "Country",
+    "freq": "Quarterly",
+    "access": "SDMX REST API",
+    "url": "https://data-explorer.oecd.org/",
+    "used": "auto"
+  },
+  {
+    "name": "Mortgage rates: ECB MFI rates and Bank of England",
+    "publisher": "ECB / Bank of England",
+    "kind": "Official (international)",
+    "metrics": "New home-loan rates (ES, PT, IE) and UK 2-year fixed at 75% LTV",
+    "geo": "Country",
+    "freq": "Monthly",
+    "access": "SDMX / IADB CSV",
+    "url": "https://data.ecb.europa.eu/data/datasets/MIR",
+    "used": "auto"
+  },
+  {
     "name": "idealista price reports",
     "publisher": "idealista",
     "kind": "Portal (asking prices)",
