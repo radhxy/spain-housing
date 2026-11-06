@@ -1,20 +1,244 @@
 {
- "fetched": "2026-11-05T14:41Z",
+ "fetched": "2026-11-06T14:18Z",
  "items": [
   {
-   "title": "Gonzalo Bernardos, economista: “La caída de precios de la vivienda ni está ni se la espera. Subirá un 5% en 2027\"",
-   "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQMHY5UlktNFJqVnMzSndyM244OHJ3SzY4bUVQT1lwc3M0WEJjRkM4S21MTnoydVpjR2hBd0ZTR2ZSS3cxVVd2aVpaQU5YdHM1V0VzUndGMHctaTRIXzBUVldFc2MwUG5QbHp1aDJoT3ZJNFZuNUJmSlluT01hdkItQVQxMmRFMUJ6aUVvSFVpaC1EQml4WjNuSERQczVOeFdEX1VvQTRXMW9Bd1VxcGEyVzdzM3pCb0dvU1hLRi12bXhyY0g2OUx3akhiOXc1dkVJR0VXSUZLZkl0ZFNhVVgxZ2paaUg2UnRtVmUxc3dWR25IOGJaa3ptY1Ftc3BzYjB5NUE?oc=5",
-   "outlet": "Líder Actual",
+   "title": "Segovia encabeza el aumento del valor de las viviendas en España",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNd3oxaklJczZvSG5XT0hiVDl1U3o2MW1XMnkzdEVrVVZVTmlMV1hMSm9lUHJJZU9pMUxrX2k3OGxMRlZfWnljQUdTUk9VNmJkY1hrWHJLcWZqOGVJeG1tdlZacTVBSm1ua1lBZ252Q011MlZKSWxuN2tTdTEtV2pQQ0kxMnZsQU1jbWE5cVFvMnJZVXRfLXNScUhCdkdSMEJEa3p4dzhuZnB4UU9JZS1laQ?oc=5",
+   "outlet": "El Adelantado",
    "lang": "es",
-   "date": "2026-11-05T14:28Z",
+   "date": "2026-11-06T12:23Z",
+   "topic": "other"
+  },
+  {
+   "title": "Elecciones 29N: Alfonso Rodríguez Gómez de Celis lanza el mensaje del PSOE de Sevilla y pone el foco en las pensiones y la vivienda",
+   "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOUV85aVdfYU10aGpCZEdlQ2hSblU3dTRISEJqLXJZbE1fTXQ1VVRjZGNOc21FbHlXMVZmQzJ6Z1JkbFM0azhOaWVoRHNrWTYxZ3VEUUdnSUdCWkJlN21iMFdrbWJGb0h0S2o3T2ZQTHduN0JTaWtVWWZQaFd1Yng4WlFSclNRNF9JUVZSaFA1dUY0eTNWQlFJZ1lsTWk1OEl4ZnZaZ1pQVGx4TzdTMFZoajl1ald0SmhMVkRYMlFPdXR3X2ZrR0lkSV9GQ25uU0hNaTNCM0tpUFAtWF9ubVhzT2hvU1dOMWk1bmt0THNQWjFfUQ?oc=5",
+   "outlet": "El Pespunte",
+   "lang": "es",
+   "date": "2026-11-06T12:08Z",
+   "topic": "election"
+  },
+  {
+   "title": "El Movimiento Ciudadano traslada 25 demandas a los candidatos a las elecciones del 29N por Córdoba: vivienda pública, empleo joven y ejecución de infraestructuras",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOellFVF9mdkF5dVpuVkdUR1ZWYkk0Z01EMjJSTmdzZTFaQndwbFRCZmR1U0ZmcEFSZkdQZnlEVzdNVXJTS2dXbjFOX1ZOcUhPMjFrb3VUUUVQX2JENDV6VGdoSmxkVTVVNkpiQkVjTEE0dnZlc2FzMFhaR0pjLTRFR2Q1M19ZbTBIWGRzQmROMXdjY0N6MlJNZzFDMk43QdIBowFBVV95cUxPWXV0TjQtNklMeEtXc2xkSFdPeFQ0djZ5SUxFamxpU3Zjc09GUXdrclcybzVxOEFuS0VXMVZCTTQ5M2lHaFluMHlMOXkwQnZCOHFITUlfejB5Z09JMEc5MEtSMkhPYUY3eEFHUE9GSFFnUmhSWmdOUlM0ZEtMTEZwYlNILVZzcklSMXVXSWlGT1Y1d1l4bW1SenJGbXFNbmY3TVpB?oc=5",
+   "outlet": "El Día de Córdoba",
+   "lang": "es",
+   "date": "2026-11-06T11:40Z",
+   "topic": "election"
+  },
+  {
+   "title": "Gamarra: «Sánchez solo se ha preocupado de una vivienda, la suya en La Moncloa»",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQSXBWUGw0YjFDQWJVejV1bmlSQ1hNMldmUURFZk1Ha2xBdm8xTDNmQzVnVmI1Q2lLOGc5VUMyVkpXTldlZEtKZU1XT2h4blExWmN0dUREaTFvbEJEb2d1ODE2eHFmbGd4YnJHdHR3UHFtTlpXbExEXzY2c0ZKWWcyUzE5NlcyeDRKTGVEUVhJbVNFSGg5dUwxMEcybHNnZw?oc=5",
+   "outlet": "NueveCuatroUno",
+   "lang": "es",
+   "date": "2026-11-06T11:29Z",
+   "topic": "election"
+  },
+  {
+   "title": "Colau promete una ley de expropiación a fondos buitre para recuperar 100.000 viviendas",
+   "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQNXdlSWZfVEctN3FLTk82RndvLVMyd0ZCN0NHMHRMemk5bTZDVC1RT3hpNkNUeVR3bl9Ea2pERWcwMWt4UnZQMnJORlg4dHhOVl9xbU5iZEQ4cWxSaUs2Nzh1OG9fTDRBdzY3WU9sUTM4WW42cGpWMnYyVTE4Ykw5OU1QYjhwVng2OURDcF95ZnRWLUMycEtsYjYyWUVyeWRvcG5lUW11VzJtMlJpRlh0MTkzVEp4MTV6bkRoZ0RuSVV4djRBLURyTmx0ano5OFVfOHNkMjN2RGt5djBCUlFRVG95bWs?oc=5",
+   "outlet": "Ultima Hora",
+   "lang": "es",
+   "date": "2026-11-06T10:50Z",
+   "topic": "policy"
+  },
+  {
+   "title": "Podemos exigiría a Sánchez para volver a gobernar bajar precios de alquileres y alimentos",
+   "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNOWlmTFRibjlLX3NWNzRpaDhUemlhcHpDZ2o4X2g4SkhRNWpHMFQzMWh2V253UFZXcW84S2FVUHlJeU9jSUtyVkhNSUV2UUFWWTBwWmZ6WWNubF9BYXB6aUozcXZXZGJ6SHlJOERKamtFRURnWHRVS3lBRVpJbzd6c2w3WkVxS0VBSHMwZ1ZlVUNpNmk3bGZBWVVneEJLdkItdTRTaDgydXg2OTdBcXR2VmlyaW9DTVg1UzdBbzBUODZNNUY4ZGRYdTVuQkFSODhDRlI4Wi1vV2lzTXhaUDdpcmRndmp1TS12eEE?oc=5",
+   "outlet": "Ultima Hora",
+   "lang": "es",
+   "date": "2026-11-06T10:48Z",
+   "topic": "election"
+  },
+  {
+   "title": "Pradales afea a Bildu que no apoye políticas vascas de vivienda",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQNWVMVjNoS2RURFRUNnZpRk1TZnl1dUZOdmM0VG5NQ1BVSWQyd1VkeDQwNm11TjFzZ1NzeUtSNjlJWGNEX0xNczgxYTY3VHl3VlBqRVM2N2x1X0FqbVpfeEd3dGF4Tnlqa0dueGktRjRwanJ3WVlNSEVmSVU3MGVhVGU4QklXZ3hkdEdrR2RUcHU?oc=5",
+   "outlet": "Norte Exprés",
+   "lang": "es",
+   "date": "2026-11-06T09:31Z",
+   "topic": "other"
+  },
+  {
+   "title": "El precio de la vivienda modera su ritmo de crecimiento al 13,7% en octubre, según Tinsa",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPdnJEQlZYZm1OWFZGcmlUN3FiSDl0bmxBS1lUWVQ2S2xPV2s3aXprTmZnakRVdDZ6dnpQdmQtZlIyX2V5Z1FibklsbFBEOVQ2WWJaazRsQXZOeDRuSkoxYjlZUS0yUVQ4Mk5tcU91elM1aV9Dbml3LW9XWTdpSWxSclRWRHFlX09aX3p1MFItUUpuWHpGeTB6RFo4U2dFaUdsSGlyalNHQjRHYWVKR1ZrbVJrTWY1UWdCa2MxV05HZEJ6NmtUNTdwVg?oc=5",
+   "outlet": "PressDigital",
+   "lang": "es",
+   "date": "2026-11-06T09:12Z",
    "topic": "prices"
   },
   {
-   "title": "Ley de alquileres en Texas | Los propietarios podrán aumentar el precio de la renta sin un límite estatal: cuándo está permitido y qué derechos tienen los inquilinos",
-   "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxPbjctek1UWjV2cmFNTEJFV3NqdFZtWVNLRzBWRlYyV0loOVNBei12NDdSQnl1Nm9QTzZndWV0WlA3ckZTendBYWY5aWMzYjNhbWw4RFdpTUMzZms0WllQMlo5ZC1SVFpTMFNkWWFCSTQzVWpraHpEYkxMNmRTTC0yZmVPNmlDVWRsSmliekRhdWpHdjFucVF0VHpJM1FKemhJaVc5WExBODBMVnUzb28xNE52UF9XZnFxeEJkb1ZuYlkzb1JmbEZLQ0g2OE5NSW54WU56TWdaaFFXMGlTVWwweEhsdmN0SFBadjNQaW9QUEIyMThBVVRhUTFzV1hPbnNINkhCd3lrLTZ5akJ5TlhMYU0xbFgyUmFTdW94cVVEdFlvNmRrNDhQcNIBwwJBVV95cUxNUy1RRDFFbnR2RjhXUkdWZ1RGazJYU2VUZU56bVpMNUU4OGZ4U0V3bmMwWFNuRHV2Ym9nSEZnYld2bXN6NTYwMXR6WHFBMDVzOHdkMnNTZ3Z1eWVWUWlLRV80VzdZSWxKS1hkNlJTa3hrVWc2bTlzUU52NjQ5b2pfbDc3N2Nhc0t2OVAydUVYNnBpTnBLdE5iVUlyX2tBU283UWdPc3Nra1liN3hKNmZZMzBuOGczLWZ1VUN2Y0NJZlBLa21tdmlxc3BzX08tNzVGZlFnZG9nYVVrYmpsMlpNaU1WbWY3REJGU1luSEpzLUpUalZlWlFNMHFFeWlDdkhNQWd0d3hQNmhKRm96cTI0azZfdkVQcmdydzJHMDRRazB5OFF6cWFBMWVRUU1OeVZjRUNsdVRjQmxTdlp3N0xqZ2Vrdw?oc=5",
-   "outlet": "El Cronista",
+   "title": "'Single-property owners yes, multiple no': Is there sympathy for Spain's landlords?",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPLTZ6Yl9idk9PNElvNTJ1R0c3LWlVUXZuNEp2dDlqRHFYVkJEYlpjNlVjVjNPQjBENUdaYVFuLURfV1gtblIyUHVnR1cwcGh1eG5QV0wyeWo5UjRORXJXRFF0WC1qMG5wQzM0TjR3V0ZWN2RadTllUVNJRU9FdEpLMF9WeWxxQzFqcS12Y2ZyWkFhZ2hRdDZJeEVQM3l6VkVVVXdwaC05bC1VMjFrREJz?oc=5",
+   "outlet": "The Local Spain",
+   "lang": "en",
+   "date": "2026-11-06T09:02Z",
+   "topic": "other"
+  },
+  {
+   "title": "Analizamos la nueva Ley de Arrendamientos Urbanos (LAU) en Baleares",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOc0JlSnV5YkFUUkVsZld4RkxkNmVDOHJwUldJbjB4SkswcmZzNjdZWnVhT0toM0xSazRkX1Y2U0RNcHdlanhIVVNnVlJsYk5fT21YZFozaUthRk1qbS1jVmVkdWl5MmpibzRJeERPQzQ5QmR3TVNmUnFub1Y3OTktRm5WYXNSSXlsbjlEZUJsWVVxLXRuY1JSTUJKUXFJNXpuUThHbWVjeHBPT1hFZDRkRUJuTDJvcWxpQ0NsTjVGamY2NGdNYnhobWFTaU55WGhtQWpKaWFldmE?oc=5",
+   "outlet": "Economía de Mallorca",
    "lang": "es",
-   "date": "2026-11-05T14:10Z",
+   "date": "2026-11-06T08:21Z",
+   "topic": "policy"
+  },
+  {
+   "title": "It’s Not Just Rents: Buying a Home in Spain Is Becoming Unaffordable Too",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPenVGVk1VenZGYzYzeG1iWThiVnd2NS04QU55ZFF2MHBTTzRZWm5RYUV6Y2tFWDRIMUhlTDhfdTltSDFsa25KMXB2UnJTQ1V5eGFqbUdITWF5VHBpMWIyTGNNVXhVWGFuRVZNYm9id1RTaFFzbDZzVS16d01KdDQ0M2NUM1gyZnZad2JFUHlEVTM0NjhIUk1DNmN3Y2dqeGVzaDM0c1hCWQ?oc=5",
+   "outlet": "Spanien Press",
+   "lang": "en",
+   "date": "2026-11-06T08:16Z",
+   "topic": "rent"
+  },
+  {
+   "title": "El precio de la vivienda se dispara un 13,7% interanual en octubre",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQYUhTQ3RORkRKem5jVW9fNVBEejZKZ2xqQk1LeWZnc3RCT1N1bmg3aTJGaXM5OXJsYjNxTHF1WW1KM3FEVFJtc1FTQnh6N1lRV1dQNWVUTjNmYmxrMTRoTmlZajZTN2NVVGVHRl9EMVFEeFd6enM5cTZFeTJpVTFyQzFzRmM4NzktblpQYkMtUkRYWHJiZ1hFdg?oc=5",
+   "outlet": "Servimedia",
+   "lang": "es",
+   "date": "2026-11-06T08:11Z",
+   "topic": "prices"
+  },
+  {
+   "title": "Un abogado aclara quién paga las averías en un piso de alquiler: “El decreto cambia el reparto en la vivienda temporal”",
+   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQNnlfWmd4aWp3Wml4RnhxaXdBYlR6SHBJRkZ6c1lrYk1nd3BLaWJielRGZy1Hd0dPWEx5dkNHY01WUmpxYzdrWVhNTHc3Zlh4SjF2M190R2VFY2F1Q0JpQ3p1VkRXQzJRSHQxMnZwYmFGamFVMFVHMmdEcUZqRHZVTlhHMUJ1bVNYdmlQanpmcDBYNWlBaEF1ZnBTa1pZYmVXNEoxOW9PaEx6N185SlVvT1N0am5KOGFGWDRTYjB6VmlwSlhwRUhDX0l0aHhraEd1Q0NaR9IB2gFBVV95cUxQTzR2U0lIXzRoclh6WTRpUEFfMzIyQjV0R1M1YUQ3cjY0YWIyajlJeTNqWUd6MWdMdzYtYjREaWdtUGdkSV9ZQ3lmMUNPN2ctb2d6MmxhZEVGODVWcUJzSkVNSklzVFBIWFlFTEU0Mlo1d2E2blhSd3B4dGduOE0zNURCMDAyb1BtZlJFVkx3SzVTZFN3WWxySWhMX091WDVsZ3NNQnVJaGloeXltRERyamtFbVpQNUliT25BQUNxXzJpMmFWWUpGbXo3NVNmVmFGOVZ2dEpXR0U1Zw?oc=5",
+   "outlet": "elDiario.es",
+   "lang": "es",
+   "date": "2026-11-06T08:00Z",
+   "topic": "policy"
+  },
+  {
+   "title": "¿Qué pasará con la vivienda tras las elecciones? Estas son las propuestas de los principales partidos",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQVEVVSFl5QzVTS181R1dlempBajZRNVJsQ1hNdHZBN3dURGVoTk4xbnQwYWpvck1RM0ZvVGdkNUpmcWJ5eTlDMVE2Z3k5ZEgxak1vWVZpQTFCdGc0aHd3Y1kwMmdmWW1DbEE3aXgxUmZJRzBXUVA1M0REUTNHUXlEcVdxVEVQN2V5X29WSlp0VFMwb29FekNWblpHZHdsQktVd0lTelFXVVlBbF9qWHA2NWdPSFo?oc=5",
+   "outlet": "Fotocasa",
+   "lang": "es",
+   "date": "2026-11-06T07:04Z",
+   "topic": "election"
+  },
+  {
+   "title": "Andrés Millán, abogado: “Te pueden devolver hasta 1.163 euros de alquiler en toda España, sin límite de edad y de forma retroactiva tras el Decreto Maricarmen”",
+   "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNbTg5VFNVVXZYQnQzSjk5VHY0cTJjTExJR3ZzU3hVMi1xM0VBM0VLUTBlT0tJYzlpd0dwLTVtYWNza2VjYmpKMUxOWHFsUFRhTUFJX0g1RWdYM2hJc3VQbS1QUzdTQXl4MFF4U0pfOVprTndQcWRHWWpfRGIyd1VNZi0wUWMyaDBIbHptaTZEWUJFMVdxY3NJQ0VVSTgtR040cXV0cWdCelFOdHRqc2tYaFdjVE1zWHFrdngyb0UybFA3SDd2cDVoTHV0UlRKNlNkaW8zTndndjJXXzR0d3VCdHRfZklmQ0xTRXlGTEFidGlBWUpERXBjOHAtc3hoZUU5MHExTUxEX2c?oc=5",
+   "outlet": "Lecturas",
+   "lang": "es",
+   "date": "2026-11-06T06:20Z",
+   "topic": "policy"
+  },
+  {
+   "title": "El precio de la vivienda marca récord en Alicante: estos son los barrios más caros y más baratos para comprar casa",
+   "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOSjBoTDcwR2NiRmViZ0JRNnpXOHdrbDJtRkdwbmNrZC1wZUUwemg4VE5DdnYyU09FcUZwenlZMlBDaXpsRzNJYjdmUjRjZE8tTmRFa3d6MzMtX3FYTWpDQUFBNE1FQUZTZDd0d0VwM1FJT2Q3a0RpZUNtU2RqRXU0eVlGTHgtTDlQdF9lQ240eXREY0JMVWEwUzV4RTZNZnlDYkdUREc0bWNzbjJFaHI4bTA4RkRYM3M3UWFyYmtmU0lqVFFJXzd3R3VYeW8xSmRHaHJQYzl0YWFTWEROd0JyUy1ZVHJSSmUyWW1PZtIB8gFBVV95cUxNUS1PbHUwMUx0ZjN4RDFuQXY1YnhXRXFiZENfdEw0d0F1M1pWdVBvYVNTLXU1RXZneGRSOFQzblRrSTg2aHJuMHZJQUdwemFYVEg4Q2NpYVdBRkpwODdhSV9vUUNDNFJpbERZS3lCcjJRcFhlWHZUT0JDUkRLTXQzVDdMQ1JodHhIV2s3NUZWQnZlb1RqUUZLRjlTdmFiWlhDMXloZ1FBVWdubktqQ0M2SmlNNHFiZG5XUi1Jakw1R1JNMEpsODdGZ21jZDFQNmZra3lTcF84YVNYd0xjS0tZOXBtVXFDQ3NpeG11M2ZsNC05Zw?oc=5",
+   "outlet": "El Debate",
+   "lang": "es",
+   "date": "2026-11-06T03:00Z",
+   "topic": "prices"
+  },
+  {
+   "title": "Cuánto se cobra por estar en una mesa electoral el 29N",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPX3lsbUJ4OUpVSHZqZkszVExDSmhCVkRCMWRxal85UWhYUlByWHdITW8xTW9fWXZISGo2cVJ1VzZocll4RzZiank0cjVVN2ZXWjBJc2kxLUVWU2RUTS15a1J2bGdyOHVacFgxaUN4OC05bWVISmhnNzF5UklkRzVjd3hnOVg2RGJFM3VCZ2hDQ0tycHhjQ3BHaGZaaHN6eTFhUERYRmpwVm4xVlZUT0FYYVhJTTZ6Zw?oc=5",
+   "outlet": "Ultima Hora",
+   "lang": "es",
+   "date": "2026-11-06T02:55Z",
+   "topic": "election"
+  },
+  {
+   "title": "La “hucha joven”, menos impuestos, apoyo de los bancos y viviendas reservadas: cuatro claves del plan de Feijóo para el 29N",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQcE95Z0J2Rk5jTEhOYVM3UUVmMmpqZmdUemhxdWV6UDFnSUNPaTJOVnNDUHhpS0VUcWhhTl9oV2NyeTk1b21uRERsX2ZWUXYwQWFYaGN5SVJzR2tURThNRzV6OFlqWVBZZGxNb3FIMUJCVWZIc2U1OHFrbDdLTDdHYXpCcWMxWjE1T2VmWVpaNXlqTXFsekx1cFZn0gGfAUFVX3lxTE84TWFkZ28yMFF5dk5DRF81XzllVXB4YVJQeTYySV9zc3dLMHJQRFIyYmtFdEFuMFdFaEhEN2w1cjhxdzd1MFZNZVpROVlqdm52LVpGdkpJLVl6TjRNSHVRcEc1WWN1aUxJZTNndjZqZ0J0TVVSX1B3aXIxQnJyT01VRlV0WEFiR3J1QjRHbVY3eEdZcjVDSlF6N1dHbXhTWQ?oc=5",
+   "outlet": "Demócrata",
+   "lang": "es",
+   "date": "2026-11-05T22:27Z",
+   "topic": "election"
+  },
+  {
+   "title": "Comprar casa en Canarias ya cuesta más que en casi toda España: el metro cuadrado supera los 3.300 euros",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNa3NwQ3NIdl84Q3pXVFdWYU9yc3JYbGJ3bVlPMnY1bU42Rzl3c3JVX1laRVhtRkswVzdtaGJCcW9KUm4zYk5HMGtWNUt5ZmZheFU3QU1BT2NIdE02ZzZ3ajZ5aVk4a19UakZMUURtOV80alpCVzllUm9jRnBCSzQ2SEVaQnl3d0JrQkJPQlZ4SkhYbnpac08yWGZLNk3SAaIBQVVfeXFMTUIwZHhWMFJ3RVp0SmprRmVraUZvMUhROXRVVGpPZG1GTEMyakVpMzlrcUs1V3h6Yi1fUndfMEZsdURJNFdwcDBZd2xmbjM2WjlKRDJOb2tHU2E3V3Q4ZEl1WlB3bGtHVzZLdUxZTXVicFZpWjQ3ZW52dDZBMzJ0c0p4a3FiVDRfY1NraktWMjU4cHVFUHBIS3Q3VHJzVE41MVdn?oc=5",
+   "outlet": "La Provincia",
+   "lang": "es",
+   "date": "2026-11-05T21:05Z",
+   "topic": "other"
+  },
+  {
+   "title": "Dos heridos, uno de gravedad, tras un tiroteo en una vivienda de Tenerife",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQcU4tcGZDbVNUblVWN2s3RGFaTTl0Zmo2dThpaFhYWVNjX0hMeGdoMFVCd3lzUmdSZnl4eFpRZ2x4ZmhLRzNGblh4NU10M2RYOS0yQUV1V2dVZFdhdEoyTURtRHFVRVEycXRsd1hMWVdYZVNJaFdkNFpkSVpVbEFJRGxiMElncmxhS2hTOExLZ3JqbDNDWWNWcGFCSW5oY1BYWk1XcnE3bXRkQnI1Ymx3S3NxWEgtbEctZ2psTtIB0AFBVV95cUxPa1A3VVZsTFAtWl9ZQ1ZsT29Wc3Rwa1JrbUZEOHpfQTh3dzBuenY1ZEh1eGwwaG9Db0VTVEtGZmNabk51MTlsVHNXM2pYa3A5aVFNdVctZS1EMHJpeElwWklWeEI0UlVmR2hEWjVvNWRYZmR6OFNyU3g0X1FKS2pGUU5ObGtzaGxsMFRqUUN1azhhd1BzcnBnQVdHRFJ0ZmN2NUhrYjdZSGd5V3F2QWcwSXBTZHlYRHZnTHh3UmFNZXV1Z3dGRHpTcFF6T182cUIy?oc=5",
+   "outlet": "La Razón",
+   "lang": "es",
+   "date": "2026-11-05T20:25Z",
+   "topic": "other"
+  },
+  {
+   "title": "Noticias de Israel y del mundo judío en español",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQSTZlRTltOS1ZcFFHWUJWMHJaUDBMTG15blBSX0Jqd194cVVzVWI0ZnNQWjZUMzdRWk9LdHA5OHQ0SUdSWVpCQkJ1ekh2c09IUVR6czl0aW5wZnVWM2F4dkFVbURRelNWVFdkNExCdy1pNGFFSEktODRCS3BOQndvSlRzcw?oc=5",
+   "outlet": "Aurora Israel",
+   "lang": "es",
+   "date": "2026-11-05T19:36Z",
+   "topic": "other"
+  },
+  {
+   "title": "El detalle del contrato de alquiler temporal que puede convertirlo en vivienda habitual",
+   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNaF9BZ0V3SGtRRGVxdXdLTE1PQjhRYm9vQ0ozS05vRGZjWnN6dURWeC1vaGg5UmdZRndxblZiRTEtQjlIT2thWjA2dXhKZ2hKTnhZc1diaENFNVJrQW42NGlNOGdJMHF2SWtnRWVoa2ZnWnZBWHFmYWRxeld4Wl9mYg?oc=5",
+   "outlet": "Qué.es",
+   "lang": "es",
+   "date": "2026-11-05T19:28Z",
+   "topic": "rent"
+  },
+  {
+   "title": "Los nuevos decretos de vivienda amplían el derecho de compra preferente de los inquilinos",
+   "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPWUdzdldESkFrcEk0NE9FR0t2WS1JNl95eDF1a0dObi1RMzUyNnhobUd2YmM3dkJGdUlvenExWlUwN2ZRN21hV082X092VXk3c0R4V0h2Q3J3QTVTc0xBUjVpdXBMUXZhZGFNTzdxNS00VlBCQi1Za25kUkpHSks5ZTIwd3JvamdjN2U2czBUMnRkY0EtOVU3RWY5X3E2eEc3Vk1BTFg0M3RMblVPRmZwdloweVpVZEJXcXU2cG5CMmhiSmJXS0YyY0RsZ05aTWVpTGpranZROXhQVFZZSWRSYWFMZw?oc=5",
+   "outlet": "Law & Trends",
+   "lang": "es",
+   "date": "2026-11-05T19:17Z",
+   "topic": "policy"
+  },
+  {
+   "title": "How an 87-year-old became a symbol of Spain's housing crisis",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOSDFZY3BtMlg3SHhvNmptYXZxZGRzU1FwTmxLX195MWZBcE1YZHh2Z3NiT01rZk9tUzNQNHo5dlZTOWV1bEN2V1NpYWl1RDdNQ0g4VXlIRmlLTmVPQXV2VC1LQnkxLWpCX1dfSFRPY0lLWXR3OE1xTmNXdXRic0I3Q3Z2NHFpcURPZFppOWRpbG1oZzlxcGx3Njg4VkdzdWNiWVE?oc=5",
+   "outlet": "DW.com",
+   "lang": "en",
+   "date": "2026-11-05T17:46Z",
+   "topic": "other"
+  },
+  {
+   "title": "El precio de la vivienda en Baleares ha subido el triple que la renta de los hogares en los últimos 20 años",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQTWJvN1hUZGNJUVRscEZYTnc5NFpxSDVQbmw0NDlST3RpdDBLY0RFTFlXYjZwVkJzcERGV2NWQzVCX1ZOdVZIY3RkVThoQUJuLS1WV3UtaWs0TzVCMmlDbU91M2Q5MGJ2T2JtZWpIWXlHVHBSNFRzS0Z2Q0lSZFpwdktXWGtVZTNvRjJWLVAzeXVxV2F3clQweTlIb3U1SUZpcFd5Z2hyMjRxSTh5UUs4NVpPNEE4Y3NBUlNOR1ZvdkJjSXlYcGtiMTdR?oc=5",
+   "outlet": "Ultima Hora",
+   "lang": "es",
+   "date": "2026-11-05T17:20Z",
+   "topic": "rent"
+  },
+  {
+   "title": "Comprar una vivienda en España es cada vez más caro: el precio alcanza un nuevo récord mientras caen las operaciones",
+   "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPbVlRb2R1R1pic095aXlyYWNfSl8ydWtuMTZXT3Z0M0hfdkM2RmRXY0h3V3F2cW5rNFlPUlAyQmtQbHI2N05FcFJuQV9GTnJtS1VGOEJBdk9VNzVmdE5wRTFzOG5iWGZ1cHNJR3NVblF6anRqM3BmX04wZ0phczV0b0JaN18tYXZJT0YwM3pHbUt6TzZPblVpcngxZXJwWnJfYmFzXzNNNEFXVWloZXZyS01hazc2ZGc5N0s2WDY5RGJGemkwU3BmeXdORklDcVR1NlJrNG1kd2NHbXp6cmZ5Um9HdmZpNjB6SXc?oc=5",
+   "outlet": "Iberoeconomía",
+   "lang": "es",
+   "date": "2026-11-05T17:11Z",
+   "topic": "prices"
+  },
+  {
+   "title": "Spanish Tenants Have Had Enough",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPd0ZZWTdNdjhxcm05MFdpVkdEdUpUc01ZVk9Cak1hSU53empMV0I4RE9oek5EXzhrQTRjVms2Zzg5cEFhc2hpMzlFUEtwMnRXd3JmbERFd09GeklReWx0SENlanZsNzdYTnFPOVRLekhZNnNlZkN3SDIwT0VkV0MxVEZZMA?oc=5",
+   "outlet": "Democratic Left",
+   "lang": "en",
+   "date": "2026-11-05T16:47Z",
+   "topic": "rent"
+  },
+  {
+   "title": "La Diputación Permantente votará el 12 de noviembre los decretos de vivienda del Gobierno",
+   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPYkU5cDRjRENJUjl5V09LWjdiRk8wWFFlb2sxQzVEWjlRUTBvcVFOdHBndkNhTWdrSWJEZ2VXcHJDWTktQ2EzRkFHUjAycDNLNEF4RjQ5eFlUSlhWUk91dWFlNnRoX1FXdFJxQ2JsNkdMUHB6QkpKOXZEcm9IWExieGVyOFRiUzVHZUJZUWlsTkMtTW9UdUozN2lOby1GLXFmMjdHZ0dITk0zT0NHRnZOM1gwWFRQZTlUNEtpODhFNGdES3pGSUNqX0xUM0JuMl92dmJKbG9Yc0d2Tk9LOVhrbWpyTzVPd9IB6wFBVV95cUxPdFk5Mk9NZ1o3amtKODFueWgxdVNmQnBXMTc5N3dCTTNwUWx4X0hNLWgyanpMazUyY2cyRVpRMjMtbkhDU1NGQjdOS3BvYVhqVGtMaXA1dmJHc016SWZZZEJZdktFYlpZNkZKaUVaTE42NkRKRUhpX19UemZ3QnkyVENueWFmWURESWp4YTZfakJySVAtbXY1bFkwbGdtOWVwQUd2X0VHVW4ycmhJM2k1S1BRUVlYQ0pWcENhLXJrT3d5Wk52Q1lMWUphbkZJYWtEalV3TEFuUy13SEhrRzIwV1B5Y2pGLW9WdFkw?oc=5",
+   "outlet": "Idealista",
+   "lang": "es",
+   "date": "2026-11-05T15:43Z",
+   "topic": "policy"
+  },
+  {
+   "title": "How one woman’s eviction set off protests and new elections in Spain",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQbWhpcDk3Y1dYbC00dmtwbzV4UW1obkkzRVpndVQzMkdHTk1zSldEcTJwT0haSWZSaTdJTmVkVFRYbzJfMXc0aTJVZjM4WGl2akRRU1dMUl9PdDIzNnJvZm02SVM3aVQ0V3RaX0hQWWh4V21ZTHZQM0cwMmVDV0Q3cVhTVXdwa3ZZTzlrVFpFVGMtTC1vMXF6WGFhYWtuLXp6cV9YYXJUSDVzQQ?oc=5",
+   "outlet": "Marketplace.org",
+   "lang": "en",
+   "date": "2026-11-05T15:37Z",
+   "topic": "election"
+  },
+  {
+   "title": "La oferta de pisos en alquiler cae un 20% en un mes tras los decretos de vivienda",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxORkxkWVdGaDZfUlplRnE5WVhhQWJKd09yRlNpS0pYV2RkdjY0NE5mU0U0RVFXbUdGRDhwWU1aSzUtWnFCalhPVFQ2ZlhKTlhaQUctb2J5SEtfV1RfTkxWNklpdmpwSW1iUjh0QmZDSGt6U25UTGFSdXlhM3c4WmRzTkV4di1jYmE5Nng3YzNpNkZWUmY0bDZwTXdOWFBfbzdFNXcwc0RYd2IzU2RDZTUyM0NrVmJUcmFIa3JBQ3RhNmtJcm1EdXh4WXdR0gHKAUFVX3lxTE5KMlN5ZHlVd2VzQVRvR29XN0NDUklDYkQzMWtsWUdJc1dGQmNSUUZLM21QWHNWTFBaS3F1eHUwcVoycm5rWWhiZXN5a3hLQ2o5cHltemNYU3R0UlNCcGtic0hIMlY5VTQyTUVNM1hpd2pLZV9vTExBdVlvRHRsOG5mOHZXSkxQdGJfRHNERjZMQUp1VmFrSllNaHZya2ZvYm9MYVRLZUdRaFR3OWxwcEJKWGJvX3YzSW1mU1UxQUUxZWYzOHVacm55Vnc?oc=5",
+   "outlet": "Antena 3 Noticias",
+   "lang": "es",
+   "date": "2026-11-05T15:29Z",
    "topic": "policy"
   },
   {
@@ -38,7 +262,7 @@
    "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNY1hxeFYyX3pVdDBldG9oRUU2WHhWdEsxQjc2Mm5nYnA0ZDI2OGVPcGptY3loQlZYMThjZkIzSjRYVVNQR1dqazc0aUkyMjNxT25MMmVsLTlLb25pWGhoUUdQemQtUTQwN1BkU2ZXeHRYdWltbnZkaWVCT0N1ZEhhaXRPOTEzQjNhU0NJcGp5V1g5eG8zSThMTTdySk5kWXlLdlVRdE9nR2xHZm9JbUZSUEJ0Rzl5R0JyTTE5djAxVFlvYW1BV19OSGhoMi1uRThEdGdXb0lCWTFSTnN4STB1c3VhQlZwNUFX?oc=5",
    "outlet": "Artículo 14",
    "lang": "es",
-   "date": "2026-11-05T11:56Z",
+   "date": "2026-11-05T12:11Z",
    "topic": "policy"
   },
   {
@@ -50,6 +274,22 @@
    "topic": "rent"
   },
   {
+   "title": "La escasez de oferta de vivienda en España mantiene la presión sobre los precios, según la UFV",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQeWdoU3VnYVJQa0ZQVnoyU3FFMElYNG9hLTQyUEs1Z2F2UGI0V1o2bUdnbFlvVzcwQVpBZmlqaEp5UkJ2R1B6am4zaklOa3hvRXlITzU1NzVPYXZXUVladzdQMGFXTjhRT01BNTFJamdtMXdUeGQ3cDNlaTJjNlFOSU9YYUNtajliODFnYVZsMjBNUWFlcjc1SU85TVhvLXIzRkE?oc=5",
+   "outlet": "InfoConstrucción",
+   "lang": "es",
+   "date": "2026-11-05T11:14Z",
+   "topic": "prices"
+  },
+  {
+   "title": "El 37% de las viviendas vendidas en Baleares entre julio y septiembre fueron compradas por extranjeros",
+   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRzVLZnd2ZWJzczg1dnQwTW1ST1hqZHpSNFl1US1qUV9lM3h1NUdTRlozb1c4SVB3eHowdF82QzY1WjF1NF9LN3lLMHhIWTRzaC1aSThXS2VzRmtLSXZHcVB1RmRqT2w5MkpTSzZVWkozLU54aFNvV1Y5eGF1d3pKaUt0N25JSnM5enVHYzBOX05fOUNZNEpJVjVGVTBoaTNncnd6aWFjR1gwX2x6akJxaHRSNGVyZ3ZVYVFoWjZHeDB6RW5nSGl5Vk9HN1NON1R4blZ0Y2Jya2RjOFVfaUVqcFduUHZPZw?oc=5",
+   "outlet": "Crónica Balear",
+   "lang": "es",
+   "date": "2026-11-05T11:00Z",
+   "topic": "other"
+  },
+  {
    "title": "Resultado de los dos reales-decretos de Sánchez sobre vivienda: la oferta de alquiler cae en 19%",
    "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPTjBnN3R0YjhGZ2NSNktaeENCLVdaeVloRnBVaHZVUW9HT3VZeFpHQTgweWc5MXZGdzdvLU1fUHY2SXdiMC12d0dTcnVnM0EyQ2E2TERmVFJzSnZYUm9BTkVpU3RkVEUxOHV2QkVWZHZ4MHJXR3BSUl9vUEtkdUNfQUFlVjRLeVA1ck9uQ0JENS1vMFNPbjA5OC0zQ3JKeU01MjVvdGw1WGFhNXhtcEZzNkptcWVGQzQ2UTZSTmkzaTFjbUZMYURQa0x30gHPAUFVX3lxTE9NZk9ycW54UF9LUjVMdTF5d2hwX3pXYmZ5TXFaVGs5MmR6eVdtQ25UWkJKSGN2Y1EwSi1YNHozNnQtWjFHeHJXOTVBMld1cVdmR2ZIbVl1SGcxQ3ExS2dyS3k3LVIxVWtnTFo3ZW5LUlBQMUZ3bldwQmlGbjRUY3FHN2l1dUNXVDFSTDJpSlo1OFlJcDJMUDY2eEJqenFBRWJzTVk2QkJseDgtWHRGM3gtRHhta2diSHRYYUxCaXFWME00cmFRajVGeHV6NjFjVQ?oc=5",
    "outlet": "ESdiario",
@@ -58,12 +298,12 @@
    "topic": "election"
   },
   {
-   "title": "Viviendas de alquiler: Abriendo un nuevo rumbo para el mercado inmobiliario.",
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPNnNCWXowVXR0S3lHQXZweGpaZ2x3elZLMzBINnh5eENXTWFHSUk5b1NEbC1adGlxeGRTdDFjYWt5NFRDcDNhYWIxazZZaUV5TG40ZTRFUlV5TWFiT2x2X01iZTdCREF4WEp0MTExVkc0NzBybU0yUktsMm44ejBSODFMODBSenFGNHVPRDNrWXJCRmNoLWY0?oc=5",
-   "outlet": "Vietnam.vn",
+   "title": "Gonzalo Bernardos, economista: “La caída de precios de la vivienda ni está ni se la espera. Subirá un 5% en 2027\"",
+   "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQMHY5UlktNFJqVnMzSndyM244OHJ3SzY4bUVQT1lwc3M0WEJjRkM4S21MTnoydVpjR2hBd0ZTR2ZSS3cxVVd2aVpaQU5YdHM1V0VzUndGMHctaTRIXzBUVldFc2MwUG5QbHp1aDJoT3ZJNFZuNUJmSlluT01hdkItQVQxMmRFMUJ6aUVvSFVpaC1EQml4WjNuSERQczVOeFdEX1VvQTRXMW9Bd1VxcGEyVzdzM3pCb0dvU1hLRi12bXhyY0g2OUx3akhiOXc1dkVJR0VXSUZLZkl0ZFNhVVgxZ2paaUg2UnRtVmUxc3dWR25IOGJaa3ptY1Ftc3BzYjB5NUE?oc=5",
+   "outlet": "Líder Actual",
    "lang": "es",
-   "date": "2026-11-05T10:05Z",
-   "topic": "rent"
+   "date": "2026-11-05T10:25Z",
+   "topic": "prices"
   },
   {
    "title": "El decreto de vivienda tendrá un coste de 1.300 millones anuales para las arcas públicas",
@@ -75,35 +315,27 @@
   },
   {
    "title": "La vivienda usada alcanza los 2.466 euros por metro cuadrado y Teruel lidera las subidas",
-   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNEFEWGJDVWt2cUlCSUw1XzJHakJQUkl5eld2T09kSy1VckFPX0Q3bEU2X2o2a1ZjQlVrWmZiX0JhUFpjRWkxRG42Z0Rja3llWjJtYnlUSFppZDFoam5ySWoxc0ZpMnpZTERMQVZUeFpsRHoyWFFOS0h1cVFoTmhULVR2UHhMNnRyRWtTNmp4V256RTZsTjZBdXhCT2U2OGNvTjRNeXBVMjRBOVAzS3BHWTJCV3p2NC1NYl84NkdpaEhuUdIBwgFBVV95cUxQNEFEWGJDVWt2cUlCSUw1XzJHakJQUkl5eld2T09kSy1VckFPX0Q3bEU2X2o2a1ZjQlVrWmZiX0JhUFpjRWkxRG42Z0Rja3llWjJtYnlUSFppZDFoam5ySWoxc0ZpMnpZTERMQVZUeFpsRHoyWFFOS0h1cVFoTmhULVR2UHhMNnRyRWtTNmp4V256RTZsTjZBdXhCT2U2OGNvTjRNeXBVMjRBOVAzS3BHWTJCV3p2NC1NYl84NkdpaEhuUQ?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNZnNhblMzYnVZLUtXRzEzTXhBVVh2R2NYUEJaNm5DZ3NuSHZfNXM0b2RYX2dsenJORzh1bm9DaUU1Vmh3NFNsV0RwR2Z5dUJZMy1ZSGdleC16d3FKajE1M3N1ekREQzFIZU43QkRHSlNUb3B2WWI3a1pVYjVXVWxhVE5pVzdvb0d2VWNOS0g4d1ZmUklvVVN1OWczckplU3pyTWFhcWJyNVJ3OEpzN2xNUHdReFpfWnJfbWk2a9IBwgFBVV95cUxQNEFEWGJDVWt2cUlCSUw1XzJHakJQUkl5eld2T09kSy1VckFPX0Q3bEU2X2o2a1ZjQlVrWmZiX0JhUFpjRWkxRG42Z0Rja3llWjJtYnlUSFppZDFoam5ySWoxc0ZpMnpZTERMQVZUeFpsRHoyWFFOS0h1cVFoTmhULVR2UHhMNnRyRWtTNmp4V256RTZsTjZBdXhCT2U2OGNvTjRNeXBVMjRBOVAzS3BHWTJCV3p2NC1NYl84NkdpaEhuUQ?oc=5",
    "outlet": "heraldo.es",
    "lang": "es",
    "date": "2026-11-05T09:50Z",
    "topic": "other"
   },
   {
-   "title": "¿Qué pasará con la vivienda tras las elecciones? Estas son las propuestas de los principales partidos",
-   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQVEVVSFl5QzVTS181R1dlempBajZRNVJsQ1hNdHZBN3dURGVoTk4xbnQwYWpvck1RM0ZvVGdkNUpmcWJ5eTlDMVE2Z3k5ZEgxak1vWVZpQTFCdGc0aHd3Y1kwMmdmWW1DbEE3aXgxUmZJRzBXUVA1M0REUTNHUXlEcVdxVEVQN2V5X29WSlp0VFMwb29FekNWblpHZHdsQktVd0lTelFXVVlBbF9qWHA2NWdPSFo?oc=5",
-   "outlet": "Fotocasa",
+   "title": "Los decretos de vivienda hunden la oferta de alquiler: desaparecen 26.531 pisos en solo un mes, el 19% de los anuncios",
+   "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQZmlETGNIb0kwN2p1VTdCU2hqbFJVR3ozbjRZVUd6Tk9PWEgtZllzYVh2cGlqbmRNTkFLNGZwVm1rdkIxQ3dZdHhlZkg0RW81OWxneFR5bUE3UGxjSFpiMjZQem9aWDZyWkY1dEtHSWlDZUlXSUZiZmViX1NCd25pVDg0bVJFdDVlaEdUSkNqemRvRnpwTXpZR3BEb1NmRnI1Uno1QVl6Nm5iZzJBZW5haG9rMV9ybXhzZ3dQSk9NTEZQaXBBUHRhdUlibGxZVWt5WGhkeERIV0pDUVZhQnBzcGxXN1BQT0Z0LVhF0gH_AUFVX3lxTE5lbEI0SzJ6cG1hUVQtZldIamdrVkVWLWJVdFpSSVBoNmZ5enBhRzBIU09qTVFPcTQtM0NSV1hXVThUcS1lbzg3S2VuQ1lYTTZrUGdla3h5QWlUVnhqNEwtRHhtQ2hrcWFrUnlhbTFDSXY3cFZodV9jdkc4dXJHMFRVbWd5X1UzTURWUk9fR2hRaEJyZVRXeUNfcEp4ZDRydVVDYXl5NWVVZkhaRjJvVGFxOV9pYmN1WlRTR0JjQW9FNGowN1NVbWg1YzNkVVFHRmZwZkpiZDJYVVRLQWE5X3VmYTNGV2VwOHFHS1NmdVBSYnBPekw3ZFNOQVJRek9odw?oc=5",
+   "outlet": "La Razón",
    "lang": "es",
-   "date": "2026-11-05T08:54Z",
-   "topic": "election"
+   "date": "2026-11-05T09:02Z",
+   "topic": "policy"
   },
   {
-   "title": "La Asamblea de Extremadura debatirá sobre vivienda, ciberataque al SES y encarecimiento de precios en el próximo pleno",
-   "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNdkZtU0tkZkFyd3Fmc0VreE1QTS1MRWlLM0NudnhtZjN6Wl93SXJLRmplSGJYTmRlN0xTUV9ob29XMTZLdW9SRFNSWDItUF9aTTM0ZnV3VVlwVmM5UnhZX2RCMUE2TTZSWUVKSUVsWjYyLUdCRmpwRFhGTFFBaWRhUWY3TktxVlh1M2lMWWt6OTdqenlFMmpTMTNNc3ZXNXRIWjBlUG1KZVhaZ3ZZbi10STZ3NW5yTE5VOFlfTHJ1VGRvZUxxeVI1ME51NHY0ZFZjSzVxT1ZqVy11ZS04R3hNVHNkb0Z4V0RQeFh30gHwAUFVX3lxTE1CWGVmOGNhVHBYamNvdWR1aDZmOUJ2a3kweGhMcVpXQ2V6RF9BUHNKcVZXaE5xSEdvZTR6c2FqSDRNbG9tUjktUDAzTkJQZE5ndEFVSWI4cnRQLWJkZHBLNjMzNk5rQ2tUcl9zQmJGT3BITk8tdnRyTmdJN1dKeXlUeG1xTW1XajhteDZmdm1Ybl9FVlBQbGM1Y1FMOGlRbHFNUGNXTHh6N1BCcTg3QUx5NHpLU2xGVVNJZlMtSlhCcEVidlR6cW9QVlFuVGJSd3pjVVkyWnlWa0ZlR0lDWFNGZUIzQ1BVR09CMENCTU95Mw?oc=5",
-   "outlet": "Demócrata",
+   "title": "La oferta de pisos en alquiler cae en La Rioja más del 25% tras el 'decreto Maricarmen'",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQclZEem1QYi0ydEo1Nmw1SFpmbUJQMmZSZnBwdnEzSXVZcXlrazZURTlBVVd1YlpGSFV1WGk3Q1FGcndlY0RpeVdfT1F0YnNjYzBLdzhpRmRtR19QVFZwMzJPaEtOR283ZlhQYWFjMl9fYU1pMnE5elFTWXN4dXFyZ0JJS1NNM2ZHLUJGYW5vT29XVjlsLWlSOXprcXNpbHN2ZEFHb3cxSzZtNm_SAbABQVVfeXFMTThGQkwzQVd4YlktdEFJOHhueG1wM3ZYeW1FM2VERW1pazQyRWM4eVBaNFpkSU9zM1AwX0NGZFZ3SE5CbVpSbEdzdmpBSEdfN0J3TlNDNkYyQ3Q2QkZPQXRDOTBVcklBX2Fia1BqVFFnUlRWNUFna0syeWswRE5hN3NuUXZ0T0s0amdPNUpPRjJsXzVZR1VXWVJuc0Y5NmxLM19nMk00cHNFazQ2ajZ6Tlg?oc=5",
+   "outlet": "La Rioja",
    "lang": "es",
-   "date": "2026-11-05T06:37Z",
-   "topic": "prices"
-  },
-  {
-   "title": "Todo lo que debes saber sobre la actualización del precio del alquiler",
-   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQc19Kdm43NldkZXhtNk04NE9tY0V0WWFjc3kzT0lIT0tndGxxT2szUkozZHE1bTVGOFhubEQxOWJUOGRIN1lTRmgwa1VzMkdQcTFZZG1faTRyZC1vRHhNbHdNd3h1ZVlJNXZnNVBWZFdsSkJpemVhY3diUjQwZ3BFVmc5SzlHeXVlLW1QOGJTQkZlVGcxZGhPbDZ2UDFoSTJMLWQ0RzdrVQ?oc=5",
-   "outlet": "Fotocasa",
-   "lang": "es",
-   "date": "2026-11-05T06:00Z",
-   "topic": "rent"
+   "date": "2026-11-05T08:38Z",
+   "topic": "policy"
   },
   {
    "title": "Hacienda lo confirma: los propietarios de pisos turísticos perderán la exención del IVA a partir del 1 de diciembre en estos casos",
@@ -112,6 +344,14 @@
    "lang": "es",
    "date": "2026-11-05T06:00Z",
    "topic": "tourism"
+  },
+  {
+   "title": "Todo lo que debes saber sobre la actualización del precio del alquiler",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQc19Kdm43NldkZXhtNk04NE9tY0V0WWFjc3kzT0lIT0tndGxxT2szUkozZHE1bTVGOFhubEQxOWJUOGRIN1lTRmgwa1VzMkdQcTFZZG1faTRyZC1vRHhNbHdNd3h1ZVlJNXZnNVBWZFdsSkJpemVhY3diUjQwZ3BFVmc5SzlHeXVlLW1QOGJTQkZlVGcxZGhPbDZ2UDFoSTJMLWQ0RzdrVQ?oc=5",
+   "outlet": "Fotocasa",
+   "lang": "es",
+   "date": "2026-11-05T06:00Z",
+   "topic": "rent"
   },
   {
    "title": "¿Puede el propietario no renovar un alquiler en 2026?",
@@ -144,14 +384,6 @@
    "lang": "es",
    "date": "2026-11-05T04:45Z",
    "topic": "policy"
-  },
-  {
-   "title": "El precio de ser joven en España: alquileres imposibles, empleos precarios y títulos que no garantizan un futuro mejor para la Generación Z",
-   "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPR2MtZU1QSUp5U2NPdU1PaTJqNjBhbmRIU3ZHaGlHQVZIZWtacElhdFFnakV6TFc4WUhvOUV5ZEFKUUlRc3F4RFJZbEpXMHBUaXhBQTBYVzV2WkM5MmdQS1ZwZmU4czh3WVYtTWFfV09aeEJZM3NSZGI2RUJFaFoxTV9aRHUtdVV6eTZKWHlaT2k1a1c0Zkhwa1RXcjhtR2ZXQWVVZkFOenMzTmJPSFRaN1hqQW1HUnJCMmVNNmtldEVpYkVkMWtPajNXQVlyRlEtR2dveUZLM2xCYmg5c3JMSnVYdkg5MXJNVndLSHluT0J3ekdvVDhtc0ttRUt4WmZrWWFHZndzQ0RaX0Ju0gGnAkFVX3lxTFA4YnUzcEJuUFlBNWxsVHFKN3Y1Q0JZdklmUjZKRnI3bnZBbU9yZ2VfVVA3OXBseTdfaURwdHVra0hzQmhKbk1FX0tDUzA2MFNQaGU3bUR3d3YyQWlPYXZ0NHZCLWtoM3haR3NUNDVHamI3X0tjRXpJemU3YTFRLXF5d1cxY0lJMmZvMzIySEs4VXZTX0dDclREZmVjWXpxTFhkUkVieUUxcnMwSFhtS2Z5eXBEM1hoV0YtRGp1X2tFM2x4anRNWUcydkhTYlNMWEJPSHBJZlJGYU5DeHNOel80bmNTVURzUmlrb09WU2JiM3NnemVHQVdZR0NGanVicmFBcmZjRVRHRXZiN1o1Q0g1LTYwVXpnZU9RNmg1RE1lb3FjcW8tOGM?oc=5",
-   "outlet": "Infobae",
-   "lang": "es",
-   "date": "2026-11-05T04:22Z",
-   "topic": "rent"
   },
   {
    "title": "Madrid monopoliza la vivienda más cara de España: los 14 barrios con mayores precios están en la capital",
@@ -194,11 +426,11 @@
    "topic": "rent"
   },
   {
-   "title": "El Gobierno local destaca que Córdoba es la séptima capital española con menor subida del precio de la vivienda",
-   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNM0IzV2RUcVdNcmhZdVBmMHpNMFFGOG9RMHhBY241MFc5RGNFV2ZNbEpPV1g1Nlg5WTVwVmN0eEJua1ZiaXBjQUtZUjljYnRpVUpPTWRmY3UxZy1BTWctQk1MSGtWM2V3WExsU2VkVjgzUlZhN0stU1MtTFp3N1loOUxKb09kZTB4Q0Z3SnlkQ3FqalZUV2dUNXBwNlFCVklJdXAzMnR3NkJTVVJ1bkI0OHFsQjJTaGZjVVYzVDExRkw1TU5pUzRNNV91NXhoZ3d4TkFsQUd6enV3YlVC?oc=5",
-   "outlet": "elDiario.es",
+   "title": "La compraventa de vivienda caerá el 8% en 2027, pero los precios subirán por debajo del 5%",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcDJtMzdkOWg5UXFaS0hCODZMdVNJOHZQZWJnd3RqR0FVbEpiaGY0OXNrbXJVdGpaVjB6UnMxWWZ4amlicWwwXzNIOE1mWTRIUWx2TVltczRoZE9XNy04OUV5VGpUeXkxZ3BWOXhGaGNTNnFlS2pOYjFDUWN4clNnRFZfMlhyRkRZd213cWtreTVrRGI5X0dPMVRtTGpER1Vpa205c3dnMkpmWDVNdWZiczdKbXRTVVQ0VzBlMEo0MlRadw?oc=5",
+   "outlet": "EjePrime",
    "lang": "es",
-   "date": "2026-11-04T17:18Z",
+   "date": "2026-11-04T15:00Z",
    "topic": "prices"
   },
   {
@@ -234,14 +466,6 @@
    "topic": "prices"
   },
   {
-   "title": "Las grandes ciudades españolas tienen menos casas vacías que la media de la OCDE y precios un 25% más caros que el resto del país",
-   "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOczRlVlNGclhaYko5cERiLVhBdVl5TVNXaFNUNWYteHV5TmtCQTNsd2JUeVJ6QVJtbTBLX3BsMkN0V05DeW5mYlMxR2tlV3NmdTJ3UlpEdWxydXdPUzZUY2VxcElkYl9mTU1QTmt1eGRQSXVheDNyaF9HenRxYUlSNDJ4UlRwWTdnbDhjZ0J3ajBDSWtNY0pvYTlhUG9PdnZ2YmVRbjFBd2c4OGJYMEFHZkdBZXRKRXlaWEFlNjMzcjB3VWFZRnN3WTRMMlZrZU9wdEhwZ3Y3V3F5YTZURlFiSlIyandkb1JZWnlURzFKNUXSAfYBQVVfeXFMTnZrZFNTVlNXSHZGYkJ5N3UxbERUYnh6TUdXTjZ3c0JsOWJaNEhBeTU4MGxmYms5QjE3WlBJQWVVWklPeWR3ZkFXOXRscU41UUVVeW4wNG9IdDFzNWNfUkY3N2djWjlCaXRaTUZfLWVyLVVMQzBJdDk5eGxJM216MHM5MnlFeEhscVJ0a0F1YUhXWmNmaGRDM1YzMXlUOHpUR3NXX2NGNDdSWi1mYnNjYWQ2TE5GS2VkUXpDYlpySGJwUGx0NkFESWpZNzk0V3puRWtjTGtldnh2dEJaeDFtQ1BseUFDYWNKS3FBeHdhR2R4ZUJDMUdR?oc=5",
-   "outlet": "20Minutos",
-   "lang": "es",
-   "date": "2026-11-04T12:26Z",
-   "topic": "prices"
-  },
-  {
    "title": "El precio de la vivienda en las grandes ciudades es un 25% superior al de la media de España",
    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQYy1LQXk4bmZCVWN0ampSNGRMV2VpVlZnWE1jQ0hLUEh6YnZrY3NLbW5ydEtsbzMxSDlWWldCMjJEa3JiZjJkQkppRWduNG82dXM5a3VseHhmNDhDSVRTYlM1WVJCZXNtUlhsSkp5ZGFZV2Y2cERrV0czTk1PMGg2QjdHS3HSAYoBQVVfeXFMT0tLZUVFZnRIOEpGMlBlaHh2X2JqTUdRRW04SFhrMkVyZk5HQWw2d3lIWl9Eb3F3emFlSEUzM3JjMnp6QnZYcnNBNU13cVJMRTc0M1c5TUxxRnI1M3M0c1JSM0ZvaFZMaEJxdzlQRXpjZTVzY1cwWDNSM3NZWWEtYUpaajZ2Qmp6eDF3?oc=5",
    "outlet": "The Objective",
@@ -256,230 +480,6 @@
    "lang": "es",
    "date": "2026-11-04T11:36Z",
    "topic": "prices"
-  },
-  {
-   "title": "Cantabria registra una subida del 14,2% en la vivienda usada en octubre",
-   "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPSkYxQUFraFpCd1RGdnBZVmk0bXMzWmtnU2J2X0tWLWQ3bzhUbm1Wb3o4NEc2djhpX1dHZ2JSNS1nYmZyZVY2eHYwMW1zZDQtRzc5ZHc1RjMxTmR6bEFEZ01FbTNBeVIwbE9CLWJLcklhQjc3UzhfS0haRm9FazRRb01pZERSQjJ5ZklUTHhjZFZvNzMyOWZzdEhxVW9tVVhiN083MzI3TEZTc3lTWi1mQjFDaVJIbUQ5eC05cWRsSmRMM1RhVmt1Vm1GWVl2OXBGQ2hueHRxeFA1akNFcXZ3QVp30gHnAUFVX3lxTE9NXzd4cGRIOTFFb3NyZ294Q19TQ2hGb1JIMFgtTVVvYW5CZU94Z3pCYk9oNlU2TjN2WkRvMWJObHFyd0xBV3p0a2pRYzNqUy0zSVRlVVQ3MWs5S2w0V0RfLW9VRnA5R1JmR1g0ZzhSOXBIV0I5LXF5Rm5Tc1VrT1FvSVhKbzFKb0MwZXlTVERBd2NSUTFTUHJScjVQeFRyTGFvVnAyTFJLcXpNazlaV3ZCZDh1blRSajUzLUtXOWctOHByRVJtSTBXQVBkM0RrTEdzVl9pLWgxNGR6RkdNNTRMUGVoMUV2MA?oc=5",
-   "outlet": "Ifomo Noticias 24h",
-   "lang": "es",
-   "date": "2026-11-04T11:11Z",
-   "topic": "other"
-  },
-  {
-   "title": "Un abogado aclara quién paga las averías en un piso de alquiler: “El decreto cambia el reparto en la vivienda temporal”",
-   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQNnlfWmd4aWp3Wml4RnhxaXdBYlR6SHBJRkZ6c1lrYk1nd3BLaWJielRGZy1Hd0dPWEx5dkNHY01WUmpxYzdrWVhNTHc3Zlh4SjF2M190R2VFY2F1Q0JpQ3p1VkRXQzJRSHQxMnZwYmFGamFVMFVHMmdEcUZqRHZVTlhHMUJ1bVNYdmlQanpmcDBYNWlBaEF1ZnBTa1pZYmVXNEoxOW9PaEx6N185SlVvT1N0am5KOGFGWDRTYjB6VmlwSlhwRUhDX0l0aHhraEd1Q0NaR9IB2gFBVV95cUxQTzR2U0lIXzRoclh6WTRpUEFfMzIyQjV0R1M1YUQ3cjY0YWIyajlJeTNqWUd6MWdMdzYtYjREaWdtUGdkSV9ZQ3lmMUNPN2ctb2d6MmxhZEVGODVWcUJzSkVNSklzVFBIWFlFTEU0Mlo1d2E2blhSd3B4dGduOE0zNURCMDAyb1BtZlJFVkx3SzVTZFN3WWxySWhMX091WDVsZ3NNQnVJaGloeXltRERyamtFbVpQNUliT25BQUNxXzJpMmFWWUpGbXo3NVNmVmFGOVZ2dEpXR0U1Zw?oc=5",
-   "outlet": "elDiario.es",
-   "lang": "es",
-   "date": "2026-11-04T10:30Z",
-   "topic": "policy"
-  },
-  {
-   "title": "El precio de la vivienda usada en España alcanza un nuevo récord",
-   "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNWURIY2hYTFdZV3hCMjNnZ2RDQ3FVNEtWQW1YYTJHOG0zc2pOdnAweWlVRkVONFRKdTRVVnMxVW04SUEzSHRpa0tneW5wMVhVZ0pia3ZLV1AtT2NvQW5tV21JNHJNVHBtNkJvLVR5b3hfNWxiTVU0SVdSZzRBcWVuWkR0X1VuS1NUU01iM1VJOUU1VlJGT1hUUXdMT09tUFp4OGJmczVpVFpfdkNqU1Joa0psd3lEYWVIX1Y0Q0ZVMGhoTGxKRmdaMmM5OVdmZ0ltbWd2d2V2UEx5b1NWNFQ0?oc=5",
-   "outlet": "Diario de Burgos",
-   "lang": "es",
-   "date": "2026-11-04T09:58Z",
-   "topic": "prices"
-  },
-  {
-   "title": "Ourense, la única provincia de España donde baja el precio de la vivienda",
-   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQbnBCb3lscE1RWk02Slk1MVZBVEFNSlUyQmU1dk45Smg0YlNyRGJ0NUFqZ280RFFveHE5N1pfcHd6VHJHMGdFeGxWUjJlbHU0RjdIZ2xwSk5aYng1YUI1RDJGZ2pLLTMzVTFCd1Nfdlhqam8zSG96Nm1mOEtsTGQzb2xkZUR1dk1BaDREdXlPY3BPdjhxT3Mzdg?oc=5",
-   "outlet": "La Región",
-   "lang": "es",
-   "date": "2026-11-04T09:52Z",
-   "topic": "prices"
-  },
-  {
-   "title": "El precio de la vivienda usada en España escala a 3.158 euros el metro cuadrado tras seis años al alza",
-   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOOHhoRDNXaTJJUXY5TnNscUloRlRqQlBFSGQ1eGZWS3FsallWU1VpZ2c3emJWQkpIZWVlX25SeDl3NmVlc2ZFQ25TcldfX1pPU2hRR3dtNld0UzZQQmhXaEVFcUdQWEJTQ1ZKTV9Pc1lNaWVKa3BGU0dPNDVwbDZ3YUlrOVJ5U0JfR3RSQ01Ub3BBSDl6aG9yM1lDV1dwbW9tRDlmY1ViTzhzbk1PUGQyY3VhOHk5aWdwSW9jaWh6VWRIbTA?oc=5",
-   "outlet": "Ahora León",
-   "lang": "es",
-   "date": "2026-11-04T09:37Z",
-   "topic": "prices"
-  },
-  {
-   "title": "El precio de la vivienda en venta acelera un 11,2% en octubre y marca un nuevo récord en plena crisis de accesibilidad",
-   "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNWUdBQjBqeExWQnRLOHVkS0NzWmNIQ3N4bzJwaVR4dlRzWWVZbUhrRUlzRi0ydkk4OExmekE3UW5xLTY5RlRiRlNzSzFqYWt4UmZiRnBkUC1hZ1dJZ1I1R1RQYlJKTUJTWWJJRTRrZlZqdGZTQ1h2dk5GaDlBS2Q5WGRDUWN0RXlVZmY3SEwtQklsWVNjdWlvUU5KZUtnaW1pR2hRVk43U2MzeTN3WGI2QUhrQU5MWWtCUlJBd2NfS0pkaHlac1B2c2VtT0UzRWpUY1pDZmUyblp0UjNBSEthc284U3ZGem9uZk9fczRn0gGCAkFVX3lxTFBMMVJadUtXbUpiTDVSbnFFZE5lYlNGU083ZWc4SGp6b2NjM1VuVjJZRnVScXl2ajk3YkJHUHlpMlZ3VlR1aU43U2JTU0VzeTBWd3JQOElFajVfb3Q1bnptUjdmanMyYUdwN2E4YTFpZHhhNDhDLTU5bWttSkF0Y0lyTVhUYUxFMWRMTERvbkxIeE1EcTFNQTV1NjJGYzR3Q1dQRGN1RE9mT1VLSDBRYmRjNHEyMzVxb093eUVVbjVEbll1cmZwYjhqRklkWFRkYVZFQTZmQ1BPUXp0eXNFY0JQZ0RkSUFzV0JoSGFJZGJrSXF1bFA3RFJjV3N1VkhMWVBpUQ?oc=5",
-   "outlet": "La Razón",
-   "lang": "es",
-   "date": "2026-11-04T09:03Z",
-   "topic": "prices"
-  },
-  {
-   "title": "Confirmado por el Real Decreto 326/2026: los propietarios pedir ayudas de 30.000 euros para restauren la vivienda para alquilarla",
-   "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPTHV0VXlBOEl3LTMwX28tRnUxT05OemkxTlZyQ0dmaFFKdzh1bDBBZkNVdEJBQnFCakVYU20xU2FBQ0pUSk16QXliMENBN0J1STdEZXJIOGlQQWtfRUhwbzgtaGg1NGktcWlZcFg3dVliWmhRbjBzS21JUXI3a1JvQjd1dlVISFVuRFJkY1RPWEs0WUF6SHV3bUVlNWhKZG9RaHpPeUlsWFdxNUZMMndNaEhNQmhQWDQtSWpjdGRldlBJOVBOcVI1Y3ZnaGVlTVBEM1RQRUhLSEpMTlJacUR3bDkxa0FlUnBXNjFGWW9PcHFmc2VXWEFMRmoyVDBEcGpRVWNBeUtYazDSAaMCQVVfeXFMT2NUeTY4VUVIOWhvYVFOQllLakhsbkZpZmtoc1RRN3hBbVVhSUNEWmlmWkpUWTNZRTVpSTAzcWVka19xN3Nob1lsMnVQd0c5eGduWkhuSC01eWc3YTVsWS0tLVh4bk50TVY1S0pkRDdnTU5sQTdqTmhGNkhjM09LRDdjRy1ESGRCSXQzQjU0VEstN2NlMFdTNWpqMS1HS21XNlBUeUtpUVFhNW9CQlVSWnRpdkRtUFRvU1F3RkVSNFkyUXZFSEhWVDJDNDRGcEh2XzRfdXBqU3VVb01xTzMtMHlBTEhLbnEwQjByeWxlaTMxbVMtYks5aW9iRGY1TkVqUjRtbFlJVTNwWGs2WWp0cXVOdXF3RGxRMS1rYVRwaDVTWnc0?oc=5",
-   "outlet": "El Cronista",
-   "lang": "es",
-   "date": "2026-11-04T08:46Z",
-   "topic": "policy"
-  },
-  {
-   "title": "El precio de la vivienda usada en venta alcanza nuevo máximo en octubre tras subir un 11,2% anual",
-   "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPZ0Y5dWpCWUcza1lPR0d0U3ZyZDRJT25maFdiSUZFY3E5R21pUS1hV05NMWs5LVpnbF9XZW9fUlhldlloWnotSVNNSW92U3Nzbm01TENmZGdUX25DQ1ZOWmJBdThTc3BKUnUwbEhXYkJSWFRYV3JkSVZWVE50YWJGVllLMF9US1Nqc0QybDE0amZqb1JjVUF0WkxGdnBZUG1rOWF4N2hhVmI1NThTSWFRTUpKbmYzNngzdGlrNjNOTnFsWnJXZEVnLUJxVFlCUndQdE5aQ1J0cFpKc1NWUVFXc1lzQjAxcUt10gHuAUFVX3lxTE83dEZiandJLXl6TGlUYUpmLVkzbWxRd3dsN0g2dUEtSzRHYlhHb09NbVhVVlVjUlRDT01QZzBvZUZJa2lPdTIxRl92NWRYVWtfVnp6bUJ6WW1WME1tcDRUTi1ZMTFMcXl1aGhqaG9ZZC1lQ3dKVWJHcHFZRzZMaUxRZThoODZZMVZrTXhSWHRVVXh6V1cwWFZ6NVpIbXBud0o0bl8zYzc1cEVGWWRFa3o5Z0l0MWxMV1FhN3ZQWDRGUUV3MHFVQlJtenRyelJpZ05NT1Q3SDM0dE1uLXhURTJhdlBPY3h0akhHTDJMc3c?oc=5",
-   "outlet": "Idealista",
-   "lang": "es",
-   "date": "2026-11-04T08:11Z",
-   "topic": "prices"
-  },
-  {
-   "title": "Housing is now Spain’s biggest worry, concerning more than half the population",
-   "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOTXJsUWc5SkJ0V1F2RzZTb1o2OTBJaGV2MzU0OTN4ZDd4bTVTRXBEaXU4VFBMbEtuUDM1c2JsZXZzS0wxeWVEVmdNZ210XzZmWmstRHNWbi1iVVk5dElEUWYtaFlaZmlMVTB5MnpKdlFNT293TE1IdzJ3TndvdndscU5kajZoZDl2ZEtXTDVjYVlwWHlCV1g1azZhNEotVGdkNTFzUTF2cFpOOUxSSlBzc0NGY25kOXFzV1VqM3MyNVQzb25iUEFKTUJ2VE1NVEs4bTd5cDVQTW9INGtyRURDWi1fX1Vwbl9rMjlmNtIB8gFBVV95cUxQY0pSNnlaNEZiWWVaUVZRQWZnbFQtYk5Jc0NvMC1lb0txa0hqUllQT0wwNFdjd2RfaDdfZlBickowenNBUE12Y1Fqa3RQTnR0OS1oU2VnQ3Y4cWJyQ0tpblZ3MFkzY3JBZ0VLS3JpaE13ZjExYzFfUW0xa1k1eTF1LTQ2STZhY2tWRW1FaUd5QWptWDMybEdDdTRLd2FzUXp0c0hvS1lidnNjSFJJRV9NT3hEUnBrTTRqbDBMN3RWbDdRVzRxelBiY0pROUFGZTZQS29nQmJfVjhZOG5faVI3UmJxc295bERTNGMzX3c3c1NLQQ?oc=5",
-   "outlet": "Idealista",
-   "lang": "en",
-   "date": "2026-11-04T08:00Z",
-   "topic": "other"
-  },
-  {
-   "title": "Se acaba el contrato de alquiler, ¿mejor firmar uno nuevo o prorrogar el actual?",
-   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQUzhxaXZkdHhGVjAyQXh1dXY0QzVHOTZWVGVjVWltX0pwMzlEQkZjUi1NVkVSZlAxSXQ5dUZaczU3TzZQM1ZyZlZ4SWt0UjRiWFVkcWtPZ3VTcnFEN2dqdWtla2tFS0wtaFNHZUJZNlg4c0E1NV96NF9aY3VqRWQ5STdZdjZNUUhmdnZmUjNR?oc=5",
-   "outlet": "Fotocasa",
-   "lang": "es",
-   "date": "2026-11-04T07:19Z",
-   "topic": "rent"
-  },
-  {
-   "title": "El IRPF cambia las reglas para los propietarios: quienes suban el alquiler mas de un 20% perderán beneficios fiscales",
-   "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQNHlvUWVBbzZXWkdDS0FSZlJtX1RuVEcxQjhtYWFmNEtsUVV3OWlMZkJwLUtTamR3TldKaUNWVGFyMndKR1NlWDM5STU3b0NTZTZLQTlmVTYxeFdNeVJJR2RNTFdpVDNRb1lDWjI0ZmNtXzYycFQ0cXU2Xzd4MURxVXJPWlNHYS03ekJDUDQ4YUhfOEJTWVF6NGs3Ung5NXBxemlmRWpKZGZ1S21vQkJ1Z1ZMZzNlUUJpaWxKcFoxV2pNUFNDbXpqOFFDUnl2a1oxQktuU3daOE1HbEUzazEzOUVnaU5KZ180TnNyRnotR0VmZ2tpX3FV0gGLAkFVX3lxTFBSNVgzekRKbWgtM3NwSnh2c1dsRlUzQlR5VmVkV0NEaXctZ1JoTUtDd21pS1V0ZTdzWlo2U3VOaGpJZDVjUWdVaGY1Sk0yMnZmX1RIQWxNUkp6MEJka1FSWE9YMEsxb1ZrVmhqZk1vQjk2Y2Y2SDIxcjNVSWxZU1lIMktkOGlQSU5ENmdXbHdXRW9fRHhCN3J2VU8zVlM4Y0d3eVVpLTFGZXNzOU1KV3BQSlNxV1Y4bFFZMDNGZ0tja0FKU01uWFlsUm9hSkwxU1VBdGJueVlOQmRYWUhaQlhMaGdoaVdEam52V2J3LW5YblRmZU5HdjBNWGwtZ2JTazJ6LTN1MUdEaVNhbw?oc=5",
-   "outlet": "La Razón",
-   "lang": "es",
-   "date": "2026-11-04T07:00Z",
-   "topic": "rent"
-  },
-  {
-   "title": "Apuestas y cuotas para las Elecciones Generales en España 2026",
-   "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBnTGhtbS1Iei1zWHVDa0tzd05PTXg2ZktpbENpcnVjN1dxWExhMU5UUUpMUUVaZkhjRnNNY1BVU0hiUVhYcjJ6QlJRQ0RaY0VKNUFJbQ?oc=5",
-   "outlet": "Diario AS",
-   "lang": "es",
-   "date": "2026-11-04T04:53Z",
-   "topic": "election"
-  },
-  {
-   "title": "La “hucha joven”, menos impuestos, apoyo de los bancos y viviendas reservadas: cuatro claves del plan de Feijóo para el 29N",
-   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQcE95Z0J2Rk5jTEhOYVM3UUVmMmpqZmdUemhxdWV6UDFnSUNPaTJOVnNDUHhpS0VUcWhhTl9oV2NyeTk1b21uRERsX2ZWUXYwQWFYaGN5SVJzR2tURThNRzV6OFlqWVBZZGxNb3FIMUJCVWZIc2U1OHFrbDdLTDdHYXpCcWMxWjE1T2VmWVpaNXlqTXFsekx1cFZn0gGfAUFVX3lxTE84TWFkZ28yMFF5dk5DRF81XzllVXB4YVJQeTYySV9zc3dLMHJQRFIyYmtFdEFuMFdFaEhEN2w1cjhxdzd1MFZNZVpROVlqdm52LVpGdkpJLVl6TjRNSHVRcEc1WWN1aUxJZTNndjZqZ0J0TVVSX1B3aXIxQnJyT01VRlV0WEFiR3J1QjRHbVY3eEdZcjVDSlF6N1dHbXhTWQ?oc=5",
-   "outlet": "Demócrata",
-   "lang": "es",
-   "date": "2026-11-04T04:00Z",
-   "topic": "election"
-  },
-  {
-   "title": "Brecha de precios de la vivienda en las ciudades españolas es una de las mayores de la OCDE",
-   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBmUTJkQlBqc3NwRlJUZE9rUGpHU0QtZU9Bb0R4NWJVSlZ4N0puaGJ6M3RHMThPelZDb2ZILXZfcFBtX1hQaXpxcWxvdE9iYlNvNWFmYUdLWWNFbkJyUmNDRDlnZGNSWjcwczR2RnVSWTJtWjBYdmpfNVh2cTM?oc=5",
-   "outlet": "EFE - Agencia de noticias",
-   "lang": "es",
-   "date": "2026-11-04T00:47Z",
-   "topic": "prices"
-  },
-  {
-   "title": "Nueva ley de rentas en CDMX: ¿Qué propone el registro de contratos de arrendamiento y quién debe hacerlo?",
-   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNZ0ZDR2hQRTBrTHBObzhjaXBsd1k0QS01WmUxWklGUF93MFR3U2F4MHVJNW5ZMjc5YXRIQjRhNUxrOFA4N1J3RHFUaVp5OGJqXy1ZR0pkVFlZY25RMUlfWmFIWk1Za2pUbWFGYjM0WlpSYVpPSHZzUG5LNmFmUjIzUHlTX1ZPOUZyRUxnMXBwdmdlS1gyNHJEVFEyVS11VklYb3BiXzlzclZwMkx0UGVSVDRYblMzQkp5VkoyMWdzeVoxLWFrZ3RJU0hpRWxoMTJuNUFhenhzV3JHbEVxcnM2d3ZOeTh4QQ?oc=5",
-   "outlet": "El Financiero",
-   "lang": "es",
-   "date": "2026-11-03T21:49Z",
-   "topic": "policy"
-  },
-  {
-   "title": "El precio de la vivienda usada se dispara un 13,2% interanual en octubre, según Fotocasa",
-   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPZEdjRDN5ckRhVXhTUkdaRDhPT2oya1ZkaWtza3NMX0tiX3ZuRC16QW84Q2xwVGJoX2xiOTVVOXRWSk1UWFN1Y1NidFFVcHR1cExUZktnT29tQnlhaUZUa0hfZVZYMlFZZVZlY0tYdVp2Z25tNDRiMlV2MXdwMGNmWS1YUFMzYko2ZW9EbDdralFGY1BRMlJxdzVuRGt6VkF6LXpBUEJiQnpOTVAtR3VtZ0NpblNXY2xvM0VMMjNHWEhvWTVrQVQwYUkwci0?oc=5",
-   "outlet": "PressDigital",
-   "lang": "es",
-   "date": "2026-11-03T21:02Z",
-   "topic": "prices"
-  },
-  {
-   "title": "Cómo saber si eres miembro de una mesa electoral el 29N sin moverte de casa",
-   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPNU5zLWJBaEhxMDI5a1ppN0pQUWRLZnpYVWJGWFpIYjhBTm1ZYlFxT2lEMkZfa2VmdDk1bjZVQ3ZOMXlYMUNsbGJhU0pGeGJwMVFXT3piOEJ6dHJFcDdhckpjUlo5U2haWEk1NVlzVDNYOGUwTFFxaDVDQlRDekVmd2oyd3JFb3lIS19hLdIBkgFBVV95cUxQdXpQUVJvWFdENXR6aXNFMWZtenZubDRQX1ZkNXJqZTIyRU1UT1U4ejlWeWNLbDQybFlKYU9oMmI4OVczcTQyTGVmWDR1VUZJRUhSUS1OdlhYQTc0RDBsRXhwa2FmRTVuaGlJUEVVWWNfck5mUVRxSXp5WF8xcmN5M0tocl9feS1JYWMteTUtb0dpUQ?oc=5",
-   "outlet": "Diario de León",
-   "lang": "es",
-   "date": "2026-11-03T16:41Z",
-   "topic": "election"
-  },
-  {
-   "title": "\"Almería será clave\": el PP prepara el 29N con el AVE, el agua y la vivienda como bandera",
-   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZFlieDA3RWQ5cTV5dnNfZU1tVVl2bGNSNE4tUjZ3b3JTckFjbG1FMkNjaEp6a0poaERBeXNLUVVjbm83NmRGVXRXSVJUNGN3M2VmcTVvVTFMTlFMOUZQZnJkVXNnTFVxWHptTS1BaW1sRGVRVnBiVktzZDFrWUZHdUl0ejRpYTN5ZE9aNHY0NEZsNl9KSUszUW8ydXFjT0RKUFVseDVR0gGrAUFVX3lxTE1VVGN5SndrUi1pTnBuQ0x5VUJtTGZuWVRjd05ja25LMWhOMlBNS1dZYkRpNWhwWjB2SDJwZ3lLa3pmcWpBQkhETWlEVkthQlFyWUIybEtrU09FS2QxSTBGWUJoaXJ5TTFzSE1NaG1BcEtRSVduMGV5bnNOcVBtQ0hTMExpeW5VXzRsanZOUEU2dFZWYmY4VVhzWml0a2MxdTdUS3VYdk9PWXZyYw?oc=5",
-   "outlet": "Diario de Almería",
-   "lang": "es",
-   "date": "2026-11-03T16:27Z",
-   "topic": "election"
-  },
-  {
-   "title": "Alianza por el Clima reclama vincular las políticas de vivienda y acción climática ante las elecciones del 29N",
-   "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQQTVqdGJXZFpQSVFyNjNSTFBsaWhsX3ByQ3dwM1pmcGNzZGhvT0VIUzM4YlQyNmRjOVY0Qzhpem43NXRsSnFMUk5ROWpBakFxSnBlZkxyWTJsTVlxX0dpWjVwQ2U2V0dlOWhZYWpEeDd2NnBaZkJEcE9OZmRmUkx5MGdNdFlpX3JLc01HMmNuQ0JzWkx4TlF6b0c4V1NjNGk1b2FHWnRiR0ZtUUltcnRnREMwdy1PUERSOTZ6dHBCRTM4T21jTUZjR2lhYjNtclFBYy00TTBVaW5FSmI2NW9LT2JSR3FBaDhMeXk2c0FlMEtHYWw4UDQzMHRTWVRoUl91cHFxNVNYMk9VWTNRTWtxMV80a1JVT2fSAZcCQVVfeXFMUEE1anRiV2RaUElRcjYzUkxQbGlobF9wckN3cDNaZnBjc2Rob09FSFMzOGJUMjZkYzlWNEM4aXpuNzV0bEpxTFJOUTlqQWpBcUpwZWZMclkybE1ZcV9HaVo1cENlNldHZTloWWFqRHg3djZwWmZCRHBPTmZkZlJMeTBnTXRZaV9yS3NNRzJjbkNCc1pMeE5Rem9HOFdTYzRpNW9hR1p0YkdGbVFJbXJ0Z0RDMHctT1BEUjk2enRwQkUzOE9tY01GY0dpYWIzbXJRQWMtNE0wVWluRUpiNjVvS09iUkdxQWg4THl5NnNBZTBLR2FsOFA0MzB0U1lUaFJfdXBxcTVTWDJPVVkzUU1rcTFfNGtSVU9n?oc=5",
-   "outlet": "Cadena SER",
-   "lang": "es",
-   "date": "2026-11-03T16:15Z",
-   "topic": "election"
-  },
-  {
-   "title": "Madrid's Puerta del Sol Camp Is Dismantled Ahead of Spain's Housing Strike",
-   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQM0x6Rm5UNWlDLTRkMjhwYVBtNnlRT2owVUhPNkZBdG1xdHlVang4ZEtWOHpLR1FPTTVsUVYzM1FxNEtnS1ZlekVkYXNwY3hLWnRUVE5QT3dKN1lTLWpaeXpYVmhMdDJGaWt4U09UVjZoN2x0Y05XeldyQVFQeUE1cS1Jd21ZdjZncEJReA?oc=5",
-   "outlet": "Latin Times",
-   "lang": "en",
-   "date": "2026-11-03T15:23Z",
-   "topic": "other"
-  },
-  {
-   "title": "El precio del alquiler en Barcelona baja un 4,4% con dos años de ley de Vivienda",
-   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE4tQVd3X2JrWDhPTkJ6Z1YtX0NwV1NaelJDTmVESWdsbFF1cUd1VmxTMzB0SmRmZENMUW9VNFV6dS1tTTAtdjBHX2d6X0QxdzNIOFMzNHQxWlJEY2tiSEs4RkdkcGpzNDQ3d0NsQWw2M1dMRU05aFdqUEh0MUQzQjA?oc=5",
-   "outlet": "Qué.es",
-   "lang": "es",
-   "date": "2026-11-03T15:00Z",
-   "topic": "policy"
-  },
-  {
-   "title": "Dos arquitectos coinciden sobre el problema de la vivienda en España: \"Más que el número, es el precio\"",
-   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOQjdCZ3kyOEEwb2xSemlneTF0eU5EbmZRSUZ0MlZLMWd4eklqVzVseDZOcXdJbC03MmtDVWFhdzV0LW9Jc2NnR2hpSHY5TWdDS1ZtT1N0TjVKcmRTZWtVa0VibHhZaXpzSURoMXhtb2lJMkhvdy1WSEpMY3RtSjJTaGxERnRqRkQ0UlFLOEpRUThoSk5tY2pHRW9n?oc=5",
-   "outlet": "Arquitectura y Diseño",
-   "lang": "es",
-   "date": "2026-11-03T14:13Z",
-   "topic": "prices"
-  },
-  {
-   "title": "El PSOE de Segovia afronta las elecciones del 29N con el compromiso de seguir avanzando y hacer de la vivienda una prioridad para que nadie quede atrás",
-   "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNbkFQcU9CVUhhb0VPV3NvTXhUeGlpZlpDT2VURDkxQTd4OVVpcEFlcGlmLS1aVEZaRFAwUmQtM1B2WWgxWHhNSTNQUHFGTWlkNndweTJlclY0eGR3RWxYREN1TndFQ2FjNm1acW5PNlV3TW90M29mOFJwc1ZKanJiNWRqZUpIRHFSazRDcnp5S25acEo2SjJTa256ZTMwOXA0b3paeXl0NmJHU2NaQkU1Z09PaFZiS2ZBaXVMaXduOVp1MUcwRkszVzdKLWlCVnhJM2ZJT1RoUE9xdDN1bEMyblZFYlplMXVoVk5BT1dTMTRiTGl0amFtLUNYR09lbkZaTWNqWkN2R3F0MkE?oc=5",
-   "outlet": "PSOE Segovia",
-   "lang": "es",
-   "date": "2026-11-03T12:57Z",
-   "topic": "election"
-  },
-  {
-   "title": "Cambios en la Ley de Vivienda: los alquileres de temporada tendrán un nuevo límite de tiempo para no ser considerados habituales",
-   "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPMlRHby1qMHhuajEzV3hhRVZlWk5IaDJWR1JaS2p2VF9DWC1ZS0ZVQmxHNG9PbVI5dEtLWHhCQTVfLUJJM2EybHlFMklEZXVyS2pvSHAtY3pPZ1NoNWxPd0xLNG5HS3ZBeEk0Y0hQbG5XV1NHYUk4T2ZDNU9HMzhMYXRjc01zVDMwcEN1dTRaNFhuREtYU0V0RDB0bGdNVllSb3FLRUZPSW1oVmZmd3dBSnVLdURCXzRlQVR6d2JObFJkb2MzRVVDUENMNXJGUmJSaHFEM0owNGJ6NW5rT1lFNnFtX1lpdE5DMjBoT2Zab2dCNmpyVi1NVnJkak5TdmtlbXNMMjF3SFAxUdIBpAJBVV95cUxPTW9ibFRoTlFYc0p3ZTVoMWJOSHBaajhIcGpxSHJzT1lGbV9yN3dEeWVqcWpKVjZtY0NHRl9DU29XbWowNms3NVFhcWFtcWFheHY5MDM4VmZ4dmx2c19NSVhVYjNWdExkaFAwZHQyajVpRDJmc0p4NFVmZndpMVNRdTFnV2xlSDdFazJscFJtaktYdkNzcXpnZHVlMTRYV2QtbW9GbWhqbTZ1aFllUG9idGd0QmE4RGpBSk9JaDIwbVBJVFZwNGFrNzVyZGxCMXE4X3BvdHBvNkthRjY0MTdvMUM4dDZoWDRHZUNtNHRfNjN0M1BDLWo0OFozOFo1UFphZlNjbC1STnNYVndnakEyS3lnQXJtWld5N25nNlIxWFRqN3lT?oc=5",
-   "outlet": "El Cronista",
-   "lang": "es",
-   "date": "2026-11-03T12:36Z",
-   "topic": "policy"
-  },
-  {
-   "title": "Affordable rental housing in Czechia: state to provide 6 billion Kč",
-   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONDZEUnR4c0FhRXJTLWstTVFMYVVDVFp3QnJFemtOTVc2S2ZGY0gtdjJRdjFod0ZnaTJ3dndSMUFSa21CdzlVdzMyTXhZY25yMGc2alp2UEQyZHlkOTg2bVFhRG9UcUV2Ui1yZXZRT3JpMENwY2FJSnpNYUdPd1lqSzItVmg3UUk1cjQ4d3kyWXBJVUowQzFCQ1JULTVHT0FOZ0JnUjVSSQ?oc=5",
-   "outlet": "Around Prague",
-   "lang": "en",
-   "date": "2026-11-03T11:31Z",
-   "topic": "rent"
-  },
-  {
-   "title": "Spanish police dismantle Madrid housing protest camp",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPVjRIMzNEbkswNkNuY29Dek1COEc1MWc1WWIzLS1GeHJMcjA0YTJuLVVmbDk4RzVzYkFIZXlXWWM1aWJKazFETnZWT0pYYzVNbXRYbXMycEtVc2I5MnZmb284WGRicEMzUGNvX1lQaHA5cDJacU03YnptVmMxZ3ZfazhTR1BiYjVCOWhRMy1Eb2syNkRycy1vMG5RTW1OQdIBogFBVV95cUxPSVJMbklqZzl1al9EVTN3aGZ2ck5MczhhSmJXUzdIa0JaVEhsWWdlQXF1U3hHdU95OWlUT3ZtTFBtQ1lXZUtKSlVBV250Rm5kM2d2Wl9xVkxrOXU2VFJOWmM1UEpMMjBVSy1VaWo1MXVFNmZLRjdnbmpoRFFvOGpGUGxlTWNuRDAxSGdldW1iZEs3TGN0WXd4X3hwUGR1U29SYlE?oc=5",
-   "outlet": "Kuwait Times",
-   "lang": "en",
-   "date": "2026-11-03T09:22Z",
-   "topic": "other"
-  },
-  {
-   "title": "El precio del alquiler en España sube un 5,6% anual en octubre",
-   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPclM5N0FiaU55Z0FBN0tuMEpkT1M2dklGQjBXc2ZOdlpOLU91MG5GSWpnU05WOU9iMDZfbTNaX0tfUjRnRENscU40T2lhaEhsU3FtUy1WbzdLb3NjbEtuNTI0dm9TT2Y4ZXhjVmVaejBvc0FzQ3dnTW9iLU1DUVMzNGE0VS01NXVLakZXRm1UcGl4YjBkeHF5LTRNMlZ0dEV5VXRBQ2l5SXhWSmRXZUQxcXlHZjVScGhodUlBLWE2RGY4YXVCd2V2SWVoN1TSAdIBQVVfeXFMUFFjSExKcG91SHl5MW1fMHVMM3RsUDVET0JWXzMzTVRyN2hvYldmTmloRFdTT3BTR0RUZUpFQ1ZqNnlNMkZycE5oejhfc1ZTVndhcW5CMjMxX3dLSThNLWhabnE1RUVDMGdhOFVQMTRhQVhac2sycktaQmxlTUJsZEVoRE9VaFQ3RzcycEhHUUhWSUpsVjRjb3hleU11TnVXb2huaU9ScFRGTzR1cV9ialMwODFlRkR2aHptTzAyOUxaWWxaQkFndzJESFdRVWRXaGlR?oc=5",
-   "outlet": "Idealista",
-   "lang": "es",
-   "date": "2026-11-03T08:07Z",
-   "topic": "rent"
-  },
-  {
-   "title": "¿Puedes ausentarte del trabajo sin perder salario para ir a votar en las elecciones del 29N? Esto es lo que dice la ley",
-   "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPUnU1UGJHOEVzUGRZUWpMelNQN0VEOF9Xcm04NFhuRU03Mi1UNllOTHFac19uTFp5Uk5pVDNGS2p2a0N5cXZhdEdXUkk1SW9ybGJ3QzFSVEdOT2t4OUxuSzZhUkdCejZjQ3FZWGhHSlZuNTBDT2RlZkFLOEs2UlJVZHhvUGl3RXA2RWEyem1HelZtQkY1YXdMTHkyN2Y1VW55OGVpWDRNM3ctQ0JiWV9FLU5rNkFwVWFoaEhhV2VXdlk0a2MySHdsRXB3VjctbzFLWHRnZm0tV29rZFdvd3VIUkFGT0RmU0F50gH8AUFVX3lxTE5ubkhlQVFoZEpsajBCNDYwM005bHNoaDRPajhNNWE5eXJEaG9xTHdTU0NHVWtUV3VlVVZnem9maTlUeUN1Ul9rU0FxLVdtSG40cTV5ZzR0MVIwY0VLZDRpbFJ3M09ZLVZwVld2ZFJNVEY0MUN2ZVRFcWNYbWZOYmp3aGVCbE9EWl82ZXpxY0N5Z3pYbDhCUUNVaEdfVjg2SDhXaXZjdE9veGN4bzE2cVh0dEtCekNGcUZFQzV4a2RBX3VoQUJMbzNNcWpnbEFHWnhDSUJMVFZRd3FubWFRMEczdmVXTnpmLXhxUmZOWFZvM3c5U3NBX3RNV2l4Qg?oc=5",
-   "outlet": "La Razón",
-   "lang": "es",
-   "date": "2026-11-03T05:30Z",
-   "topic": "election"
   }
  ]
 }
