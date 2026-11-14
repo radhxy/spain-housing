@@ -31,7 +31,8 @@ python3 -m http.server 8000        # open http://localhost:8000
 - **Automatic:** `.github/workflows/update-data.yml` runs daily. It pulls INE (IPV, ETDP, IPVA), the Ministry of Housing appraisal and buyer-residence workbooks, Banco de España housing indicators, Catalonia's Incasòl lease register, ECB Euribor, Eurostat and Google News, then commits the refreshed `data/`. The national idealista sale price also updates automatically through Banco de España's monthly republication.
 - **idealista API (optional):** request access at https://developers.idealista.com/access-request, then add `IDEALISTA_API_KEY` and `IDEALISTA_API_SECRET` as repository secrets (Settings → Secrets and variables → Actions). `scripts/fetch_idealista.py` then samples sale and rent listings around each provincial capital. To stay within the free quota (about 100 requests a month), each province is refreshed about every 8 weeks. These samples replace modelled rents in the yield table.
 - **Hosting:** `.github/workflows/pages.yml` redeploys the site to GitHub Pages after every push and data refresh: https://radhxy.github.io/spain-housing/
-- **By hand** (sites that block automated access, and political events):
+- **Weekly research refresh:** a scheduled Claude session runs every Monday and follows `docs/weekly-refresh.md` to update the curated files below, then rebuilds, checks and pushes.
+- **By hand or weekly** (sites that block automated access, and political events):
   - `data/curated/market.json`: idealista and Fotocasa rents and sale prices, once a month after each report (around the 1st).
   - `data/curated/politics.json`: timeline, upcoming dates, decree status, polls and party positions.
   - `data/curated/projections.json`: new forecasts (add a row per vintage) and the scenario assumptions.
