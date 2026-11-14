@@ -1,24 +1,24 @@
 {
   "_note": "Curated political tracker. Dates are as reported; where outlets disagree the item says so. Update as events occur.",
-  "updated": "2026-10-25",
+  "updated": "2026-11-14",
   "election": {
     "date": "2026-11-29",
     "label": "General election",
     "campaign_start": "2026-11-13"
   },
-  "headline": "Congress voted down the government's two housing decrees on 2 Oct 2026. Pedro Sánchez dissolved parliament and called a snap election for 29 Nov. Re-issued as RDL 28/2026 and RDL 29/2026, the decrees have been in force since 8 Oct, but the Diputación Permanente must ratify them, with a vote expected on 12 Nov. The 2% cap on rent updates and the extensions to lease contracts depend on that vote and on who wins on 29 Nov.",
+  "headline": "The reduced parliamentary committee (Diputación Permanente) ratified RDL 29/2026 by 35–34 on 12 Nov, with PNV support, so the 2% cap on rent updates, the eviction moratorium to 2030 and 10% VAT on tourist lets are now law. It rejected RDL 28/2026, so the lease-extension decree has lapsed. A day earlier, Spain held its first general strike over housing since 2012. The campaign opened on 13 Nov. Polls give PP and Vox a combined majority for the 29 Nov election, and the PP has pledged to unwind the controls.",
   "decrees": [
     {
       "id": "RDL 29/2026 · main housing package",
-      "status": "In force · vote 12 Nov",
-      "level": "warn",
-      "summary": "Caps annual rent updates at 2% to the end of 2027, bans evictions of vulnerable households to 2030, adds rules on seasonal and room rentals, and puts 10% VAT on tourist lets from 1 Dec. Press tallies point to ratification by 35–34 with PNV support."
+      "status": "Ratified 12 Nov · in force",
+      "level": "good",
+      "summary": "Ratified 35–34 (PSOE, Sumar, PNV, ERC, Bildu, Podemos for; PP, Vox, Junts against). It caps annual rent updates at 2% to end-2027, suspends evictions of vulnerable households to 2030, adds rules on seasonal and room rentals, and puts 10% VAT on tourist lets from 1 Dec. A new government could repeal it."
     },
     {
       "id": "RDL 28/2026 · lease extensions",
-      "status": "In force · likely to fall",
+      "status": "Rejected 12 Nov · lapsed",
       "level": "crit",
-      "summary": "Tenants can extend expiring leases by up to 2 years, and the decree moves toward open-ended contracts. PNV says it will vote against, so the measure is expected to lapse on 12 Nov."
+      "summary": "It got only 34 votes after PNV voted no. Automatic lease extensions and the move to open-ended contracts are gone. Tenants who asked for an extension while it was in force face legal uncertainty."
     },
     {
       "id": "Ley 12/2023 · Housing Law",
@@ -92,13 +92,6 @@
       "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-20823"
     },
     {
-      "date": "2026-10-16",
-      "cat": "parliament",
-      "title": "Ratification vote scheduled for 12 November",
-      "detail": "In the Diputación Permanente (69 seats), press tallies put RDL 29 at 35–34 in favour, with PNV support. RDL 28 (open-ended leases) is likely to fall.",
-      "url": "https://www.moncloa.com/2026/10/17/decretos-vivienda-congreso-12n-3450016/"
-    },
-    {
       "date": "2026-10-20",
       "cat": "market",
       "title": "Permanent rental supply down 10% y/y",
@@ -125,24 +118,47 @@
       "title": "8,300 'seasonal' listings ordered off platforms",
       "detail": "The Consumer Affairs ministry is targeting holiday lets disguised as seasonal rentals.",
       "url": "https://theolivepress.es/spain-news/2026/10/25/spain-illegal-holiday-lets-crackdown"
+    },
+    {
+      "date": "2026-11-03",
+      "cat": "market",
+      "title": "idealista: rents +5.6% y/y in October, −1.1% q/q",
+      "detail": "Rents are still rising in 48 of 50 provinces. Huesca leads (+12.1%) and only Gipuzkoa and Álava are falling.",
+      "url": "https://www.idealista.com/news/inmobiliario/vivienda/2026/11/03/921672-el-precio-del-alquiler-en-espana-sube-un-5-6-anual-en-octubre"
+    },
+    {
+      "date": "2026-11-10",
+      "cat": "market",
+      "title": "Forcadell / UB: sales to fall ~8% in 2027",
+      "detail": "Prices up slightly more than 10% in 2026, with growth easing below 5% by end-2027.",
+      "url": "https://www.idealista.com/news/inmobiliario/vivienda/2026/11/10/923160-la-venta-de-viviendas-caera-un-8-en-2027-y-los-precios-seguiran-al-alza-segun"
+    },
+    {
+      "date": "2026-11-11",
+      "cat": "protest",
+      "title": "General strike over housing",
+      "detail": "The first general strike over housing since 2012, called by CCOO, UGT and tenants' unions. Organisers claim up to 5 million took part; independent reports describe tens of thousands at the marches, with incidents and arrests. Tenants' unions announced a new cycle of mobilisations.",
+      "url": "https://www.moncloa.com/2026/11/12/huelga-general-11n-2-3466117/"
+    },
+    {
+      "date": "2026-11-12",
+      "cat": "parliament",
+      "title": "RDL 29/2026 ratified 35–34; RDL 28/2026 rejected",
+      "detail": "PNV was decisive after Junts voted no. The 2% rent-update cap, eviction moratorium and tourist-let VAT are now law, and automatic lease extensions lapse.",
+      "url": "https://www.idealista.com/news/inmobiliario/vivienda/2026/11/12/923779-la-diputacion-permanente-convalida-el-decreto-de-vivienda-y-rechaza-el-de"
+    },
+    {
+      "date": "2026-11-13",
+      "cat": "election",
+      "title": "Campaign opens; manifestos published",
+      "detail": "PSOE: state housing company, public housing above 6% of stock, interest-free loans up to €50k. Frente Amplio (Sumar): expropriate homes from large funds, limit investor purchases. Vox: more land, lower taxes, 'national priority' for housing aid.",
+      "url": "https://www.telecinco.es/noticias/economia/vivienda/20261112/elecciones-generales-2026-que-proponen-vivienda-psoe-pp-vox-frente-amplio-podemos_46_020663002.html"
     }
   ],
   "upcoming": [
     {
-      "date": "2026-10-28",
-      "title": "Candidate lists published in BOE"
-    },
-    {
-      "date": "2026-11-11",
-      "title": "24-hour general strike over housing and wages"
-    },
-    {
-      "date": "2026-11-12",
-      "title": "Diputación Permanente votes on RDL 28 & 29/2026"
-    },
-    {
-      "date": "2026-11-13",
-      "title": "Official campaign starts"
+      "date": "2026-11-28",
+      "title": "Day of reflection"
     },
     {
       "date": "2026-11-29",
@@ -150,15 +166,19 @@
     },
     {
       "date": "2026-12-01",
-      "title": "10% VAT on tourist lets applies (if RDL 29 ratified)"
+      "title": "10% VAT on tourist lets applies (RDL 29 ratified)"
     },
     {
       "date": "2026-12-04",
       "title": "INE house price index, Q3 2026 (estimated date)"
+    },
+    {
+      "date": "2026-12-17",
+      "title": "Earliest likely date for the new Congress to sit (estimated)"
     }
   ],
   "polls": {
-    "_note": "Only the figures reported by the press or aggregators are entered here. Blank means not reported. Add new polls as rows.",
+    "_note": "Figures as reported by pollsters and aggregators; blank = not reported. Sumar runs as Frente Amplio in some polls. The CIS is an outlier with PSOE ahead.",
     "result_2023": {
       "PP": 33.1,
       "PSOE": 31.7,
@@ -199,11 +219,52 @@
         "PP": 32.0,
         "PSOE": 27.0,
         "Vox": 19.0
+      },
+      {
+        "pollster": "DYM",
+        "date": "2026-11-10",
+        "PP": 33.1,
+        "PSOE": 27.3,
+        "Vox": 18.6,
+        "Sumar": 5.6
+      },
+      {
+        "pollster": "Sigma Dos",
+        "date": "2026-11-12",
+        "PP": 30.8,
+        "PSOE": 25.3,
+        "Vox": 19.6,
+        "Sumar": 7.3
+      },
+      {
+        "pollster": "CIS",
+        "date": "2026-11-12",
+        "PP": 25.5,
+        "PSOE": 33.3,
+        "Vox": 18.4,
+        "Sumar": 6.9
+      },
+      {
+        "pollster": "40dB",
+        "date": "2026-11-13",
+        "PP": 31.5,
+        "PSOE": 29.4,
+        "Vox": 18.8,
+        "Sumar": 5.1
+      },
+      {
+        "pollster": "Winston",
+        "date": "2026-11-13",
+        "PP": 31.1,
+        "PSOE": 26.4,
+        "Vox": 18.7,
+        "Sumar": 8.4
       }
     ],
     "sources": [
       "https://en.wikipedia.org/wiki/2026_Spanish_general_election",
-      "https://www.poliwave.com/es/gen/polls"
+      "https://www.poliwave.com/es/gen/polls",
+      "https://mapaelectoral.es/encuestas/"
     ]
   },
   "parties": [
@@ -211,19 +272,19 @@
       "party": "PSOE",
       "stance": "Intervention",
       "score": -2,
-      "housing": "Keep RDL 29/2026: 2% rent-update cap, lease extensions, eviction moratorium, VAT on tourist lets. Promises to go 'further' if re-elected; €7bn State Housing Plan to 2030."
+      "housing": "Keep RDL 29/2026 (2% rent-update cap to end-2027, eviction moratorium, tourist-let VAT). Manifesto: state housing company, public housing above 6% of stock, interest-free purchase loans up to €50k; €7bn State Housing Plan to 2030."
     },
     {
       "party": "Sumar",
       "stance": "Strong intervention",
       "score": -3,
-      "housing": "Historically pushed for tighter rent caps, open-ended leases and limits on speculative purchases. Backs both decrees."
+      "housing": "Runs as Frente Amplio. Proposes expropriating homes from large funds, limiting purchases by investors and deep rent cuts. Backed both decrees."
     },
     {
       "party": "PNV",
       "stance": "Swing",
       "score": 0,
-      "housing": "Supports RDL 29 (the main package) but opposes RDL 28 (open-ended leases). Its vote decides the 12 Nov ratification."
+      "housing": "Its vote ratified RDL 29 on 12 Nov and sank RDL 28 (open-ended leases)."
     },
     {
       "party": "Junts",
@@ -241,7 +302,7 @@
       "party": "Vox",
       "stance": "Deregulate",
       "score": 3,
-      "housing": "Opposes rent controls, wants tax cuts and tough anti-squatting rules, and frames housing demand around immigration. Voted against both decrees."
+      "housing": "More land and lower taxes, no rent controls, tough anti-squatting rules. 'National priority': Spaniards first for rental aid and protected housing. Voted against both decrees."
     }
   ],
   "buyer_context": [
