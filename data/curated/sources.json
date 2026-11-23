@@ -242,6 +242,17 @@
     "used": "curated"
   },
   {
+    "name": "Other published housing forecasts",
+    "publisher": "Valmesa, Dils Lucas Fox, Forcadell / Univ. Barcelona",
+    "kind": "Forecast",
+    "metrics": "Price and sales outlook",
+    "geo": "National",
+    "freq": "Ad hoc",
+    "access": "Press",
+    "url": "https://www.que.es/2026/11/19/precios-vivienda-2027-dils-lucas-fox/",
+    "used": "curated"
+  },
+  {
     "name": "BOE – Real Decreto-ley 29/2026",
     "publisher": "Boletín Oficial del Estado",
     "kind": "Legal",

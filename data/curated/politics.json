@@ -1,12 +1,12 @@
 {
   "_note": "Curated political tracker. Dates are as reported; where outlets disagree the item says so. Update as events occur.",
-  "updated": "2026-11-14",
+  "updated": "2026-11-23",
   "election": {
     "date": "2026-11-29",
     "label": "General election",
     "campaign_start": "2026-11-13"
   },
-  "headline": "The reduced parliamentary committee (Diputación Permanente) ratified RDL 29/2026 by 35–34 on 12 Nov, with PNV support, so the 2% cap on rent updates, the eviction moratorium to 2030 and 10% VAT on tourist lets are now law. It rejected RDL 28/2026, so the lease-extension decree has lapsed. A day earlier, Spain held its first general strike over housing since 2012. The campaign opened on 13 Nov. Polls give PP and Vox a combined majority for the 29 Nov election, and the PP has pledged to unwind the controls.",
+  "headline": "RDL 29/2026, ratified on 12 Nov, keeps the 2% rent-update cap, the eviction moratorium to 2030 and 10% VAT on tourist lets from 1 Dec. RDL 28 (lease extensions) has lapsed. Housing opened the 19 Nov Sánchez–Feijóo debate, and Feijóo has pledged to abolish the Housing Ministry and repeal the 2023 Housing Law. Final polls before the 24 Nov publication ban mostly give PP and Vox a combined majority for the 29 Nov election, though 40dB shows the PSOE within a point of the PP.",
   "decrees": [
     {
       "id": "RDL 29/2026 · main housing package",
@@ -153,9 +153,55 @@
       "title": "Campaign opens; manifestos published",
       "detail": "PSOE: state housing company, public housing above 6% of stock, interest-free loans up to €50k. Frente Amplio (Sumar): expropriate homes from large funds, limit investor purchases. Vox: more land, lower taxes, 'national priority' for housing aid.",
       "url": "https://www.telecinco.es/noticias/economia/vivienda/20261112/elecciones-generales-2026-que-proponen-vivienda-psoe-pp-vox-frente-amplio-podemos_46_020663002.html"
+    },
+    {
+      "date": "2026-11-17",
+      "cat": "market",
+      "title": "Valmesa: prices +7.1% in 2027",
+      "detail": "Central scenario for INE's house price index: +11.9% in 2026, slowing to +7.1% in 2027, with sales easing from about 683,000 to 663,000.",
+      "url": "https://www.diariosigloxxi.com/texto-diario/mostrar/6095148/valmesa-preve-precio-vivienda-suba-71-2027-pese-descenso-compraventas"
+    },
+    {
+      "date": "2026-11-19",
+      "cat": "election",
+      "title": "Feijóo pledges to abolish the Housing Ministry",
+      "detail": "The PP would fold housing into a strategic vice-presidency, repeal the 2023 Housing Law and scrap tensioned zones and the rent reference index.",
+      "url": "https://www.idealista.com/en/news/property-for-sale-in-spain/2026/11/19/924300-spain-s-2026-election-housing-promises-from-one-million-new-homes-to-property"
+    },
+    {
+      "date": "2026-11-19",
+      "cat": "election",
+      "title": "Sánchez–Feijóo debate opens on housing",
+      "detail": "Feijóo said the government 'has barely built housing' and that rental supply has collapsed. Sánchez urged him not to repeal the Housing Law and defended RDL 29/2026.",
+      "url": "https://www.idealista.com/news/inmobiliario/vivienda/2026/11/20/925347-sanchez-a-feijoo-en-el-debate-no-derogue-la-ley-de-vivienda"
+    },
+    {
+      "date": "2026-11-19",
+      "cat": "market",
+      "title": "CaixaBank Research: prices +7.2% in 2027",
+      "detail": "Price growth of more than 12% in 2026 slows to 7.2% in 2027. Sales fall 3.7% to about 685,000 in 2026 and a further 4.4% to about 655,000 in 2027.",
+      "url": "https://www.caixabank.com/es/actualidad/noticias/mercado-inmobiliario-espana-previsiones-2027"
+    },
+    {
+      "date": "2026-11-19",
+      "cat": "market",
+      "title": "Dils Lucas Fox: prices +5.7% to +7.4% in 2027",
+      "detail": "The consultancy expects 650,000–700,000 sales in 2027 and prime homes to rise only about 4%.",
+      "url": "https://www.que.es/2026/11/19/precios-vivienda-2027-dils-lucas-fox/"
+    },
+    {
+      "date": "2026-11-21",
+      "cat": "protest",
+      "title": "Tenants' unions back on the streets a week before the vote",
+      "detail": "The tenants' unions joined European housing mobilisations on 20–22 Nov, with a housing bloc at a Madrid march on 21 Nov.",
+      "url": "https://www.que.es/2026/11/21/sindicato-inquilinas-elecciones-29n/"
     }
   ],
   "upcoming": [
+    {
+      "date": "2026-11-24",
+      "title": "Poll publication ban begins (five days before the vote)"
+    },
     {
       "date": "2026-11-28",
       "title": "Day of reflection"
@@ -178,7 +224,7 @@
     }
   ],
   "polls": {
-    "_note": "Figures as reported by pollsters and aggregators; blank = not reported. Sumar runs as Frente Amplio in some polls. The CIS is an outlier with PSOE ahead.",
+    "_note": "Figures as reported by pollsters and aggregators; blank = not reported. Sumar runs as Frente Amplio in some polls. The CIS is an outlier with PSOE ahead. From 14 Nov, one row per pollster (its latest release before the 24 Nov ban), dated by fieldwork end and taken from Wikipedia's polling table. Sumar here means Frente Amplio. Hamalgama uses Vozpópuli's own figure (PP 31.8), where Wikipedia lists 32.2. NC Report uses Wikipedia's 32.3, where press summaries cite 31.9. The 40dB row is the 10–21 Nov aggregate.",
     "result_2023": {
       "PP": 33.1,
       "PSOE": 31.7,
@@ -186,12 +232,6 @@
       "Sumar": 12.3
     },
     "rows": [
-      {
-        "pollster": "CIS",
-        "date": "2026-10-08",
-        "PP": 28.3,
-        "PSOE": 28.6
-      },
       {
         "pollster": "RTVE",
         "date": "2026-10-05",
@@ -201,6 +241,12 @@
         "pollster": "Electocracia",
         "date": "2026-10-05",
         "Sumar": 6.2
+      },
+      {
+        "pollster": "CIS",
+        "date": "2026-10-08",
+        "PP": 28.3,
+        "PSOE": 28.6
       },
       {
         "pollster": "Electomanía",
@@ -259,9 +305,169 @@
         "PSOE": 26.4,
         "Vox": 18.7,
         "Sumar": 8.4
+      },
+      {
+        "pollster": "Public First",
+        "date": "2026-11-17",
+        "PP": 29.5,
+        "PSOE": 27.2,
+        "Vox": 19.6,
+        "Sumar": 5.9
+      },
+      {
+        "pollster": "GAD3",
+        "date": "2026-11-19",
+        "PP": 31.1,
+        "PSOE": 28.4,
+        "Vox": 18.1,
+        "Sumar": 6.5
+      },
+      {
+        "pollster": "DYM",
+        "date": "2026-11-19",
+        "PP": 33.0,
+        "PSOE": 28.0,
+        "Vox": 18.0,
+        "Sumar": 6.9
+      },
+      {
+        "pollster": "IMOP",
+        "date": "2026-11-19",
+        "PP": 31.7,
+        "PSOE": 27.4,
+        "Vox": 18.3,
+        "Sumar": 7.4
+      },
+      {
+        "pollster": "Winston",
+        "date": "2026-11-19",
+        "PP": 31.1,
+        "PSOE": 28.2,
+        "Vox": 17.7,
+        "Sumar": 6.4
+      },
+      {
+        "pollster": "More in Common",
+        "date": "2026-11-19",
+        "PP": 28.9,
+        "PSOE": 28.0,
+        "Vox": 19.8,
+        "Sumar": 7.1
+      },
+      {
+        "pollster": "Metroscopia",
+        "date": "2026-11-19",
+        "PP": 30.0,
+        "PSOE": 30.0,
+        "Vox": 19.0
+      },
+      {
+        "pollster": "Hamalgama Métrica",
+        "date": "2026-11-20",
+        "PP": 31.8,
+        "PSOE": 25.4,
+        "Vox": 20.6,
+        "Sumar": 6.5
+      },
+      {
+        "pollster": "NC Report",
+        "date": "2026-11-20",
+        "PP": 32.3,
+        "PSOE": 27.2,
+        "Vox": 19.0,
+        "Sumar": 6.0
+      },
+      {
+        "pollster": "Ipsos",
+        "date": "2026-11-20",
+        "PP": 30.3,
+        "PSOE": 29.8,
+        "Vox": 17.9,
+        "Sumar": 4.8
+      },
+      {
+        "pollster": "GESOP",
+        "date": "2026-11-21",
+        "PP": 32.9,
+        "PSOE": 29.0,
+        "Vox": 17.5,
+        "Sumar": 6.7
+      },
+      {
+        "pollster": "Sondaxe",
+        "date": "2026-11-21",
+        "PP": 31.1,
+        "PSOE": 28.2,
+        "Vox": 17.3,
+        "Sumar": 5.4
+      },
+      {
+        "pollster": "Sigma Dos",
+        "date": "2026-11-21",
+        "PP": 31.7,
+        "PSOE": 28.3,
+        "Vox": 17.9,
+        "Sumar": 7.2
+      },
+      {
+        "pollster": "Electomanía",
+        "date": "2026-11-21",
+        "PP": 31.2,
+        "PSOE": 28.4,
+        "Vox": 18.3,
+        "Sumar": 5.8
+      },
+      {
+        "pollster": "SW Demoscopia",
+        "date": "2026-11-21",
+        "PP": 29.9,
+        "PSOE": 32.5,
+        "Vox": 15.8,
+        "Sumar": 6.8
+      },
+      {
+        "pollster": "Cluster17",
+        "date": "2026-11-21",
+        "PP": 30.2,
+        "PSOE": 32.6,
+        "Vox": 16.9,
+        "Sumar": 5.2
+      },
+      {
+        "pollster": "Target Point",
+        "date": "2026-11-21",
+        "PP": 31.5,
+        "PSOE": 28.8,
+        "Vox": 17.4,
+        "Sumar": 7.3
+      },
+      {
+        "pollster": "40dB",
+        "date": "2026-11-21",
+        "PP": 31.8,
+        "PSOE": 30.9,
+        "Vox": 17.3,
+        "Sumar": 4.4
+      },
+      {
+        "pollster": "Data10",
+        "date": "2026-11-22",
+        "PP": 31.7,
+        "PSOE": 27.3,
+        "Vox": 19.1,
+        "Sumar": 6.5
+      },
+      {
+        "pollster": "SocioMétrica",
+        "date": "2026-11-22",
+        "PP": 32.1,
+        "PSOE": 28.7,
+        "Vox": 18.4,
+        "Sumar": 4.9
       }
     ],
     "sources": [
+      "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
       "https://en.wikipedia.org/wiki/2026_Spanish_general_election",
       "https://www.poliwave.com/es/gen/polls",
       "https://mapaelectoral.es/encuestas/"
@@ -272,13 +478,13 @@
       "party": "PSOE",
       "stance": "Intervention",
       "score": -2,
-      "housing": "Keep RDL 29/2026 (2% rent-update cap to end-2027, eviction moratorium, tourist-let VAT). Manifesto: state housing company, public housing above 6% of stock, interest-free purchase loans up to €50k; €7bn State Housing Plan to 2030."
+      "housing": "Keep RDL 29/2026 (2% rent-update cap to end-2027, eviction moratorium, tourist-let VAT). Manifesto: state housing company, public housing above 6% of stock, interest-free purchase loans up to €50k; €7bn State Housing Plan to 2030. Public stock of 100,000 homes run by Casa 47, housing spending of 1% of GDP a year, and housing as a constitutional right."
     },
     {
       "party": "Sumar",
       "stance": "Strong intervention",
       "score": -3,
-      "housing": "Runs as Frente Amplio. Proposes expropriating homes from large funds, limiting purchases by investors and deep rent cuts. Backed both decrees."
+      "housing": "Runs as Frente Amplio. Would expropriate homes from large landlords in stages, starting with those holding over 1,000 homes, and cap rents in tensioned zones at the lower of 25% of local household income or the SERPAVI index. Also proposes a 10% tax on accumulated residential property and phasing out tourist licences in tensioned zones. Backed both decrees."
     },
     {
       "party": "PNV",
@@ -296,13 +502,13 @@
       "party": "PP",
       "stance": "Supply & liberalise",
       "score": 2,
-      "housing": "Land Law, 48-hour squatter evictions, 1M homes, tax breaks for landlords who extend leases below CPI, purchase aid for young buyers. Has previously moved to repeal the 2023 Housing Law."
+      "housing": "Abolish the Housing Ministry (fold it into a strategic vice-presidency), repeal the 2023 Housing Law and scrap tensioned zones and the rent index. Land Law, building permits decided within 3 months, 48-hour squatter evictions, 1M homes, lower VAT on first homes for buyers under 40, tax breaks for landlords who extend leases below CPI."
     },
     {
       "party": "Vox",
       "stance": "Deregulate",
       "score": 3,
-      "housing": "More land and lower taxes, no rent controls, tough anti-squatting rules. 'National priority': Spaniards first for rental aid and protected housing. Voted against both decrees."
+      "housing": "Repeal the Housing Law. More land, 0% VAT on new-build main homes, higher taxes on non-EU buyers, no rent controls, evictions of squatters within 24 hours. 'National priority': Spaniards first for rental aid and protected housing. Voted against both decrees."
     }
   ],
   "buyer_context": [
